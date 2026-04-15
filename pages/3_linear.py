@@ -333,7 +333,17 @@ elif st.session_state.linear_page == "다중공선성 확인":
     else:
         st.info("ols_5.jpg 파일을 pages 폴더에 추가해 주세요.")
 
-    st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
+    st.markdown('<div style="margin-bottom:60px;"></div>', unsafe_allow_html=True)
+
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">02</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">최종 분석 데이터 완성</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
 
     img_path6 = os.path.join(pages_folder, "ols_6.jpg")
     if os.path.exists(img_path6):
