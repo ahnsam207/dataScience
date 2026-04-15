@@ -1,4 +1,15 @@
 import streamlit as st
+import os
+import base64
+
+pages_folder = os.path.dirname(os.path.abspath(__file__))
+
+def img_to_base64(img_path):
+    ext  = img_path.split(".")[-1].lower()
+    mime = "image/png" if ext == "png" else "image/jpeg"
+    with open(img_path, "rb") as f:
+        b64 = base64.b64encode(f.read()).decode()
+    return mime, b64
 
 if "linear_page" not in st.session_state:
     st.session_state.linear_page = "연구주제"
@@ -79,17 +90,10 @@ if st.session_state.linear_page == "연구주제":
         unsafe_allow_html=True
     )
 
+# ══════════════════════════════════════════════════
+# 탐색적 데이터 분석
+# ══════════════════════════════════════════════════
 elif st.session_state.linear_page == "탐색적 데이터 분석":
-    import os
-    import base64
-    pages_folder = os.path.dirname(os.path.abspath(__file__))
-
-    def img_to_base64(img_path):
-        ext  = img_path.split(".")[-1].lower()
-        mime = "image/png" if ext == "png" else "image/jpeg"
-        with open(img_path, "rb") as f:
-            b64 = base64.b64encode(f.read()).decode()
-        return mime, b64
 
     # 01 - 데이터 불러오기 및 정보 확인
     st.markdown(
@@ -130,7 +134,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
     )
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
-        ' border-radius:16px; padding:28px 36px; margin-bottom:8px;'
+        ' border-radius:16px; padding:28px 36px; margin-bottom:20px;'
         ' border-left:6px solid #1976d2;">'
         '<div style="display:flex; flex-direction:column; gap:14px;">'
 
@@ -139,7 +143,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         ' display:flex; align-items:center; justify-content:center; font-size:14px;'
         ' font-weight:700; flex-shrink:0; margin-top:2px;">1</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
-        '생성형 AI를 사용한 경험 <span style="color:#1976d2; font-weight:700;">(Q4)</span> 이 있는 학생과'
+        '생성형 AI를 사용한 경험 <span style="color:#1976d2; font-weight:700;">(Q4)</span> 이 있는 학생'
         '</div>'
         '</div>'
 
@@ -148,7 +152,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         ' display:flex; align-items:center; justify-content:center; font-size:14px;'
         ' font-weight:700; flex-shrink:0; margin-top:2px;">2</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
-        '고등학생 <span style="color:#1976d2; font-weight:700;">(일반고, 특성화고)</span> 의 데이터 중에서 '
+        '고등학생 <span style="color:#1976d2; font-weight:700;">(일반고, 특성화고)</span> 대상인 학생 데이터'
         '</div>'
         '</div>'
 
@@ -176,6 +180,14 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '</div>',
         unsafe_allow_html=True
     )
+
+    img_path2 = os.path.join(pages_folder, "ols_2.jpg")
+    if os.path.exists(img_path2):
+        st.image(img_path2, use_container_width=True)
+    else:
+        st.info("ols_2.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
     # 03 - 선별 데이터 탐색적 데이터 분석하기
     st.markdown(
