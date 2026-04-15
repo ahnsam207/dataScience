@@ -276,6 +276,8 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
             '<span style="background:#fff3e0; border-radius:8px; padding:2px 10px;'
             ' font-weight:700; color:#e65100;">use_grade</span>'
             ' <span style="color:#888; font-size:22px;">(생성형 인공지능을 사용하는 목적이 학교 성적 향상)</span>'
+            '</div>'
+            '<div style="font-size:22px; line-height:2.0; color:#222; margin-top:8px;">'
             '<span style="font-size:22px; font-weight:900; color:#e53935;">변수 간 상관계수가 0.83</span>'
             ' 으로 <b>강한 양의 상관관계</b>가 있음을 확인할 수 있음.'
             '</div>'
