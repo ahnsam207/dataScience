@@ -17,14 +17,16 @@ st.markdown(
     "@media (prefers-color-scheme: dark) { :root { --label-color: #e8e8e8; } }"
     "[data-theme='dark'] { --label-color: #e8e8e8; }"
     ".block-container {"
-    "  padding-top: 1rem !important;"
+    "  padding-top: 2.5rem !important;"
     "  padding-left: 2rem !important;"
     "  padding-right: 2rem !important;"
     "}"
-    "div[data-testid='stHorizontalBlock'] button {"
-    "  height: 3rem !important;"
-    "  font-size: 18px !important;"
+    "div[data-testid='stHorizontalBlock'] button p {"
+    "  font-size: 20px !important;"
     "  font-weight: 700 !important;"
+    "}"
+    "div[data-testid='stHorizontalBlock'] button {"
+    "  height: 3.5rem !important;"
     "}"
     "</style>",
     unsafe_allow_html=True
@@ -47,19 +49,12 @@ for col, tab, icon in zip(mc[:2], tabs, icons):
         ):
             st.session_state.intro_page = tab
 
-st.markdown('<div style="margin-bottom:12px;"></div>', unsafe_allow_html=True)
+st.markdown('<div style="margin-bottom:16px;"></div>', unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════
 # 2ok
 # ══════════════════════════════════════════════════
 if st.session_state.intro_page == "2ok":
-    st.markdown(
-        "<style>"
-        ".content-2ok { max-width: 800px; }"
-        "</style>",
-        unsafe_allow_html=True
-    )
-
     intro_img = os.path.join(pages_folder, "intro.jpg")
     if os.path.exists(intro_img):
         mime, b64 = img_to_base64(intro_img)
@@ -79,7 +74,6 @@ if st.session_state.intro_page == "2ok":
             unsafe_allow_html=True
         )
 
-    st.markdown('<div style="max-width:800px;">', unsafe_allow_html=True)
     st.divider()
     col1, col2 = st.columns(2)
     with col1:
@@ -110,21 +104,20 @@ if st.session_state.intro_page == "2ok":
     st.subheader("💬 4기 파이팅!")
     st.markdown(
         '<div style="max-width:800px;">'
-        '<div style="'
-        'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);'
-        'border-radius: 16px; padding: 32px 36px; margin: 12px 0; color: white;'
-        'box-shadow: 0 4px 20px rgba(102,126,234,0.4);">'
-        '<div style="font-size:17px; line-height:2.2; font-weight:400;">'
+        '<div style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);'
+        'border-radius:16px; padding:32px 36px; margin:12px 0; color:white;'
+        'box-shadow:0 4px 20px rgba(102,126,234,0.4);">'
+        '<div style="font-size:17px; line-height:2.2;">'
         '각자의 자리에서 치열하게 하루를 보내고, 밤늦게까지 데이터와 수식을 들여다보며 '
         '연구를 이어가는 동기 선생님들을 볼 때마다 큰 자극과 위로를 동시에 받습니다.'
         '</div>'
-        '<div style="border-top: 1px solid rgba(255,255,255,0.3); margin: 18px 0;"></div>'
-        '<div style="font-size:17px; line-height:2.2; font-weight:400;">'
+        '<div style="border-top:1px solid rgba(255,255,255,0.3); margin:18px 0;"></div>'
+        '<div style="font-size:17px; line-height:2.2;">'
         '가끔은 정체기처럼 느껴져 답답할 때도 있지만, 우리가 지금까지 끈기 있게 분석하고 '
         '고민해 온 시간들은 결측치(NaN)로 <b>dropna()</b> 되지 않을 것이라 생각해요.'
         '</div>'
-        '<div style="border-top: 1px solid rgba(255,255,255,0.3); margin: 18px 0;"></div>'
-        '<div style="font-size:17px; line-height:2.2; font-weight:400;">'
+        '<div style="border-top:1px solid rgba(255,255,255,0.3); margin:18px 0;"></div>'
+        '<div style="font-size:17px; line-height:2.2;">'
         '체력 관리 잘하면서 성공적으로 함께 완주했으면 좋겠습니다.'
         '</div>'
         '<div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">'
@@ -139,7 +132,6 @@ if st.session_state.intro_page == "2ok":
         '</div>',
         unsafe_allow_html=True
     )
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════
 # 오늘의 과제
@@ -148,79 +140,84 @@ elif st.session_state.intro_page == "오늘의 과제":
     st.subheader("📝 오늘의 과제")
     st.divider()
 
-    col_a, col_b, col_c = st.columns(3)
+    # 카드 1 - 프로젝트 목표
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#e0f7fa,#e8f5e9);'
+        ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
+        ' border-left:6px solid #26a69a;">'
+        '<div style="font-size:22px; font-weight:800; margin-bottom:16px; color:#00695c;">🎯 프로젝트 목표</div>'
+        '<div style="font-size:17px; line-height:2.0; color:#222;">'
+        '연구 주제를 <b>자유롭게 설정</b>한 뒤, <b>다중선형 회귀분석</b> 또는 <b>로지스틱 회귀분석</b>을 적용하여 '
+        '교육 데이터 분석을 직접 수행해 봅니다. 데이터를 통해 교육 현장의 의미 있는 패턴과 '
+        '인사이트를 발견하는 것이 이번 프로젝트의 핵심입니다.'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
 
-    with col_a:
-        st.markdown(
-            '<div style="background:linear-gradient(135deg,#e0f7fa,#e8f5e9);'
-            ' border-radius:14px; padding:24px; height:100%;'
-            ' border-top: 5px solid #26a69a;">'
-            '<div style="font-size:16px; font-weight:800; margin-bottom:14px; color:#00695c;">🎯 프로젝트 목표</div>'
-            '<div style="font-size:14px; line-height:2.0; color:#333;">'
-            '연구 주제를 자유롭게 설정한 뒤<br>'
-            '<b>다중선형 회귀분석</b> 또는<br>'
-            '<b>로지스틱 회귀분석</b>을 적용하여<br>'
-            '교육 데이터 분석을 수행합니다.'
-            '</div>'
-            '</div>',
-            unsafe_allow_html=True
-        )
+    # 카드 2 - 프로젝트 진행
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#f3e5f5,#ede7f6);'
+        ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
+        ' border-left:6px solid #8e24aa;">'
+        '<div style="font-size:22px; font-weight:800; margin-bottom:20px; color:#6a1b9a;">🔬 프로젝트 진행 단계</div>'
+        '<div style="display:flex; flex-direction:column; gap:16px;">'
 
-    with col_b:
-        st.markdown(
-            '<div style="background:linear-gradient(135deg,#f3e5f5,#ede7f6);'
-            ' border-radius:14px; padding:24px; height:100%;'
-            ' border-top: 5px solid #8e24aa;">'
-            '<div style="font-size:16px; font-weight:800; margin-bottom:14px; color:#6a1b9a;">🔬 프로젝트 진행</div>'
-            '<div style="display:flex; flex-direction:column; gap:10px;">'
+        '<div style="display:flex; align-items:flex-start; gap:16px;">'
+        '<span style="background:#8e24aa; color:white; border-radius:50%; min-width:32px; height:32px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex-shrink:0;">1</span>'
+        '<div style="font-size:17px; line-height:1.8; color:#222;">'
+        '<b>연구 문제 설정</b> — 활용 가능한 데이터를 탐색하면서 관심 있는 주제를 발굴하고 연구 문제를 구체화합니다.'
+        '</div>'
+        '</div>'
 
-            '<div style="display:flex; align-items:flex-start; gap:8px; font-size:14px; line-height:1.7; color:#333;">'
-            '<span style="background:#8e24aa; color:white; border-radius:50%; min-width:22px; height:22px;'
-            ' display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; margin-top:1px;">1</span>'
-            '<span>활용 가능한 데이터에서 <b>연구 문제 설정</b></span>'
-            '</div>'
+        '<div style="display:flex; align-items:flex-start; gap:16px;">'
+        '<span style="background:#8e24aa; color:white; border-radius:50%; min-width:32px; height:32px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex-shrink:0;">2</span>'
+        '<div style="font-size:17px; line-height:1.8; color:#222;">'
+        '<b>변수 설정</b> — 데이터의 변수를 꼼꼼히 살펴보고 분석 목적에 맞는 종속변수와 독립변수를 선정합니다.'
+        '</div>'
+        '</div>'
 
-            '<div style="display:flex; align-items:flex-start; gap:8px; font-size:14px; line-height:1.7; color:#333;">'
-            '<span style="background:#8e24aa; color:white; border-radius:50%; min-width:22px; height:22px;'
-            ' display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; margin-top:1px;">2</span>'
-            '<span><b>종속변수 · 독립변수</b> 설정</span>'
-            '</div>'
+        '<div style="display:flex; align-items:flex-start; gap:16px;">'
+        '<span style="background:#8e24aa; color:white; border-radius:50%; min-width:32px; height:32px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex-shrink:0;">3</span>'
+        '<div style="font-size:17px; line-height:1.8; color:#222;">'
+        '<b>탐색적 분석 및 회귀분석</b> — Jupyter Notebook(.ipynb)을 활용하여 데이터를 탐색하고 회귀분석을 수행합니다.'
+        '</div>'
+        '</div>'
 
-            '<div style="display:flex; align-items:flex-start; gap:8px; font-size:14px; line-height:1.7; color:#333;">'
-            '<span style="background:#8e24aa; color:white; border-radius:50%; min-width:22px; height:22px;'
-            ' display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; margin-top:1px;">3</span>'
-            '<span>탐색적 데이터 분석 및 회귀분석 진행 <b>(ipynb)</b></span>'
-            '</div>'
+        '<div style="display:flex; align-items:flex-start; gap:16px;">'
+        '<span style="background:#8e24aa; color:white; border-radius:50%; min-width:32px; height:32px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex-shrink:0;">4</span>'
+        '<div style="font-size:17px; line-height:1.8; color:#222;">'
+        '<b>결과 공유 및 발표</b> — 분석 결과를 Streamlit 앱으로 배포하고 URL을 통해 발표합니다. PPT 없이 발표하는 것을 권장합니다.'
+        '</div>'
+        '</div>'
 
-            '<div style="display:flex; align-items:flex-start; gap:8px; font-size:14px; line-height:1.7; color:#333;">'
-            '<span style="background:#8e24aa; color:white; border-radius:50%; min-width:22px; height:22px;'
-            ' display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; margin-top:1px;">4</span>'
-            '<span><b>Streamlit URL</b>로 공유 및 발표<br><small>(PPT 없이 발표 권장)</small></span>'
-            '</div>'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
 
-            '</div>'
-            '</div>',
-            unsafe_allow_html=True
-        )
-
-    with col_c:
-        st.markdown(
-            '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
-            ' border-radius:14px; padding:24px; height:100%;'
-            ' border-top: 5px solid #f9a825;">'
-            '<div style="font-size:16px; font-weight:800; margin-bottom:14px; color:#e65100;">🎤 발표 내용</div>'
-            '<div style="display:flex; flex-direction:column; gap:8px;">'
-            '<div style="background:#f9a825; color:white; border-radius:10px;'
-            ' padding:8px 14px; font-size:14px; font-weight:600;">📂 활용한 데이터</div>'
-            '<div style="background:#fb8c00; color:white; border-radius:10px;'
-            ' padding:8px 14px; font-size:14px; font-weight:600;">🔍 연구주제</div>'
-            '<div style="background:#f4511e; color:white; border-radius:10px;'
-            ' padding:8px 14px; font-size:14px; font-weight:600;">⚙️ 분석 방법 및 과정</div>'
-            '<div style="background:#e53935; color:white; border-radius:10px;'
-            ' padding:8px 14px; font-size:14px; font-weight:600;">📊 분석 결과</div>'
-            '<div style="background:#8e24aa; color:white; border-radius:10px;'
-            ' padding:8px 14px; font-size:14px; font-weight:600;">💡 결과 해석 및 논의</div>'
-            '</div>'
-            '</div>',
-            unsafe_allow_html=True
-        )
+    # 카드 3 - 발표 내용
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
+        ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
+        ' border-left:6px solid #f9a825;">'
+        '<div style="font-size:22px; font-weight:800; margin-bottom:20px; color:#e65100;">🎤 발표 내용 구성</div>'
+        '<div style="display:flex; flex-wrap:wrap; gap:12px;">'
+        '<div style="background:#f9a825; color:white; border-radius:12px;'
+        ' padding:12px 22px; font-size:16px; font-weight:700;">📂 활용한 데이터</div>'
+        '<div style="background:#fb8c00; color:white; border-radius:12px;'
+        ' padding:12px 22px; font-size:16px; font-weight:700;">🔍 연구주제</div>'
+        '<div style="background:#f4511e; color:white; border-radius:12px;'
+        ' padding:12px 22px; font-size:16px; font-weight:700;">⚙️ 분석 방법 및 과정</div>'
+        '<div style="background:#e53935; color:white; border-radius:12px;'
+        ' padding:12px 22px; font-size:16px; font-weight:700;">📊 분석 결과</div>'
+        '<div style="background:#8e24aa; color:white; border-radius:12px;'
+        ' padding:12px 22px; font-size:16px; font-weight:700;">💡 결과 해석 및 논의</div>'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
