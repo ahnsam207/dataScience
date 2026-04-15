@@ -1,6 +1,104 @@
 import streamlit as st
 
-st.set_page_config(page_title="다중선형 회귀분석", page_icon="📈", layout="wide")
-st.title("📈 다중선형 회귀분석")
+if "linear_page" not in st.session_state:
+    st.session_state.linear_page = "연구주제"
+
+st.markdown(
+    "<style>"
+    ".block-container {"
+    "  padding-top: 4rem !important;"
+    "  padding-left: 2rem !important;"
+    "  padding-right: 2rem !important;"
+    "}"
+    "div[data-testid='stHorizontalBlock'] button p {"
+    "  font-size: 20px !important;"
+    "  font-weight: 700 !important;"
+    "}"
+    "div[data-testid='stHorizontalBlock'] button {"
+    "  height: 3.5rem !important;"
+    "}"
+    "</style>",
+    unsafe_allow_html=True
+)
+
+# ── 상단 메뉴 버튼 ──────────────────────────────────
+mc    = st.columns([1, 1, 1, 1, 2])
+tabs  = ["연구주제", "탐색적 데이터 분석", "다중공선성 확인", "회귀분석"]
+icons = ["🔍", "📊", "🔬", "📈"]
+for col, tab, icon in zip(mc[:4], tabs, icons):
+    with col:
+        if st.button(
+            icon + "  " + tab,
+            key="linear_tab_" + tab,
+            use_container_width=True,
+            type="primary" if st.session_state.linear_page == tab else "secondary"
+        ):
+            st.session_state.linear_page = tab
+
+st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
 st.divider()
-st.info("다중선형 회귀분석 내용을 여기에 추가해 주세요.")
+
+# ══════════════════════════════════════════════════
+# 연구주제
+# ══════════════════════════════════════════════════
+if st.session_state.linear_page == "연구주제":
+
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
+        ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
+        ' border-left:6px solid #1976d2;">'
+        '<div style="font-size:22px; font-weight:800; margin-bottom:24px; color:#1565c0;">📈 다중 선형 회귀분석 연구주제</div>'
+        '<div style="display:flex; flex-direction:column; gap:20px;">'
+
+        '<div style="display:flex; align-items:flex-start; gap:16px;">'
+        '<span style="background:#1976d2; color:white; border-radius:10px;'
+        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">독립변수 (3개)</span>'
+        '<div style="font-size:17px; color:#222; line-height:1.9;">'
+        '생성형 AI의 사용목적 : 숙제 <span style="color:#1976d2; font-weight:700;">(Q9_5)</span>, '
+        '성적 향상 <span style="color:#1976d2; font-weight:700;">(Q9_6)</span><br>'
+        '생성형 AI의 평균사용시간 <span style="color:#1976d2; font-weight:700;">(Q7)</span>'
+        '</div>'
+        '</div>'
+
+        '<div style="display:flex; align-items:flex-start; gap:16px;">'
+        '<span style="background:#26a69a; color:white; border-radius:10px;'
+        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">종속변수 (1개)</span>'
+        '<div style="font-size:17px; color:#222; line-height:1.9;">'
+        '학업 성적 <span style="color:#26a69a; font-weight:700;">(DQ3)</span>'
+        '</div>'
+        '</div>'
+
+        '<div style="border-top:1px solid #bbdefb; padding-top:16px;">'
+        '<div style="font-size:17px; color:#222; line-height:1.9;">'
+        '💡 생성형 AI의 사용목적과 평균사용시간이 <b>학업 성적</b>에 주는 영향 분석'
+        '</div>'
+        '</div>'
+
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+# ══════════════════════════════════════════════════
+# 탐색적 데이터 분석
+# ══════════════════════════════════════════════════
+elif st.session_state.linear_page == "탐색적 데이터 분석":
+    st.subheader("📊 탐색적 데이터 분석")
+    st.divider()
+    st.info("탐색적 데이터 분석 내용을 여기에 추가해 주세요.")
+
+# ══════════════════════════════════════════════════
+# 다중공선성 확인
+# ══════════════════════════════════════════════════
+elif st.session_state.linear_page == "다중공선성 확인":
+    st.subheader("🔬 다중공선성 확인")
+    st.divider()
+    st.info("다중공선성 확인 내용을 여기에 추가해 주세요.")
+
+# ══════════════════════════════════════════════════
+# 회귀분석
+# ══════════════════════════════════════════════════
+elif st.session_state.linear_page == "회귀분석":
+    st.subheader("📈 회귀분석")
+    st.divider()
+    st.info("회귀분석 내용을 여기에 추가해 주세요.")
