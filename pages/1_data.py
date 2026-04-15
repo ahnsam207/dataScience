@@ -48,6 +48,7 @@ for col, tab, icon in zip(mc[:3], tabs, icons):
 
 st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
 st.divider()
+
 if st.session_state.data_page == "출처":
 
     st.markdown(
@@ -74,6 +75,9 @@ if st.session_state.data_page == "출처":
         '</div>',
         unsafe_allow_html=True
     )
+    st.markdown('</div></div>', unsafe_allow_html=True)  # 기존 카드 닫기
+
+    st.markdown('<div style="margin-bottom:24px;"></div>', unsafe_allow_html=True)
 
     st.link_button(
         "🌐  사이트 접속하기",
