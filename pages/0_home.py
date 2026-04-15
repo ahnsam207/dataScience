@@ -17,6 +17,7 @@ st.markdown(
     "@media (prefers-color-scheme: dark) { :root { --label-color: #e8e8e8; } }"
     "[data-theme='dark'] { --label-color: #e8e8e8; }"
     ".title-name { margin: 0; font-size: 32px; font-weight: 800; color: var(--label-color); }"
+    ".block-container { max-width: 80% !important; padding-left: 2rem !important; padding-right: 2rem !important; }"
     "</style>",
     unsafe_allow_html=True
 )
@@ -61,9 +62,9 @@ if st.session_state.intro_page == "2ok":
     if os.path.exists(intro_img):
         mime, b64 = img_to_base64(intro_img)
         st.markdown(
-            '<div style="width:80%; margin: 0 auto;">'
+            '<div style="text-align:left;">'
             '<img src="data:' + mime + ';base64,' + b64 + '"'
-            ' style="width:100%; height:auto; border-radius:12px;">'
+            ' style="width:80%; height:auto; border-radius:12px;">'
             '</div>',
             unsafe_allow_html=True
         )
