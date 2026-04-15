@@ -2,19 +2,15 @@ import streamlit as st
 import os
 import base64
 
-st.set_page_config(page_title="시작하기", page_icon="👩‍🏫", layout="wide")
+# ← 이 한 줄로 교체
+pages_folder = os.path.dirname(os.path.abspath(__file__))
 
-st.markdown(
-    "<style>"
-    ":root { --label-color: #333; --hr-color: #e0e0e0; }"
-    "@media (prefers-color-scheme: dark) {"
-    "  :root { --label-color: #e8e8e8; --hr-color: #444444; }"
-    "}"
-    "[data-theme='dark'] { --label-color: #e8e8e8; --hr-color: #444444; }"
-    ".title-name { margin: 0; font-size: 32px; font-weight: 800; color: var(--label-color); }"
-    "</style>",
-    unsafe_allow_html=True
-)
+def img_to_base64(img_path):
+    ext  = img_path.split(".")[-1].lower()
+    mime = "image/png" if ext == "png" else "image/jpeg"
+    with open(img_path, "rb") as f:
+        b64 = base64.b64encode(f.read()).decode()
+    return mime, b64
 
 if "intro_page" not in st.session_state:
     st.session_state.intro_page = "2ok"
