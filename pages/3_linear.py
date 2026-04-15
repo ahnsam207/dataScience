@@ -333,6 +333,14 @@ elif st.session_state.linear_page == "다중공선성 확인":
     else:
         st.info("ols_5.jpg 파일을 pages 폴더에 추가해 주세요.")
 
+    st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
+
+    img_path6 = os.path.join(pages_folder, "ols_6.jpg")
+    if os.path.exists(img_path6):
+        st.image(img_path6, use_container_width=True)
+    else:
+        st.info("ols_6.jpg 파일을 pages 폴더에 추가해 주세요.")
+
 # ══════════════════════════════════════════════════
 # 회귀분석
 # ══════════════════════════════════════════════════
