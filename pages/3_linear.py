@@ -128,9 +128,54 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '</div>',
         unsafe_allow_html=True
     )
-    st.info("분석 대상 데이터만 가져오기 내용을 여기에 추가해 주세요.")
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
+        ' border-radius:16px; padding:28px 36px; margin-bottom:8px;'
+        ' border-left:6px solid #1976d2;">'
+        '<div style="display:flex; flex-direction:column; gap:14px;">'
 
-    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
+        '<div style="display:flex; align-items:flex-start; gap:14px;">'
+        '<span style="background:#1976d2; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">1</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '생성형 AI를 사용한 경험 <span style="color:#1976d2; font-weight:700;">(Q4)</span> 이 있는 학생'
+        '</div>'
+        '</div>'
+
+        '<div style="display:flex; align-items:flex-start; gap:14px;">'
+        '<span style="background:#1976d2; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">2</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '고등학생 <span style="color:#1976d2; font-weight:700;">(일반고, 특성화고)</span> 대상인 학생 데이터'
+        '</div>'
+        '</div>'
+
+        '<div style="display:flex; align-items:flex-start; gap:14px;">'
+        '<span style="background:#1976d2; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">3</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '생성형 AI의 사용목적이 숙제 <span style="color:#1976d2; font-weight:700;">(Q9_5)</span>, '
+        '성적 향상 <span style="color:#1976d2; font-weight:700;">(Q9_6)</span> 인 데이터'
+        '</div>'
+        '</div>'
+
+        '<div style="display:flex; align-items:flex-start; gap:14px;">'
+        '<span style="background:#1976d2; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">4</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '생성형 AI의 평균사용시간 <span style="color:#1976d2; font-weight:700;">(Q7)</span>, '
+        '학업 성적 <span style="color:#1976d2; font-weight:700;">(DQ3)</span> 데이터만 가져오기'
+        '</div>'
+        '</div>'
+
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
 
     # 03 - 선별 데이터 탐색적 데이터 분석하기
     st.markdown(
