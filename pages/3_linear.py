@@ -152,7 +152,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         ' display:flex; align-items:center; justify-content:center; font-size:14px;'
         ' font-weight:700; flex-shrink:0; margin-top:2px;">2</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
-        '고등학생 <span style="color:#1976d2; font-weight:700;">(일반고, 특성화고)</span> 대상인 학생 데이터 중에서 '
+        '고등학생 <span style="color:#1976d2; font-weight:700;">(일반고, 특성화고)</span> 대상인 학생 데이터 중에서'
         '</div>'
         '</div>'
 
@@ -189,31 +189,60 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
 
     st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
-    # 03 - 선별 데이터 탐색적 데이터 분석하기
+    # 03 - 선별 데이터 변수명 수정하고 데이터 분석하기
     st.markdown(
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
         '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
         ' color:white; border-radius:16px; padding:8px 20px;'
         ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">03</div>'
-        '<div style="font-size:28px; font-weight:800; color:#1565c0;">선별 데이터 탐색적 데이터 분석하기</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">선별 데이터 변수명 수정하고 데이터 분석하기</div>'
         '</div>',
         unsafe_allow_html=True
     )
-    st.info("선별 데이터 탐색적 데이터 분석하기 내용을 여기에 추가해 주세요.")
+    img_path3 = os.path.join(pages_folder, "ols_3.jpg")
+    if os.path.exists(img_path3):
+        st.image(img_path3, use_container_width=True)
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
+            ' border-radius:12px; padding:20px 28px; margin-top:16px;'
+            ' border-left:6px solid #1976d2;">'
+            '<div style="font-size:16px; font-weight:800; color:#1565c0; margin-bottom:14px;">📝 변수명 수정</div>'
+            '<div style="display:flex; flex-wrap:wrap; gap:12px;">'
 
-    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
+            '<div style="display:flex; align-items:center; gap:8px; background:white;'
+            ' border-radius:10px; padding:8px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
+            '<span style="font-size:15px; color:#e53935; font-weight:700;">Q9_5</span>'
+            '<span style="font-size:15px; color:#555;">→</span>'
+            '<span style="font-size:15px; color:#1976d2; font-weight:700;">use_hw</span>'
+            '</div>'
 
-    # 04 - 상관계수 및 상관관계 확인하기
-    st.markdown(
-        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
-        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
-        ' color:white; border-radius:16px; padding:8px 20px;'
-        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">04</div>'
-        '<div style="font-size:28px; font-weight:800; color:#1565c0;">상관계수 및 상관관계 확인하기</div>'
-        '</div>',
-        unsafe_allow_html=True
-    )
-    st.info("상관계수 및 상관관계 확인하기 내용을 여기에 추가해 주세요.")
+            '<div style="display:flex; align-items:center; gap:8px; background:white;'
+            ' border-radius:10px; padding:8px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
+            '<span style="font-size:15px; color:#e53935; font-weight:700;">Q9_6</span>'
+            '<span style="font-size:15px; color:#555;">→</span>'
+            '<span style="font-size:15px; color:#1976d2; font-weight:700;">use_grade</span>'
+            '</div>'
+
+            '<div style="display:flex; align-items:center; gap:8px; background:white;'
+            ' border-radius:10px; padding:8px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
+            '<span style="font-size:15px; color:#e53935; font-weight:700;">Q7</span>'
+            '<span style="font-size:15px; color:#555;">→</span>'
+            '<span style="font-size:15px; color:#1976d2; font-weight:700;">avg_time</span>'
+            '</div>'
+
+            '<div style="display:flex; align-items:center; gap:8px; background:white;'
+            ' border-radius:10px; padding:8px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
+            '<span style="font-size:15px; color:#e53935; font-weight:700;">DQ3</span>'
+            '<span style="font-size:15px; color:#555;">→</span>'
+            '<span style="font-size:15px; color:#1976d2; font-weight:700;">score</span>'
+            '</div>'
+
+            '</div>'
+            '</div>',
+            unsafe_allow_html=True
+        )
+    else:
+        st.info("ols_3.jpg 파일을 pages 폴더에 추가해 주세요.")
 
 # ══════════════════════════════════════════════════
 # 다중공선성 확인
