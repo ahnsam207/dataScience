@@ -386,22 +386,6 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
         unsafe_allow_html=True
     )
 
-    st.markdown(
-        '<div style="display:flex; flex-direction:column; gap:16px;">',
-        unsafe_allow_html=True
-    )
-
-    # 02 - 결과 해석
-    st.markdown(
-        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
-        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
-        ' color:white; border-radius:16px; padding:8px 20px;'
-        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">02</div>'
-        '<div style="font-size:28px; font-weight:800; color:#1565c0;">결과 해석</div>'
-        '</div>',
-        unsafe_allow_html=True
-    )
-
     # 카드 1 - 모델 적합도
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
