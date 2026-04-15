@@ -32,13 +32,13 @@ st.markdown(
 if "intro_page" not in st.session_state:
     st.session_state.intro_page = "2ok"
 
-# ── 타이틀 + 상단 메뉴를 하나의 컴팩트한 영역으로 ──
+# ── 타이틀 ──────────────────────────────────────────
 icon_path = os.path.join(pages_folder, "icon.PNG")
 if os.path.exists(icon_path):
     mime, b64 = img_to_base64(icon_path)
     title_img = '<img src="data:' + mime + ';base64,' + b64 + '" style="height:40px; width:auto; object-fit:contain; vertical-align:middle;">'
 else:
-    title_img = '👩‍🏫'
+    title_img = ''
 
 st.markdown(
     '<div style="display:flex; align-items:center; justify-content:space-between;'
@@ -52,8 +52,8 @@ st.markdown(
 )
 
 # ── 상단 메뉴 버튼 ──────────────────────────────────
-mc    = st.columns([1, 1, 6])
-tabs  = ["2ok", "과제"]
+mc   = st.columns([1, 1, 6])
+tabs  = ["2ok", "오늘의 과제"]
 icons = ["👩‍🏫", "📝"]
 for col, tab, icon in zip(mc[:2], tabs, icons):
     with col:
@@ -145,9 +145,76 @@ if st.session_state.intro_page == "2ok":
     )
 
 # ══════════════════════════════════════════════════
-# 과제
+# 오늘의 과제
 # ══════════════════════════════════════════════════
-elif st.session_state.intro_page == "과제":
-    st.header("📝 과제")
+elif st.session_state.intro_page == "오늘의 과제":
+    st.subheader("📝 오늘의 과제")
     st.divider()
-    st.info("과제 내용을 여기에 추가해 주세요.")
+
+    # 프로젝트 목표
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#e0f7fa,#e8f5e9);'
+        ' border-radius:14px; padding:24px 28px; margin-bottom:16px;'
+        ' border-left: 5px solid #26a69a;">'
+        '<div style="font-size:17px; font-weight:800; margin-bottom:12px; color:#00695c;">🎯 프로젝트 목표</div>'
+        '<div style="font-size:15px; line-height:2.0; color:#333;">'
+        '연구 주제를 자유롭게 설정한 뒤 <b>다중선형 회귀분석</b> 또는 <b>로지스틱 회귀분석</b>을 적용하여 '
+        '교육 데이터 분석을 수행합니다.'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    # 프로젝트 진행
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#f3e5f5,#ede7f6);'
+        ' border-radius:14px; padding:24px 28px; margin-bottom:16px;'
+        ' border-left: 5px solid #8e24aa;">'
+        '<div style="font-size:17px; font-weight:800; margin-bottom:16px; color:#6a1b9a;">🔬 프로젝트 진행</div>'
+        '<div style="display:flex; flex-direction:column; gap:10px;">'
+        '<div style="display:flex; align-items:flex-start; gap:10px; font-size:15px; line-height:1.8; color:#333;">'
+        '<span style="background:#8e24aa; color:white; border-radius:50%; width:24px; height:24px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0; margin-top:2px;">1</span>'
+        '<span>활용 가능한 데이터를 살펴보면서 관심이 가는 내용과 관련하여 <b>연구 문제 설정</b></span>'
+        '</div>'
+        '<div style="display:flex; align-items:flex-start; gap:10px; font-size:15px; line-height:1.8; color:#333;">'
+        '<span style="background:#8e24aa; color:white; border-radius:50%; width:24px; height:24px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0; margin-top:2px;">2</span>'
+        '<span>데이터의 변수를 살펴보면서 <b>종속변수와 독립변수 설정</b></span>'
+        '</div>'
+        '<div style="display:flex; align-items:flex-start; gap:10px; font-size:15px; line-height:1.8; color:#333;">'
+        '<span style="background:#8e24aa; color:white; border-radius:50%; width:24px; height:24px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0; margin-top:2px;">3</span>'
+        '<span>탐색적 데이터 분석 및 회귀분석 진행 <b>(ipynb 활용)</b></span>'
+        '</div>'
+        '<div style="display:flex; align-items:flex-start; gap:10px; font-size:15px; line-height:1.8; color:#333;">'
+        '<span style="background:#8e24aa; color:white; border-radius:50%; width:24px; height:24px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0; margin-top:2px;">4</span>'
+        '<span>분석 결과를 <b>Streamlit URL</b> 형태로 공유 및 발표 (PPT 없이 발표하는 것을 권장)</span>'
+        '</div>'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    # 발표 내용
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
+        ' border-radius:14px; padding:24px 28px; margin-bottom:16px;'
+        ' border-left: 5px solid #f9a825;">'
+        '<div style="font-size:17px; font-weight:800; margin-bottom:16px; color:#e65100;">🎤 발표 내용</div>'
+        '<div style="display:flex; flex-wrap:wrap; gap:10px;">'
+        '<span style="background:#f9a825; color:white; border-radius:20px;'
+        ' padding:6px 16px; font-size:14px; font-weight:700;">📂 활용한 데이터</span>'
+        '<span style="background:#fb8c00; color:white; border-radius:20px;'
+        ' padding:6px 16px; font-size:14px; font-weight:700;">🔍 연구주제</span>'
+        '<span style="background:#f4511e; color:white; border-radius:20px;'
+        ' padding:6px 16px; font-size:14px; font-weight:700;">⚙️ 분석 방법 및 과정</span>'
+        '<span style="background:#e53935; color:white; border-radius:20px;'
+        ' padding:6px 16px; font-size:14px; font-weight:700;">📊 분석 결과</span>'
+        '<span style="background:#8e24aa; color:white; border-radius:20px;'
+        ' padding:6px 16px; font-size:14px; font-weight:700;">💡 결과 해석 및 논의</span>'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
