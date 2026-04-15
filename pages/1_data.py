@@ -129,10 +129,10 @@ elif st.session_state.data_page == "찾아보기":
 elif st.session_state.data_page == "미리보기":
 
     sections = [
-        ("table_1.jpg", "조사표",      "01"),
-        ("table_2.jpg", "데이터",      "02"),
-        ("table_3.jpg", "코드북",      "03"),
-        ("table_4.jpg", "생성형 코드북", "04"),
+        ("table_1.jpg", "조사표",           "01"),
+        ("table_2.jpg", "데이터",           "02"),
+        ("table_3.jpg", "코드북",           "03"),
+        ("table_4.jpg", "생성형 코드북(제미나이)", "04"),
     ]
 
     for i, (filename, title, num) in enumerate(sections):
@@ -151,7 +151,12 @@ elif st.session_state.data_page == "미리보기":
             unsafe_allow_html=True
         )
         if os.path.exists(img_path):
-            st.image(img_path, use_container_width=True)
+            mime, b64 = img_to_base64(img_path)
+            st.markdown(
+                '<img src="data:' + mime + ';base64,' + b64 + '"'
+                ' style="width:70%; height:auto; border-radius:10px; display:block;">',
+                unsafe_allow_html=True
+            )
         else:
             st.info(filename + " 파일을 pages 폴더에 추가해 주세요.")
 
