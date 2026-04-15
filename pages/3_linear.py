@@ -263,9 +263,28 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
     img_path4 = os.path.join(pages_folder, "ols_4.jpg")
     if os.path.exists(img_path4):
         st.image(img_path4, use_container_width=True)
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
+            ' border-radius:12px; padding:20px 28px; margin-top:16px;'
+            ' border-left:6px solid #f9a825;">'
+            '<div style="font-size:16px; font-weight:800; color:#e65100; margin-bottom:12px;">🔍 분석 결과</div>'
+            '<div style="font-size:17px; line-height:2.0; color:#222;">'
+            '<span style="background:#fff3e0; border-radius:8px; padding:2px 10px;'
+            ' font-weight:700; color:#e65100;">use_hw</span>'
+            ' <span style="color:#888; font-size:14px;">(생성형 인공지능을 사용하는 목적이 숙제)</span>'
+            ' 와 '
+            '<span style="background:#fff3e0; border-radius:8px; padding:2px 10px;'
+            ' font-weight:700; color:#e65100;">use_grade</span>'
+            ' <span style="color:#888; font-size:14px;">(생성형 인공지능을 사용하는 목적이 성적 향상)</span>'
+            ' 변수 간 상관계수가 '
+            '<span style="font-size:20px; font-weight:900; color:#e53935;">0.83</span>'
+            ' 으로 <b>강한 양의 상관관계</b>가 있음을 확인할 수 있음.'
+            '</div>'
+            '</div>',
+            unsafe_allow_html=True
+        )
     else:
         st.info("ols_4.jpg 파일을 pages 폴더에 추가해 주세요.")
-
 # ══════════════════════════════════════════════════
 # 다중공선성 확인
 # ══════════════════════════════════════════════════
