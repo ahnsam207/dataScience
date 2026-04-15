@@ -104,7 +104,15 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
     img_path = os.path.join(pages_folder, "ols_1.jpg")
     if os.path.exists(img_path):
         st.image(img_path, use_container_width=True)
-        st.caption("(데이터) 청소년의 생성형 AI 이용실태 및 리터러시 증진방안 연구.xlsx  →  data.xlsx 로 수정")
+        st.markdown(
+            '<div style="font-size:16px; font-weight:600; color:#1976d2;'
+            ' background:#e3f2fd; border-radius:10px; padding:10px 18px; margin-top:8px;">'
+            '📌 (데이터) 청소년의 생성형 AI 이용실태 및 리터러시 증진방안 연구.xlsx'
+            '&nbsp;&nbsp;→&nbsp;&nbsp;'
+            '<b>data.xlsx</b> 로 수정'
+            '</div>',
+            unsafe_allow_html=True
+        )
     else:
         st.info("ols_1.jpg 파일을 pages 폴더에 추가해 주세요.")
 
