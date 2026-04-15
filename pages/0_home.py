@@ -58,24 +58,21 @@ if st.session_state.intro_page == "2ok":
     intro_img = os.path.join(pages_folder, "intro.jpg")
     if os.path.exists(intro_img):
         mime, b64 = img_to_base64(intro_img)
-        st.markdown(
-            '<div style="max-width:800px;">'
-            '<img src="data:' + mime + ';base64,' + b64 + '"'
-            ' style="width:100%; height:auto; border-radius:12px; display:block;">'
-            '</div>',
-            unsafe_allow_html=True
-        )
+        col_img, col_empty = st.columns([4, 1])
+        with col_img:
+            st.image(intro_img, use_container_width=True)
     else:
-        st.markdown(
-            '<div style="max-width:800px; background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);'
-            ' border-radius:16px; padding:60px; text-align:center; margin:20px 0;">'
-            '<div style="font-size:80px;">👩‍🏫</div>'
-            '</div>',
-            unsafe_allow_html=True
-        )
+        col_img, col_empty = st.columns([4, 1])
+        with col_img:
+            st.markdown(
+                '<div style="background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);'
+                ' border-radius:16px; padding:60px; text-align:center; margin:20px 0;">'
+                '<div style="font-size:80px;">👩‍🏫</div>'
+                '</div>',
+                unsafe_allow_html=True
+            )
 
     st.divider()
-
     col1, col2, col3 = st.columns(3)
     with col1:
         st.subheader("📋 기본 정보")
@@ -106,7 +103,6 @@ if st.session_state.intro_page == "2ok":
     st.divider()
     st.subheader("💬 4기 파이팅!")
     st.markdown(
-        '<div style="max-width:800px;">'
         '<div style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);'
         'border-radius:16px; padding:32px 36px; margin:12px 0; color:white;'
         'box-shadow:0 4px 20px rgba(102,126,234,0.4);">'
@@ -131,7 +127,6 @@ if st.session_state.intro_page == "2ok":
         '<span style="background:rgba(255,255,255,0.25); border-radius:20px;'
         ' padding:6px 16px; font-size:15px; font-weight:700;">🙏 감사해요</span>'
         '</div>'
-        '</div>'
         '</div>',
         unsafe_allow_html=True
     )
@@ -141,25 +136,22 @@ if st.session_state.intro_page == "2ok":
 # ══════════════════════════════════════════════════
 elif st.session_state.intro_page == "오늘의 과제":
 
-    # 카드 1 - 프로젝트 목표
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e0f7fa,#e8f5e9);'
         ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
         ' border-left:6px solid #26a69a;">'
-        '<div style="font-size:22px; font-weight:800; margin-bottom:20px; color:#00695c;">🎯 프로젝트 목표</div>'
-        '<div style="display:flex; flex-direction:column; gap:14px;">'
+        '<div style="font-size:22px; font-weight:800; margin-bottom:16px; color:#00695c;">🎯 프로젝트 목표</div>'
         '<div style="display:flex; align-items:flex-start; gap:14px;">'
-        '<span style="color:#26a69a; font-size:22px; flex-shrink:0; margin-top:0px;">▪</span>'
+        '<span style="color:#26a69a; font-size:22px; flex-shrink:0;">▪</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
-        '연구 주제를 자유롭게 설정한 뒤 <b>다중선형 회귀분석</b> 또는 <b>로지스틱 회귀분석</b>을 적용하여 교육 데이터 분석을 수행'
-        '</div>'
+        '연구 주제를 자유롭게 설정한 뒤 <b>다중선형 회귀분석</b> 또는<br>'
+        '<b>로지스틱 회귀분석</b>을 적용하여 교육 데이터 분석을 수행'
         '</div>'
         '</div>'
         '</div>',
         unsafe_allow_html=True
     )
 
-    # 카드 2 - 프로젝트 진행
     st.markdown(
         '<div style="background:linear-gradient(135deg,#f3e5f5,#ede7f6);'
         ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
@@ -169,7 +161,8 @@ elif st.session_state.intro_page == "오늘의 과제":
 
         '<div style="display:flex; align-items:flex-start; gap:14px;">'
         '<span style="background:#8e24aa; color:white; border-radius:50%; min-width:30px; height:30px;'
-        ' display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; margin-top:2px;">1</span>'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">1</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
         '활용 가능한 데이터를 살펴보면서 관심이 가는 내용과 관련하여 <b>연구 문제 설정</b>'
         '</div>'
@@ -177,7 +170,8 @@ elif st.session_state.intro_page == "오늘의 과제":
 
         '<div style="display:flex; align-items:flex-start; gap:14px;">'
         '<span style="background:#8e24aa; color:white; border-radius:50%; min-width:30px; height:30px;'
-        ' display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; margin-top:2px;">2</span>'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">2</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
         '데이터의 변수를 살펴보면서 <b>종속변수와 독립변수 설정</b>'
         '</div>'
@@ -185,7 +179,8 @@ elif st.session_state.intro_page == "오늘의 과제":
 
         '<div style="display:flex; align-items:flex-start; gap:14px;">'
         '<span style="background:#8e24aa; color:white; border-radius:50%; min-width:30px; height:30px;'
-        ' display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; margin-top:2px;">3</span>'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">3</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
         '탐색적 데이터 분석 및 회귀분석 진행 <b>(ipynb 활용)</b>'
         '</div>'
@@ -193,7 +188,8 @@ elif st.session_state.intro_page == "오늘의 과제":
 
         '<div style="display:flex; align-items:flex-start; gap:14px;">'
         '<span style="background:#8e24aa; color:white; border-radius:50%; min-width:30px; height:30px;'
-        ' display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; margin-top:2px;">4</span>'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">4</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
         '분석 결과를 <b>Streamlit URL</b> 형태로 공유 및 발표'
         ' <span style="color:#8e24aa; font-weight:600;">(PPT 없이 발표하는 것을 권장)</span>'
@@ -205,7 +201,6 @@ elif st.session_state.intro_page == "오늘의 과제":
         unsafe_allow_html=True
     )
 
-    # 카드 3 - 발표 내용
     st.markdown(
         '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
         ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
