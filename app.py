@@ -125,7 +125,7 @@ if st.session_state.intro_page == "2ok":
         '<span style="background:rgba(255,255,255,0.25); border-radius:20px;'
         ' padding:6px 16px; font-size:15px; font-weight:700;">🔥 다들 파이팅!</span>'
         '<span style="background:rgba(255,255,255,0.25); border-radius:20px;'
-        ' padding:6px 16px; font-size:15px; font-weight:700;">🎓 교수님 올 PASS!!!</span>'
+        ' padding:6px 16px; font-size:15px; font-weight:700;">🎓 교수님 ALL PASS!!!</span>'
         '<span style="background:rgba(255,255,255,0.25); border-radius:20px;'
         ' padding:6px 16px; font-size:15px; font-weight:700;">🙏 감사해요</span>'
         '</div>'
