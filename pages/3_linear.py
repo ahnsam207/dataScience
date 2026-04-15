@@ -291,9 +291,47 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
 # 다중공선성 확인
 # ══════════════════════════════════════════════════
 elif st.session_state.linear_page == "다중공선성 확인":
-    st.subheader("🔬 다중공선성 확인")
-    st.divider()
-    st.info("다중공선성 확인 내용을 여기에 추가해 주세요.")
+
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">01</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">다중공선성 확인</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    img_path5 = os.path.join(pages_folder, "ols_5.jpg")
+    if os.path.exists(img_path5):
+        st.image(img_path5, use_container_width=True)
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
+            ' border-radius:12px; padding:20px 28px; margin-top:16px;'
+            ' border-left:6px solid #f9a825;">'
+            '<div style="font-size:24px; font-weight:800; color:#e65100; margin-bottom:12px;">🔍 분석 결과</div>'
+            '<div style="font-size:22px; line-height:2.0; color:#222;">'
+            '<span style="background:#fff3e0; border-radius:8px; padding:2px 10px;'
+            ' font-weight:700; color:#e65100;">use_hw</span>'
+            ' 와 '
+            '<span style="background:#fff3e0; border-radius:8px; padding:2px 10px;'
+            ' font-weight:700; color:#e65100;">use_grade</span>'
+            ' 변수의 상관계수가 높고 다중공선성 수치가 높은 것으로 볼 때,'
+            '</div>'
+            '<div style="font-size:22px; line-height:2.0; color:#222; margin-top:8px;">'
+            '숙제를 위해 AI를 사용하는 학생이 성적향상을 위해 AI를 사용하는 학생일 확률이 높다는 결론으로'
+            '</div>'
+            '<div style="font-size:22px; line-height:2.0; color:#222; margin-top:8px;">'
+            '다중공선성 수치가 더 높은 '
+            '<span style="background:#ffebee; border-radius:8px; padding:2px 10px;'
+            ' font-weight:700; color:#e53935;">use_hw 제거</span>'
+            ' 하기로 함.'
+            '</div>'
+            '</div>',
+            unsafe_allow_html=True
+        )
+    else:
+        st.info("ols_5.jpg 파일을 pages 폴더에 추가해 주세요.")
 
 # ══════════════════════════════════════════════════
 # 회귀분석
