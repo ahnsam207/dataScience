@@ -108,13 +108,47 @@ if st.session_state.intro_page == "2ok":
         )
 
     st.divider()
-    st.subheader("💬 한마디")
-    st.success(
-        "💡 **각자의 자리에서 치열하게 하루를 보내고, 밤늦게까지 데이터와 수식을 들여다보며 연구를 이어가는 "
-        "동기 선생님들을 볼 때마다 큰 자극과 위로를 동시에 받습니다. 가끔은 정체기처럼 느껴져 답답할 때도 있지만, "
-        "우리가 지금까지 끈기 있게 분석하고 고민해 온 시간들은 결측치(NaN)로 dropna() 되지 않을 것이라 생각해요. "
-        "체력 관리 잘하면서 마지막까지 각자의 완성 모델을 성공적으로 배포(Deploy)하며 함께 완주했으면 좋겠습니다. "
-        "다들 파이팅입니다! 교수님, 올 PASS !!! 감사해요**"
+    st.subheader("💬 4기 파이팅!")
+    st.markdown(
+        '<div style="'
+        'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);'
+        'border-radius: 16px; padding: 32px 36px; margin: 12px 0; color: white;'
+        'box-shadow: 0 4px 20px rgba(102,126,234,0.4);">'
+
+        '<div style="font-size:22px; font-weight:800; margin-bottom:18px;">💡 동기 선생님들께</div>'
+
+        '<div style="font-size:15px; line-height:2.0; font-weight:400;">'
+        '각자의 자리에서 치열하게 하루를 보내고, 밤늦게까지 데이터와 수식을 들여다보며 '
+        '연구를 이어가는 동기 선생님들을 볼 때마다 큰 자극과 위로를 동시에 받습니다.'
+        '</div>'
+
+        '<div style="border-top: 1px solid rgba(255,255,255,0.3); margin: 18px 0;"></div>'
+
+        '<div style="font-size:15px; line-height:2.0; font-weight:400;">'
+        '가끔은 정체기처럼 느껴져 답답할 때도 있지만, 우리가 지금까지 끈기 있게 분석하고 '
+        '고민해 온 시간들은 결측치(NaN)로 <code style="background:rgba(255,255,255,0.2);'
+        'padding:2px 6px; border-radius:4px;">dropna()</code> 되지 않을 것이라 생각해요.'
+        '</div>'
+
+        '<div style="border-top: 1px solid rgba(255,255,255,0.3); margin: 18px 0;"></div>'
+
+        '<div style="font-size:15px; line-height:2.0; font-weight:400;">'
+        '체력 관리 잘하면서 마지막까지 각자의 완성 모델을 성공적으로 '
+        '<code style="background:rgba(255,255,255,0.2); padding:2px 6px; border-radius:4px;">'
+        'Deploy()</code> 하며 함께 완주했으면 좋겠습니다.'
+        '</div>'
+
+        '<div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">'
+        '<span style="background:rgba(255,255,255,0.25); border-radius:20px;'
+        ' padding:6px 16px; font-size:14px; font-weight:700;">🔥 다들 파이팅!</span>'
+        '<span style="background:rgba(255,255,255,0.25); border-radius:20px;'
+        ' padding:6px 16px; font-size:14px; font-weight:700;">🎓 교수님 올 PASS!!!</span>'
+        '<span style="background:rgba(255,255,255,0.25); border-radius:20px;'
+        ' padding:6px 16px; font-size:14px; font-weight:700;">🙏 감사해요</span>'
+        '</div>'
+
+        '</div>',
+        unsafe_allow_html=True
     )
     st.divider()
     st.caption("© 2026 안이옥 선생님 소개 페이지")
