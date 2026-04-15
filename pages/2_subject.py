@@ -52,7 +52,7 @@ if st.session_state.subject_page == "다중 선형 회귀분석":
 
         '<div style="display:flex; align-items:flex-start; gap:16px;">'
         '<span style="background:#1976d2; color:white; border-radius:10px;'
-        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">독립변수</span>'
+        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">독립변수 (3개)</span>'
         '<div style="font-size:17px; color:#222; line-height:1.9;">'
         '생성형 AI의 사용목적 : 숙제 <span style="color:#1976d2; font-weight:700;">(Q9_5)</span>, '
         '성적 향상 <span style="color:#1976d2; font-weight:700;">(Q9_6)</span><br>'
@@ -62,7 +62,7 @@ if st.session_state.subject_page == "다중 선형 회귀분석":
 
         '<div style="display:flex; align-items:flex-start; gap:16px;">'
         '<span style="background:#26a69a; color:white; border-radius:10px;'
-        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">종속변수</span>'
+        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">종속변수 (1개)</span>'
         '<div style="font-size:17px; color:#222; line-height:1.9;">'
         '학업 성적 <span style="color:#26a69a; font-weight:700;">(DQ3)</span>'
         '</div>'
@@ -93,7 +93,7 @@ elif st.session_state.subject_page == "로지스틱 회귀분석":
 
         '<div style="display:flex; align-items:flex-start; gap:16px;">'
         '<span style="background:#e53935; color:white; border-radius:10px;'
-        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">독립변수</span>'
+        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">독립변수 (4개)</span>'
         '<div style="display:flex; flex-direction:column; gap:10px; font-size:17px; color:#222; line-height:1.9;">'
 
         '<div style="display:flex; align-items:center; gap:10px;">'
@@ -125,7 +125,7 @@ elif st.session_state.subject_page == "로지스틱 회귀분석":
 
         '<div style="display:flex; align-items:flex-start; gap:16px;">'
         '<span style="background:#8e24aa; color:white; border-radius:10px;'
-        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">종속변수</span>'
+        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">종속변수 (1개)</span>'
         '<div style="font-size:17px; color:#222; line-height:1.9;">'
         '윤리의식 여부'
         '</div>'
