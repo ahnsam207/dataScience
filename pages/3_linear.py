@@ -385,4 +385,100 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
         '</div>',
         unsafe_allow_html=True
     )
-    st.info("결과 해석 내용을 여기에 추가해 주세요.")
+
+    st.markdown(
+        '<div style="display:flex; flex-direction:column; gap:16px;">',
+        unsafe_allow_html=True
+    )
+
+    # 카드 1 - 모델 적합도
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
+        ' border-radius:16px; padding:28px 36px;'
+        ' border-left:6px solid #1976d2;">'
+        '<div style="font-size:20px; font-weight:800; color:#1565c0; margin-bottom:14px;">📊 모델 적합도 (R-squared)</div>'
+        '<div style="font-size:17px; line-height:2.0; color:#222;">'
+        'R² 값이 <span style="font-weight:700; color:#e53935;">0.001</span> 로,'
+        ' 독립변수들이 학업 성적 변동의 약 <span style="font-weight:700; color:#e53935;">0.1%</span> 만 설명하고 있습니다.'
+        ' 이는 모델의 설명력이 매우 낮음을 의미합니다.'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    # 카드 2 - 통계적 유의성
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#fce4ec,#f3e5f5);'
+        ' border-radius:16px; padding:28px 36px;'
+        ' border-left:6px solid #e53935;">'
+        '<div style="font-size:20px; font-weight:800; color:#b71c1c; margin-bottom:14px;">🔍 모델 전체 유의성 (F-statistic)</div>'
+        '<div style="font-size:17px; line-height:2.0; color:#222;">'
+        'F-통계량의 유의확률이 <span style="font-weight:700; color:#e53935;">0.443</span> 으로'
+        ' 유의수준 0.05보다 크기 때문에,'
+        ' 이 회귀모델은 <span style="font-weight:700; color:#e53935;">통계적으로 유의하지 않습니다.</span>'
+        ' 즉, 독립변수들이 종속변수를 설명하는 데 통계적으로 의미 있는 기여를 하지 못합니다.'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    # 카드 3 - 개별 변수 유의성
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#f3e5f5,#ede7f6);'
+        ' border-radius:16px; padding:28px 36px;'
+        ' border-left:6px solid #8e24aa;">'
+        '<div style="font-size:20px; font-weight:800; color:#6a1b9a; margin-bottom:14px;">📌 개별 변수 유의성 (P-value)</div>'
+        '<div style="font-size:17px; line-height:2.0; color:#222;">'
+        '<span style="background:#ede7f6; border-radius:8px; padding:2px 10px;'
+        ' font-weight:700; color:#8e24aa;">use_grade</span>'
+        ' 의 P값은 <span style="font-weight:700; color:#e53935;">0.378</span>,'
+        ' <span style="background:#ede7f6; border-radius:8px; padding:2px 10px;'
+        ' font-weight:700; color:#8e24aa;">avg_time</span>'
+        ' 의 P값은 <span style="font-weight:700; color:#e53935;">0.474</span> 로,'
+        ' 두 변수 모두 유의수준 0.05보다 크므로'
+        ' <span style="font-weight:700; color:#e53935;">통계적으로 유의하지 않습니다.</span>'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    # 카드 4 - 회귀계수 해석
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
+        ' border-radius:16px; padding:28px 36px;'
+        ' border-left:6px solid #f9a825;">'
+        '<div style="font-size:20px; font-weight:800; color:#e65100; margin-bottom:14px;">📈 회귀계수 해석</div>'
+        '<div style="font-size:17px; line-height:2.0; color:#222;">'
+        '절편(Intercept)은 <span style="font-weight:700; color:#1976d2;">3.07</span> 로,'
+        ' 독립변수가 0일 때 학업 성적의 기댓값입니다.<br>'
+        '<span style="background:#fff3e0; border-radius:8px; padding:2px 10px;'
+        ' font-weight:700; color:#e65100;">use_grade</span>'
+        ' 의 계수는 <span style="font-weight:700; color:#1976d2;">0.014</span> 로,'
+        ' 성적 향상 목적의 AI 사용이 1단위 증가할 때 학업 성적이 0.014 증가하지만 유의하지 않습니다.<br>'
+        '<span style="background:#fff3e0; border-radius:8px; padding:2px 10px;'
+        ' font-weight:700; color:#e65100;">avg_time</span>'
+        ' 의 계수는 <span style="font-weight:700; color:#1976d2;">0.014</span> 로,'
+        ' AI 평균 사용시간이 1단위 증가할 때 학업 성적이 0.014 증가하지만 역시 유의하지 않습니다.'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    # 카드 5 - 최종 결론
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
+        ' border-radius:16px; padding:28px 36px;'
+        ' border-left:6px solid #26a69a;">'
+        '<div style="font-size:20px; font-weight:800; color:#00695c; margin-bottom:14px;">💡 최종 결론</div>'
+        '<div style="font-size:17px; line-height:2.0; color:#222;">'
+        '생성형 AI의 사용목적(성적 향상)과 평균 사용시간은'
+        ' 고등학생의 학업 성적에 <span style="font-weight:700; color:#e53935;">통계적으로 유의한 영향을 미치지 않는 것</span>'
+        ' 으로 나타났습니다.<br>'
+        '즉, 생성형 AI 사용이 직접적으로 학업 성적 향상으로 이어진다고 보기 어려우며,'
+        ' 학업 성적에 영향을 미치는 다른 요인들을 추가로 고려할 필요가 있습니다.'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown('</div>', unsafe_allow_html=True)
