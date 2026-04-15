@@ -28,9 +28,29 @@ st.markdown(
     "div[data-testid='stHorizontalBlock'] button {"
     "  height: 3.5rem !important;"
     "}"
+    "#top-anchor { position: absolute; top: 0; }"
+    ".top-btn {"
+    "  position: fixed;"
+    "  bottom: 40px;"
+    "  right: 40px;"
+    "  background: linear-gradient(135deg, #1976d2, #42a5f5);"
+    "  color: white;"
+    "  border: none;"
+    "  border-radius: 50px;"
+    "  padding: 12px 22px;"
+    "  font-size: 16px;"
+    "  font-weight: 800;"
+    "  cursor: pointer;"
+    "  box-shadow: 0 4px 16px rgba(25,118,210,0.4);"
+    "  z-index: 9999;"
+    "  text-decoration: none;"
+    "}"
+    ".top-btn:hover { background: linear-gradient(135deg,#1565c0,#1976d2); }"
     "</style>",
     unsafe_allow_html=True
 )
+
+st.markdown('<div id="top-anchor"></div>', unsafe_allow_html=True)
 
 # ── 상단 메뉴 버튼 ──────────────────────────────────
 mc    = st.columns([2, 2, 2, 2, 1])
@@ -184,12 +204,60 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
     img_path2 = os.path.join(pages_folder, "ols_2.jpg")
     if os.path.exists(img_path2):
         st.image(img_path2, use_container_width=True)
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#1a237e,#283593);'
+            ' border-radius:16px; padding:28px 36px; margin-top:20px;">'
+
+            '<div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">'
+            '<span style="font-size:28px;">⭐</span>'
+            '<span style="font-size:28px;">⭐</span>'
+            '<span style="font-size:28px;">⭐</span>'
+            '<span style="font-size:20px; font-weight:900; color:#ffeb3b; letter-spacing:2px;">IMPORTANT</span>'
+            '<span style="font-size:28px;">⭐</span>'
+            '<span style="font-size:28px;">⭐</span>'
+            '<span style="font-size:28px;">⭐</span>'
+            '</div>'
+
+            '<div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 24px; margin-bottom:16px;">'
+            '<div style="font-size:18px; font-weight:800; color:#ffeb3b; margin-bottom:10px;">🤔 질문</div>'
+            '<div style="font-size:17px; line-height:1.9; color:white;">'
+            '다중 선형 회귀 변수인데 종속 변수가 <span style="color:#ffeb3b; font-weight:700;">"1, 2, 3, 4, 5"</span>'
+            ' 의 값을 갖는 범주형 변수를 분석할 수 있는가?'
+            '</div>'
+            '</div>'
+
+            '<div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 24px; margin-bottom:16px;">'
+            '<div style="font-size:18px; font-weight:800; color:#69f0ae; margin-bottom:10px;">✅ 답안</div>'
+            '<div style="font-size:17px; line-height:1.9; color:white;">'
+            '1, 2, 3, 4, 5 의 값은 엄밀히는 범주형이지만, '
+            '<span style="color:#69f0ae; font-weight:700;">리커트 척도(Likert Scale)</span>'
+            ' 처럼 등간성을 가정할 수 있는 경우에는 연속형 변수로 간주할 수 있습니다.<br>'
+            '또한 <span style="color:#69f0ae; font-weight:700;">표본의 크기가 충분히 클 때</span>'
+            ' 중심극한정리에 의해 정규성 가정이 완화되므로,'
+            ' 다중 선형 회귀분석을 적용하는 것이 통계적으로 허용됩니다.'
+            '</div>'
+            '</div>'
+
+            '<div style="background:rgba(255,255,255,0.07); border-radius:12px; padding:20px 24px;">'
+            '<div style="font-size:18px; font-weight:800; color:#80d8ff; margin-bottom:10px;">📖 등간성이란?</div>'
+            '<div style="font-size:16px; line-height:1.9; color:#cfd8dc;">'
+            '등간성(等間性, equal interval)이란 척도의 각 단계 간 간격이 동일하다는 가정입니다.<br>'
+            '예를 들어 "1→2" 의 차이와 "4→5" 의 차이가 심리적·통계적으로 동일하다고 볼 수 있을 때,'
+            ' 해당 변수를 연속형으로 처리할 수 있습니다.<br>'
+            '학업 성적(DQ3) 처럼 <span style="color:#80d8ff; font-weight:700;">순서 간격이 균등하다고 가정 가능한 경우</span>'
+            ' 다중 선형 회귀분석 적용이 통계적으로 허용됩니다.'
+            '</div>'
+            '</div>'
+
+            '</div>',
+            unsafe_allow_html=True
+        )
     else:
         st.info("ols_2.jpg 파일을 pages 폴더에 추가해 주세요.")
 
     st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
-   # 03 - 선별 데이터 변수명 수정하고 데이터 분석하기
+    # 03 - 선별 데이터 변수명 수정하고 데이터 분석하기
     st.markdown(
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
         '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
@@ -199,7 +267,6 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '</div>',
         unsafe_allow_html=True
     )
-
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
         ' border-radius:12px; padding:20px 28px; margin-bottom:16px;'
@@ -248,8 +315,6 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
 
     st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
-    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
-
     # 04 - 상관계수 및 상관관계 확인하기
     st.markdown(
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
@@ -267,7 +332,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
             '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
             ' border-radius:12px; padding:20px 28px; margin-top:16px;'
             ' border-left:6px solid #f9a825;">'
-            '<div style="font-size:24px; font-weight:800; color:#e65100; margin-bottom:12px;">🔍 분석 결과</div>'
+            '<div style="font-size:22px; font-weight:800; color:#e65100; margin-bottom:12px;">🔍 분석 결과</div>'
             '<div style="font-size:22px; line-height:2.0; color:#222;">'
             '<span style="background:#fff3e0; border-radius:8px; padding:2px 10px;'
             ' font-weight:700; color:#e65100;">use_hw</span>'
@@ -287,6 +352,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         )
     else:
         st.info("ols_4.jpg 파일을 pages 폴더에 추가해 주세요.")
+
 # ══════════════════════════════════════════════════
 # 다중공선성 확인
 # ══════════════════════════════════════════════════
@@ -340,7 +406,7 @@ elif st.session_state.linear_page == "다중공선성 확인":
         '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
         ' color:white; border-radius:16px; padding:8px 20px;'
         ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">02</div>'
-        '<div style="font-size:28px; font-weight:800; color:#1565c0;">최종 분석 데이터 완성</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">최종 분석 데이터</div>'
         '</div>',
         unsafe_allow_html=True
     )
@@ -352,7 +418,7 @@ elif st.session_state.linear_page == "다중공선성 확인":
         st.info("ols_6.jpg 파일을 pages 폴더에 추가해 주세요.")
 
 # ══════════════════════════════════════════════════
-# 회귀분석
+# 다중 선형 회귀분석
 # ══════════════════════════════════════════════════
 elif st.session_state.linear_page == "다중 선형 회귀분석":
 
@@ -495,3 +561,9 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
         '</div>',
         unsafe_allow_html=True
     )
+
+# ── TOP 버튼 ──────────────────────────────────────
+st.markdown(
+    '<a href="#top-anchor" class="top-btn">▲ TOP</a>',
+    unsafe_allow_html=True
+)
