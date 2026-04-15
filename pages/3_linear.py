@@ -33,7 +33,7 @@ st.markdown(
 )
 
 # ── 상단 메뉴 버튼 ──────────────────────────────────
-mc    = st.columns([1, 1, 1, 1, 2])
+mc    = st.columns([2, 2, 2, 2, 1])
 tabs  = ["연구주제", "탐색적 데이터 분석", "다중공선성 확인", "회귀분석"]
 icons = ["🔍", "📊", "🔬", "📈"]
 for col, tab, icon in zip(mc[:4], tabs, icons):
