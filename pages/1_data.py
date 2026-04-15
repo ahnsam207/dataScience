@@ -49,6 +49,9 @@ for col, tab, icon in zip(mc[:3], tabs, icons):
 st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
 st.divider()
 
+# ══════════════════════════════════════════════════
+# 출처
+# ══════════════════════════════════════════════════
 if st.session_state.data_page == "출처":
 
     st.markdown(
@@ -75,7 +78,6 @@ if st.session_state.data_page == "출처":
         '</div>',
         unsafe_allow_html=True
     )
-    st.markdown('</div></div>', unsafe_allow_html=True)  # 기존 카드 닫기
 
     st.markdown('<div style="margin-bottom:24px;"></div>', unsafe_allow_html=True)
 
@@ -98,6 +100,9 @@ if st.session_state.data_page == "출처":
     else:
         st.info("cite.jpg 파일을 pages 폴더에 추가해 주세요.")
 
+# ══════════════════════════════════════════════════
+# 찾아보기
+# ══════════════════════════════════════════════════
 elif st.session_state.data_page == "찾아보기":
 
     images = [
@@ -128,3 +133,11 @@ elif st.session_state.data_page == "찾아보기":
         else:
             st.info(filename + " 파일을 pages 폴더에 추가해 주세요.")
             st.markdown('</div>', unsafe_allow_html=True)
+
+# ══════════════════════════════════════════════════
+# 미리보기
+# ══════════════════════════════════════════════════
+elif st.session_state.data_page == "미리보기":
+    st.subheader("👀 미리보기")
+    st.divider()
+    st.info("데이터 미리보기 내용을 여기에 추가해 주세요.")
