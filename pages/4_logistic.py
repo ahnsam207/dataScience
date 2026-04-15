@@ -22,10 +22,10 @@ st.markdown(
 )
 
 # ── 상단 메뉴 버튼 ──────────────────────────────────
-mc    = st.columns([1, 1, 1, 3])
-tabs  = ["연구주제", "탐색적 데이터 분석", "회귀분석"]
-icons = ["🔍", "📊", "📉"]
-for col, tab, icon in zip(mc[:3], tabs, icons):
+mc    = st.columns([1, 1, 1, 1, 2])
+tabs  = ["연구주제", "탐색적 데이터 분석", "다중공선성 확인", "회귀분석"]
+icons = ["🔍", "📊", "🔬", "📉"]
+for col, tab, icon in zip(mc[:4], tabs, icons):
     with col:
         if st.button(
             icon + "  " + tab,
@@ -108,6 +108,14 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
     st.subheader("📊 탐색적 데이터 분석")
     st.divider()
     st.info("탐색적 데이터 분석 내용을 여기에 추가해 주세요.")
+
+# ══════════════════════════════════════════════════
+# 다중공선성 확인
+# ══════════════════════════════════════════════════
+elif st.session_state.logistic_page == "다중공선성 확인":
+    st.subheader("🔬 다중공선성 확인")
+    st.divider()
+    st.info("다중공선성 확인 내용을 여기에 추가해 주세요.")
 
 # ══════════════════════════════════════════════════
 # 회귀분석
