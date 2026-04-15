@@ -48,7 +48,6 @@ for col, tab, icon in zip(mc[:3], tabs, icons):
 
 st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
 st.divider()
-
 if st.session_state.data_page == "출처":
 
     st.markdown(
@@ -76,23 +75,23 @@ if st.session_state.data_page == "출처":
         unsafe_allow_html=True
     )
 
+    # 사이트 접속하기 카드 시작 (소제목 아이콘 없음)
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
         ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
         ' border-left:6px solid #1976d2;">'
-        '<div style="font-size:22px; font-weight:800; margin-bottom:24px; color:#1565c0;">🌐 사이트 접속하기</div>',
+        '<div style="font-size:22px; font-weight:800; margin-bottom:24px; color:#1565c0;">사이트 접속하기</div>',
         unsafe_allow_html=True
-    )
-
-    st.link_button(
-        "🌐  사이트 접속하기",
-        "https://www.nypi.re.kr/archive/mps",
-        use_container_width=False
     )
 
     cite_img = os.path.join(pages_folder, "cite.jpg")
     if os.path.exists(cite_img):
         mime, b64 = img_to_base64(cite_img)
+        st.link_button(
+            "🌐  사이트 접속하기",
+            "https://www.nypi.re.kr/archive/mps",
+            use_container_width=False
+        )
         st.markdown(
             '<div style="margin-top:16px;">'
             '<img src="data:' + mime + ';base64,' + b64 + '"'
@@ -102,5 +101,10 @@ if st.session_state.data_page == "출처":
             unsafe_allow_html=True
         )
     else:
+        st.link_button(
+            "🌐  사이트 접속하기",
+            "https://www.nypi.re.kr/archive/mps",
+            use_container_width=False
+        )
         st.markdown('</div>', unsafe_allow_html=True)
         st.info("cite.jpg 파일을 pages 폴더에 추가해 주세요.")
