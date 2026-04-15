@@ -260,7 +260,11 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '</div>',
         unsafe_allow_html=True
     )
-    st.info("상관계수 및 상관관계 확인하기 내용을 여기에 추가해 주세요.")
+    img_path4 = os.path.join(pages_folder, "ols_4.jpg")
+    if os.path.exists(img_path4):
+        st.image(img_path4, use_container_width=True)
+    else:
+        st.info("ols_4.jpg 파일을 pages 폴더에 추가해 주세요.")
 
 # ══════════════════════════════════════════════════
 # 다중공선성 확인
