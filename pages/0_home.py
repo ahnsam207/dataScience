@@ -56,23 +56,18 @@ st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
 # ══════════════════════════════════════════════════
 if st.session_state.intro_page == "2ok":
     intro_img = os.path.join(pages_folder, "intro.jpg")
-    if os.path.exists(intro_img):
-        mime, b64 = img_to_base64(intro_img)
-        st.markdown(
-            '<div style="max-width:800px;">'
-            '<img src="data:' + mime + ';base64,' + b64 + '"'
-            ' style="width:100%; height:auto; border-radius:12px; display:block;">'
-            '</div>',
-            unsafe_allow_html=True
-        )
-    else:
-        st.markdown(
-            '<div style="max-width:800px; background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);'
-            ' border-radius:16px; padding:60px; text-align:center; margin:20px 0;">'
-            '<div style="font-size:80px;">👩‍🏫</div>'
-            '</div>',
-            unsafe_allow_html=True
-        )
+    col_img, col_empty = st.columns([4, 1])
+    with col_img:
+        if os.path.exists(intro_img):
+            st.image(intro_img, use_container_width=True)
+        else:
+            st.markdown(
+                '<div style="background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);'
+                ' border-radius:16px; padding:60px; text-align:center; margin:20px 0;">'
+                '<div style="font-size:80px;">👩‍🏫</div>'
+                '</div>',
+                unsafe_allow_html=True
+            )
 
     st.divider()
 
@@ -106,7 +101,6 @@ if st.session_state.intro_page == "2ok":
     st.divider()
     st.subheader("💬 4기 파이팅!")
     st.markdown(
-        '<div style="max-width:800px;">'
         '<div style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);'
         'border-radius:16px; padding:32px 36px; margin:12px 0; color:white;'
         'box-shadow:0 4px 20px rgba(102,126,234,0.4);">'
@@ -131,7 +125,6 @@ if st.session_state.intro_page == "2ok":
         '<span style="background:rgba(255,255,255,0.25); border-radius:20px;'
         ' padding:6px 16px; font-size:15px; font-weight:700;">🙏 감사해요</span>'
         '</div>'
-        '</div>'
         '</div>',
         unsafe_allow_html=True
     )
@@ -141,7 +134,6 @@ if st.session_state.intro_page == "2ok":
 # ══════════════════════════════════════════════════
 elif st.session_state.intro_page == "오늘의 과제":
 
-    # 카드 1 - 프로젝트 목표
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e0f7fa,#e8f5e9);'
         ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
@@ -159,7 +151,6 @@ elif st.session_state.intro_page == "오늘의 과제":
         unsafe_allow_html=True
     )
 
-    # 카드 2 - 프로젝트 진행
     st.markdown(
         '<div style="background:linear-gradient(135deg,#f3e5f5,#ede7f6);'
         ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
@@ -205,7 +196,6 @@ elif st.session_state.intro_page == "오늘의 과제":
         unsafe_allow_html=True
     )
 
-    # 카드 3 - 발표 내용
     st.markdown(
         '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
         ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
