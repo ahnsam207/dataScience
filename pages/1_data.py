@@ -126,10 +126,34 @@ elif st.session_state.data_page == "찾아보기":
         if i < len(images) - 1:
             st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
-# ══════════════════════════════════════════════════
-# 미리보기
-# ══════════════════════════════════════════════════
 elif st.session_state.data_page == "미리보기":
-    st.subheader("👀 미리보기")
-    st.divider()
-    st.info("데이터 미리보기 내용을 여기에 추가해 주세요.")
+
+    sections = [
+        ("table_1.jpg", "조사표",      "01"),
+        ("table_2.jpg", "데이터",      "02"),
+        ("table_3.jpg", "코드북",      "03"),
+        ("table_4.jpg", "생성형 코드북", "04"),
+    ]
+
+    for i, (filename, title, num) in enumerate(sections):
+        img_path = os.path.join(pages_folder, filename)
+        st.markdown(
+            '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+            '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+            ' color:white; border-radius:16px; padding:8px 20px;'
+            ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">'
+            + num +
+            '</div>'
+            '<div style="font-size:28px; font-weight:800; color:#1565c0;">'
+            + title +
+            '</div>'
+            '</div>',
+            unsafe_allow_html=True
+        )
+        if os.path.exists(img_path):
+            st.image(img_path, use_container_width=True)
+        else:
+            st.info(filename + " 파일을 pages 폴더에 추가해 주세요.")
+
+        if i < len(sections) - 1:
+            st.markdown('<div style="margin-bottom:60px;"></div>', unsafe_allow_html=True)
