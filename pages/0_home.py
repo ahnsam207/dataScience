@@ -75,7 +75,8 @@ if st.session_state.intro_page == "2ok":
         )
 
     st.divider()
-    col1, col2 = st.columns(2)
+
+    col1, col2, col3 = st.columns(3)
     with col1:
         st.subheader("📋 기본 정보")
         st.markdown(
@@ -99,6 +100,8 @@ if st.session_state.intro_page == "2ok":
             "| 📊 | 비즈니스엑셀 |\n"
             "| 🗂️ | 기타 정보관련 교과 |"
         )
+    with col3:
+        pass
 
     st.divider()
     st.subheader("💬 4기 파이팅!")
