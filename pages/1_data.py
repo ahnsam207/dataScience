@@ -49,13 +49,9 @@ for col, tab, icon in zip(mc[:3], tabs, icons):
 st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
 st.divider()
 
-# ══════════════════════════════════════════════════
-# 출처
-# ══════════════════════════════════════════════════
 if st.session_state.data_page == "출처":
 
     st.markdown(
-        '<div style="max-width:680px;">'
         '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
         ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
         ' border-left:6px solid #1976d2;">'
@@ -76,8 +72,15 @@ if st.session_state.data_page == "출처":
         '</div>'
 
         '</div>'
-        '</div>'
         '</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
+        ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
+        ' border-left:6px solid #1976d2;">'
+        '<div style="font-size:22px; font-weight:800; margin-bottom:24px; color:#1565c0;">🌐 사이트 접속하기</div>',
         unsafe_allow_html=True
     )
 
@@ -91,27 +94,13 @@ if st.session_state.data_page == "출처":
     if os.path.exists(cite_img):
         mime, b64 = img_to_base64(cite_img)
         st.markdown(
-            '<div style="max-width:680px; margin-top:20px;">'
+            '<div style="margin-top:16px;">'
             '<img src="data:' + mime + ';base64,' + b64 + '"'
             ' style="width:100%; height:auto; border-radius:10px; display:block;">'
+            '</div>'
             '</div>',
             unsafe_allow_html=True
         )
     else:
+        st.markdown('</div>', unsafe_allow_html=True)
         st.info("cite.jpg 파일을 pages 폴더에 추가해 주세요.")
-
-# ══════════════════════════════════════════════════
-# 찾아보기
-# ══════════════════════════════════════════════════
-elif st.session_state.data_page == "찾아보기":
-    st.subheader("🔍 찾아보기")
-    st.divider()
-    st.info("데이터 찾아보기 내용을 여기에 추가해 주세요.")
-
-# ══════════════════════════════════════════════════
-# 미리보기
-# ══════════════════════════════════════════════════
-elif st.session_state.data_page == "미리보기":
-    st.subheader("👀 미리보기")
-    st.divider()
-    st.info("데이터 미리보기 내용을 여기에 추가해 주세요.")
