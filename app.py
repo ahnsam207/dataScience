@@ -3,18 +3,18 @@ import os
 import base64
 
 st.set_page_config(
-    page_title="소개하기",
+    page_title="시작하기",
     page_icon="👩‍🏫",
     layout="wide"
 )
 
 st.markdown(
     "<style>"
-    ":root { --label-color: #333; --date-color: #666; --sub-color: #555; --hr-color: #e0e0e0; }"
+    ":root { --label-color: #333; --hr-color: #e0e0e0; }"
     "@media (prefers-color-scheme: dark) {"
-    "  :root { --label-color: #e8e8e8; --date-color: #aaaaaa; --sub-color: #cccccc; --hr-color: #444444; }"
+    "  :root { --label-color: #e8e8e8; --hr-color: #444444; }"
     "}"
-    "[data-theme='dark'] { --label-color: #e8e8e8; --date-color: #aaaaaa; --sub-color: #cccccc; --hr-color: #444444; }"
+    "[data-theme='dark'] { --label-color: #e8e8e8; --hr-color: #444444; }"
     ".title-name { margin: 0; font-size: 32px; font-weight: 800; color: var(--label-color); }"
     "</style>",
     unsafe_allow_html=True
@@ -24,7 +24,7 @@ if "intro_page" not in st.session_state:
     st.session_state.intro_page = "2ok"
 
 project_root = os.path.dirname(os.path.abspath(__file__))
-intro_folder = os.path.join(project_root, "sam", "intro")
+pages_folder = os.path.join(project_root, "pages")
 
 
 def img_to_base64(img_path):
@@ -36,7 +36,7 @@ def img_to_base64(img_path):
 
 
 # ── 타이틀 ──────────────────────────────────────────
-icon_path = os.path.join(intro_folder, "icon.PNG")
+icon_path = os.path.join(pages_folder, "icon.PNG")
 if os.path.exists(icon_path):
     mime, b64 = img_to_base64(icon_path)
     st.markdown(
@@ -69,7 +69,7 @@ for col, page, icon in zip(mc, pages, icons):
 # 2ok
 # ══════════════════════════════════════════════════
 if st.session_state.intro_page == "2ok":
-    intro_img = os.path.join(intro_folder, "intro.jpg")
+    intro_img = os.path.join(pages_folder, "intro.jpg")
     if os.path.exists(intro_img):
         st.image(intro_img, use_container_width=True)
     else:
@@ -115,36 +115,34 @@ if st.session_state.intro_page == "2ok":
         'border-radius: 16px; padding: 32px 36px; margin: 12px 0; color: white;'
         'box-shadow: 0 4px 20px rgba(102,126,234,0.4);">'
 
-        '<div style="font-size:22px; font-weight:800; margin-bottom:18px;">💡 동기 선생님들께</div>'
-
-        '<div style="font-size:15px; line-height:2.0; font-weight:400;">'
+        '<div style="font-size:17px; line-height:2.2; font-weight:400;">'
         '각자의 자리에서 치열하게 하루를 보내고, 밤늦게까지 데이터와 수식을 들여다보며 '
         '연구를 이어가는 동기 선생님들을 볼 때마다 큰 자극과 위로를 동시에 받습니다.'
         '</div>'
 
         '<div style="border-top: 1px solid rgba(255,255,255,0.3); margin: 18px 0;"></div>'
 
-        '<div style="font-size:15px; line-height:2.0; font-weight:400;">'
+        '<div style="font-size:17px; line-height:2.2; font-weight:400;">'
         '가끔은 정체기처럼 느껴져 답답할 때도 있지만, 우리가 지금까지 끈기 있게 분석하고 '
         '고민해 온 시간들은 결측치(NaN)로 <code style="background:rgba(255,255,255,0.2);'
-        'padding:2px 6px; border-radius:4px;">dropna()</code> 되지 않을 것이라 생각해요.'
+        'padding:2px 8px; border-radius:4px; font-size:15px;">dropna()</code> 되지 않을 것이라 생각해요.'
         '</div>'
 
         '<div style="border-top: 1px solid rgba(255,255,255,0.3); margin: 18px 0;"></div>'
 
-        '<div style="font-size:15px; line-height:2.0; font-weight:400;">'
+        '<div style="font-size:17px; line-height:2.2; font-weight:400;">'
         '체력 관리 잘하면서 마지막까지 각자의 완성 모델을 성공적으로 '
-        '<code style="background:rgba(255,255,255,0.2); padding:2px 6px; border-radius:4px;">'
+        '<code style="background:rgba(255,255,255,0.2); padding:2px 8px; border-radius:4px; font-size:15px;">'
         'Deploy()</code> 하며 함께 완주했으면 좋겠습니다.'
         '</div>'
 
         '<div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">'
         '<span style="background:rgba(255,255,255,0.25); border-radius:20px;'
-        ' padding:6px 16px; font-size:14px; font-weight:700;">🔥 다들 파이팅!</span>'
+        ' padding:6px 16px; font-size:15px; font-weight:700;">🔥 다들 파이팅!</span>'
         '<span style="background:rgba(255,255,255,0.25); border-radius:20px;'
-        ' padding:6px 16px; font-size:14px; font-weight:700;">🎓 교수님 올 PASS!!!</span>'
+        ' padding:6px 16px; font-size:15px; font-weight:700;">🎓 교수님 올 PASS!!!</span>'
         '<span style="background:rgba(255,255,255,0.25); border-radius:20px;'
-        ' padding:6px 16px; font-size:14px; font-weight:700;">🙏 감사해요</span>'
+        ' padding:6px 16px; font-size:15px; font-weight:700;">🙏 감사해요</span>'
         '</div>'
 
         '</div>',
