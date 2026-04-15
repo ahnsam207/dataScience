@@ -45,7 +45,7 @@ if os.path.exists(icon_path):
         unsafe_allow_html=True
     )
 else:
-    st.title("👩‍🏫 안이옥 선생님")
+    st.title("")
 
 # ── 상단 메뉴 ──────────────────────────────────────
 mc    = st.columns(2)
@@ -139,8 +139,6 @@ if st.session_state.intro_page == "2ok":
         '</div>',
         unsafe_allow_html=True
     )
-    st.divider()
-    st.caption("© 2026 안이옥 선생님 소개 페이지")
 
 # ══════════════════════════════════════════════════
 # 과제
