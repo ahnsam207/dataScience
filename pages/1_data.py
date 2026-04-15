@@ -60,12 +60,10 @@ if st.session_state.data_page == "출처":
         ' border-left:6px solid #1976d2;">'
         '<div style="font-size:22px; font-weight:800; margin-bottom:24px; color:#1565c0;">📂 데이터 출처</div>'
         '<div style="display:flex; flex-direction:column; gap:16px;">'
-
         '<div style="display:flex; align-items:center; gap:16px;">'
         '<span style="font-size:15px; font-weight:700; color:#1976d2; min-width:80px;">📌 사이트명</span>'
         '<span style="font-size:17px; color:#222;">한국 아동·청소년·청년 데이터 아카이브</span>'
         '</div>'
-
         '<div style="display:flex; align-items:center; gap:16px;">'
         '<span style="font-size:15px; font-weight:700; color:#1976d2; min-width:80px;">🔗 URL</span>'
         '<a href="https://www.nypi.re.kr/archive/mps" target="_blank"'
@@ -73,7 +71,6 @@ if st.session_state.data_page == "출처":
         'https://www.nypi.re.kr/archive/mps'
         '</a>'
         '</div>'
-
         '</div>'
         '</div>',
         unsafe_allow_html=True
@@ -90,54 +87,9 @@ if st.session_state.data_page == "출처":
     cite_img = os.path.join(pages_folder, "cite.jpg")
     if os.path.exists(cite_img):
         mime, b64 = img_to_base64(cite_img)
-        st.markdown(
-            '<div style="margin-top:16px;">'
-            '<img src="data:' + mime + ';base64,' + b64 + '"'
-            ' style="width:100%; height:auto; border-radius:10px; display:block;">'
-            '</div>',
-            unsafe_allow_html=True
-        )
+        st.markdown('<div style="margin-top:16px;"></div>', unsafe_allow_html=True)
+        st.image(cite_img, use_container_width=True)
     else:
         st.info("cite.jpg 파일을 pages 폴더에 추가해 주세요.")
 
 # ══════════════════════════════════════════════════
-# 찾아보기
-# ══════════════════════════════════════════════════
-elif st.session_state.data_page == "찾아보기":
-
-    images = [
-        ("link.jpg",     "① 다운로드 메뉴"),
-        ("agree.jpg",    "② 동의 및 선택"),
-        ("download.jpg", "③ 다운로드"),
-    ]
-
-    for filename, title in images:
-        img_path = os.path.join(pages_folder, filename)
-        st.markdown(
-            '<div style="margin-bottom:40px;">'
-            '<div style="display:inline-block; background:linear-gradient(135deg,#1976d2,#42a5f5);'
-            ' color:white; border-radius:12px; padding:10px 28px;'
-            ' font-size:26px; font-weight:800; margin-bottom:16px;">'
-            + title +
-            '</div>',
-            unsafe_allow_html=True
-        )
-        if os.path.exists(img_path):
-            mime, b64 = img_to_base64(img_path)
-            st.markdown(
-                '<img src="data:' + mime + ';base64,' + b64 + '"'
-                ' style="width:100%; height:auto; border-radius:10px; display:block;">'
-                '</div>',
-                unsafe_allow_html=True
-            )
-        else:
-            st.info(filename + " 파일을 pages 폴더에 추가해 주세요.")
-            st.markdown('</div>', unsafe_allow_html=True)
-
-# ══════════════════════════════════════════════════
-# 미리보기
-# ══════════════════════════════════════════════════
-elif st.session_state.data_page == "미리보기":
-    st.subheader("👀 미리보기")
-    st.divider()
-    st.info("데이터 미리보기 내용을 여기에 추가해 주세요.")
