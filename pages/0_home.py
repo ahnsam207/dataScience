@@ -2,7 +2,6 @@ import streamlit as st
 import os
 import base64
 
-# ← 이 한 줄로 교체
 pages_folder = os.path.dirname(os.path.abspath(__file__))
 
 def img_to_base64(img_path):
@@ -12,18 +11,18 @@ def img_to_base64(img_path):
         b64 = base64.b64encode(f.read()).decode()
     return mime, b64
 
+st.markdown(
+    "<style>"
+    ":root { --label-color: #333; }"
+    "@media (prefers-color-scheme: dark) { :root { --label-color: #e8e8e8; } }"
+    "[data-theme='dark'] { --label-color: #e8e8e8; }"
+    ".title-name { margin: 0; font-size: 32px; font-weight: 800; color: var(--label-color); }"
+    "</style>",
+    unsafe_allow_html=True
+)
+
 if "intro_page" not in st.session_state:
     st.session_state.intro_page = "2ok"
-
-project_root = os.path.dirname(os.path.abspath(__file__))
-pages_folder = os.path.join(project_root, "pages")
-
-def img_to_base64(img_path):
-    ext  = img_path.split(".")[-1].lower()
-    mime = "image/png" if ext == "png" else "image/jpeg"
-    with open(img_path, "rb") as f:
-        b64 = base64.b64encode(f.read()).decode()
-    return mime, b64
 
 # ── 타이틀 ──────────────────────────────────────────
 icon_path = os.path.join(pages_folder, "icon.PNG")
@@ -38,21 +37,21 @@ if os.path.exists(icon_path):
         unsafe_allow_html=True
     )
 else:
-    st.title("")
+    st.title("👩‍🏫 안이옥 선생님")
 
 # ── 상단 메뉴 ──────────────────────────────────────
 mc    = st.columns(2)
-pages = ["2ok", "과제"]
+tabs  = ["2ok", "과제"]
 icons = ["👩‍🏫", "📝"]
-for col, page, icon in zip(mc, pages, icons):
+for col, tab, icon in zip(mc, tabs, icons):
     with col:
         if st.button(
-            icon + " " + page,
-            key="btn_" + page,
+            icon + " " + tab,
+            key="btn_" + tab,
             use_container_width=True,
-            type="primary" if st.session_state.intro_page == page else "secondary"
+            type="primary" if st.session_state.intro_page == tab else "secondary"
         ):
-            st.session_state.intro_page = page
+            st.session_state.intro_page = tab
 
 # ══════════════════════════════════════════════════
 # 2ok
