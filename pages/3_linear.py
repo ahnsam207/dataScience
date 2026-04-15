@@ -80,32 +80,75 @@ if st.session_state.linear_page == "연구주제":
     )
 
 elif st.session_state.linear_page == "탐색적 데이터 분석":
+    import os
+    import base64
+    pages_folder = os.path.dirname(os.path.abspath(__file__))
 
-    sections = [
-        ("01", "데이터 불러오기 및 정보 확인"),
-        ("02", "분석 대상 데이터만 가져오기"),
-        ("03", "선별 데이터 탐색적 데이터 분석하기"),
-        ("04", "상관계수 및 상관관계 확인하기"),
-    ]
+    def img_to_base64(img_path):
+        ext  = img_path.split(".")[-1].lower()
+        mime = "image/png" if ext == "png" else "image/jpeg"
+        with open(img_path, "rb") as f:
+            b64 = base64.b64encode(f.read()).decode()
+        return mime, b64
 
-    for i, (num, title) in enumerate(sections):
-        st.markdown(
-            '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
-            '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
-            ' color:white; border-radius:16px; padding:8px 20px;'
-            ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">'
-            + num +
-            '</div>'
-            '<div style="font-size:28px; font-weight:800; color:#1565c0;">'
-            + title +
-            '</div>'
-            '</div>',
-            unsafe_allow_html=True
-        )
-        st.info(title + " 내용을 여기에 추가해 주세요.")
+    # 01 - 데이터 불러오기 및 정보 확인
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">01</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">데이터 불러오기 및 정보 확인</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+    img_path = os.path.join(pages_folder, "ols_1.jpg")
+    if os.path.exists(img_path):
+        st.image(img_path, use_container_width=True)
+        st.caption("(데이터) 청소년의 생성형 AI 이용실태 및 리터러시 증진방안 연구.xlsx  →  data.xlsx 로 수정")
+    else:
+        st.info("ols_1.jpg 파일을 pages 폴더에 추가해 주세요.")
 
-        if i < len(sections) - 1:
-            st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
+    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
+
+    # 02 - 분석 대상 데이터만 가져오기
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">02</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">분석 대상 데이터만 가져오기</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+    st.info("분석 대상 데이터만 가져오기 내용을 여기에 추가해 주세요.")
+
+    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
+
+    # 03 - 선별 데이터 탐색적 데이터 분석하기
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">03</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">선별 데이터 탐색적 데이터 분석하기</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+    st.info("선별 데이터 탐색적 데이터 분석하기 내용을 여기에 추가해 주세요.")
+
+    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
+
+    # 04 - 상관계수 및 상관관계 확인하기
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">04</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">상관계수 및 상관관계 확인하기</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+    st.info("상관계수 및 상관관계 확인하기 내용을 여기에 추가해 주세요.")
 
 # ══════════════════════════════════════════════════
 # 다중공선성 확인
