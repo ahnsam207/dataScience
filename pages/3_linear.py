@@ -79,13 +79,33 @@ if st.session_state.linear_page == "연구주제":
         unsafe_allow_html=True
     )
 
-# ══════════════════════════════════════════════════
-# 탐색적 데이터 분석
-# ══════════════════════════════════════════════════
 elif st.session_state.linear_page == "탐색적 데이터 분석":
-    st.subheader("📊 탐색적 데이터 분석")
-    st.divider()
-    st.info("탐색적 데이터 분석 내용을 여기에 추가해 주세요.")
+
+    sections = [
+        ("01", "데이터 불러오기 및 정보 확인"),
+        ("02", "분석 대상 데이터만 가져오기"),
+        ("03", "선별 데이터 탐색적 데이터 분석하기"),
+        ("04", "상관계수 및 상관관계 확인하기"),
+    ]
+
+    for i, (num, title) in enumerate(sections):
+        st.markdown(
+            '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+            '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+            ' color:white; border-radius:16px; padding:8px 20px;'
+            ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">'
+            + num +
+            '</div>'
+            '<div style="font-size:28px; font-weight:800; color:#1565c0;">'
+            + title +
+            '</div>'
+            '</div>',
+            unsafe_allow_html=True
+        )
+        st.info(title + " 내용을 여기에 추가해 주세요.")
+
+        if i < len(sections) - 1:
+            st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════
 # 다중공선성 확인
