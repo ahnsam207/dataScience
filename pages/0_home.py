@@ -17,9 +17,9 @@ st.markdown(
     "@media (prefers-color-scheme: dark) { :root { --label-color: #e8e8e8; } }"
     "[data-theme='dark'] { --label-color: #e8e8e8; }"
     ".title-name { margin: 0; font-size: 32px; font-weight: 800; color: var(--label-color); }"
-    "/* 이 페이지만 콘텐츠 너비를 사진 너비(80%)에 맞게 제한 */"
     ".block-container {"
     "  max-width: 800px !important;"
+    "  padding-top: 1rem !important;"
     "  padding-left: 2rem !important;"
     "  padding-right: 2rem !important;"
     "  margin-left: 0 !important;"
@@ -32,26 +32,30 @@ st.markdown(
 if "intro_page" not in st.session_state:
     st.session_state.intro_page = "2ok"
 
-# ── 타이틀 ──────────────────────────────────────────
+# ── 타이틀 + 상단 메뉴를 하나의 컴팩트한 영역으로 ──
 icon_path = os.path.join(pages_folder, "icon.PNG")
 if os.path.exists(icon_path):
     mime, b64 = img_to_base64(icon_path)
-    st.markdown(
-        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:8px;">'
-        '<img src="data:' + mime + ';base64,' + b64 + '"'
-        ' style="height:60px; width:auto; object-fit:contain;">'
-        '<h1 class="title-name">안이옥 선생님</h1>'
-        '</div>',
-        unsafe_allow_html=True
-    )
+    title_img = '<img src="data:' + mime + ';base64,' + b64 + '" style="height:40px; width:auto; object-fit:contain; vertical-align:middle;">'
 else:
-    st.title("")
+    title_img = '👩‍🏫'
 
-# ── 상단 메뉴 ──────────────────────────────────────
-mc    = st.columns(2)
+st.markdown(
+    '<div style="display:flex; align-items:center; justify-content:space-between;'
+    ' padding: 6px 0 10px 0; border-bottom: 1px solid #e0e0e0; margin-bottom: 10px;">'
+    '<div style="display:flex; align-items:center; gap:12px;">'
+    + title_img +
+    '<span style="font-size:24px; font-weight:800;">안이옥 선생님</span>'
+    '</div>'
+    '</div>',
+    unsafe_allow_html=True
+)
+
+# ── 상단 메뉴 버튼 ──────────────────────────────────
+mc    = st.columns([1, 1, 6])
 tabs  = ["2ok", "과제"]
 icons = ["👩‍🏫", "📝"]
-for col, tab, icon in zip(mc, tabs, icons):
+for col, tab, icon in zip(mc[:2], tabs, icons):
     with col:
         if st.button(
             icon + " " + tab,
