@@ -36,7 +36,7 @@ if "intro_page" not in st.session_state:
     st.session_state.intro_page = "2ok"
 
 # ── 상단 메뉴 버튼 ──────────────────────────────────
-mc    = st.columns([1, 2, 3])
+mc    = st.columns([1, 1, 4])
 tabs  = ["2ok", "오늘의 과제"]
 icons = ["👩‍🏫", "📝"]
 for col, tab, icon in zip(mc[:2], tabs, icons):
