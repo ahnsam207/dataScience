@@ -109,10 +109,10 @@ elif st.session_state.data_page == "찾아보기":
     for filename, title in images:
         img_path = os.path.join(pages_folder, filename)
         st.markdown(
-            '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
-            ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
-            ' border-left:6px solid #1976d2;">'
-            '<div style="font-size:22px; font-weight:800; margin-bottom:20px; color:#1565c0;">'
+            '<div style="margin-bottom:40px;">'
+            '<div style="display:inline-block; background:linear-gradient(135deg,#1976d2,#42a5f5);'
+            ' color:white; border-radius:12px; padding:10px 28px;'
+            ' font-size:26px; font-weight:800; margin-bottom:16px;">'
             + title +
             '</div>',
             unsafe_allow_html=True
