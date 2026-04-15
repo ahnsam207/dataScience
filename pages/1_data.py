@@ -97,3 +97,34 @@ if st.session_state.data_page == "출처":
         )
     else:
         st.info("cite.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+elif st.session_state.data_page == "찾아보기":
+
+    images = [
+        ("link.jpg",     "① 다운로드 메뉴"),
+        ("agree.jpg",    "② 동의 및 선택"),
+        ("download.jpg", "③ 다운로드"),
+    ]
+
+    for filename, title in images:
+        img_path = os.path.join(pages_folder, filename)
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
+            ' border-radius:16px; padding:32px 40px; margin-bottom:20px;'
+            ' border-left:6px solid #1976d2;">'
+            '<div style="font-size:22px; font-weight:800; margin-bottom:20px; color:#1565c0;">'
+            + title +
+            '</div>',
+            unsafe_allow_html=True
+        )
+        if os.path.exists(img_path):
+            mime, b64 = img_to_base64(img_path)
+            st.markdown(
+                '<img src="data:' + mime + ';base64,' + b64 + '"'
+                ' style="width:100%; height:auto; border-radius:10px; display:block;">'
+                '</div>',
+                unsafe_allow_html=True
+            )
+        else:
+            st.info(filename + " 파일을 pages 폴더에 추가해 주세요.")
+            st.markdown('</div>', unsafe_allow_html=True)
