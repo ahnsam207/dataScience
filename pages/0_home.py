@@ -59,7 +59,14 @@ for col, tab, icon in zip(mc, tabs, icons):
 if st.session_state.intro_page == "2ok":
     intro_img = os.path.join(pages_folder, "intro.jpg")
     if os.path.exists(intro_img):
-        st.image(intro_img, use_container_width=True)
+        mime, b64 = img_to_base64(intro_img)
+        st.markdown(
+            '<div style="width:80%; margin: 0 auto;">'
+            '<img src="data:' + mime + ';base64,' + b64 + '"'
+            ' style="width:100%; height:auto; border-radius:12px;">'
+            '</div>',
+            unsafe_allow_html=True
+        )
     else:
         st.markdown(
             '<div style="background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%);'
