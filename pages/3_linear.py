@@ -189,7 +189,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
 
     st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
-    # 03 - 선별 데이터 변수명 수정하고 데이터 분석하기
+   # 03 - 선별 데이터 변수명 수정하고 데이터 분석하기
     st.markdown(
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
         '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
@@ -199,50 +199,54 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '</div>',
         unsafe_allow_html=True
     )
+
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
+        ' border-radius:12px; padding:20px 28px; margin-bottom:16px;'
+        ' border-left:6px solid #1976d2;">'
+        '<div style="font-size:16px; font-weight:800; color:#1565c0; margin-bottom:14px;">📝 변수명 수정</div>'
+        '<div style="display:flex; flex-wrap:wrap; gap:12px;">'
+
+        '<div style="display:flex; align-items:center; gap:8px; background:white;'
+        ' border-radius:10px; padding:8px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
+        '<span style="font-size:15px; color:#e53935; font-weight:700;">Q9_5</span>'
+        '<span style="font-size:15px; color:#555; margin:0 4px;">→</span>'
+        '<span style="font-size:15px; color:#1976d2; font-weight:700;">use_hw</span>'
+        '</div>'
+
+        '<div style="display:flex; align-items:center; gap:8px; background:white;'
+        ' border-radius:10px; padding:8px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
+        '<span style="font-size:15px; color:#e53935; font-weight:700;">Q9_6</span>'
+        '<span style="font-size:15px; color:#555; margin:0 4px;">→</span>'
+        '<span style="font-size:15px; color:#1976d2; font-weight:700;">use_grade</span>'
+        '</div>'
+
+        '<div style="display:flex; align-items:center; gap:8px; background:white;'
+        ' border-radius:10px; padding:8px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
+        '<span style="font-size:15px; color:#e53935; font-weight:700;">Q7</span>'
+        '<span style="font-size:15px; color:#555; margin:0 4px;">→</span>'
+        '<span style="font-size:15px; color:#1976d2; font-weight:700;">avg_time</span>'
+        '</div>'
+
+        '<div style="display:flex; align-items:center; gap:8px; background:white;'
+        ' border-radius:10px; padding:8px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
+        '<span style="font-size:15px; color:#e53935; font-weight:700;">DQ3</span>'
+        '<span style="font-size:15px; color:#555; margin:0 4px;">→</span>'
+        '<span style="font-size:15px; color:#1976d2; font-weight:700;">score</span>'
+        '</div>'
+
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
     img_path3 = os.path.join(pages_folder, "ols_3.jpg")
     if os.path.exists(img_path3):
         st.image(img_path3, use_container_width=True)
-        st.markdown(
-            '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
-            ' border-radius:12px; padding:20px 28px; margin-top:16px;'
-            ' border-left:6px solid #1976d2;">'
-            '<div style="font-size:16px; font-weight:800; color:#1565c0; margin-bottom:14px;">📝 변수명 수정</div>'
-            '<div style="display:flex; flex-wrap:wrap; gap:12px;">'
-
-            '<div style="display:flex; align-items:center; gap:8px; background:white;'
-            ' border-radius:10px; padding:8px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
-            '<span style="font-size:15px; color:#e53935; font-weight:700;">Q9_5</span>'
-            '<span style="font-size:15px; color:#555;">→</span>'
-            '<span style="font-size:15px; color:#1976d2; font-weight:700;">use_hw</span>'
-            '</div>'
-
-            '<div style="display:flex; align-items:center; gap:8px; background:white;'
-            ' border-radius:10px; padding:8px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
-            '<span style="font-size:15px; color:#e53935; font-weight:700;">Q9_6</span>'
-            '<span style="font-size:15px; color:#555;">→</span>'
-            '<span style="font-size:15px; color:#1976d2; font-weight:700;">use_grade</span>'
-            '</div>'
-
-            '<div style="display:flex; align-items:center; gap:8px; background:white;'
-            ' border-radius:10px; padding:8px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
-            '<span style="font-size:15px; color:#e53935; font-weight:700;">Q7</span>'
-            '<span style="font-size:15px; color:#555;">→</span>'
-            '<span style="font-size:15px; color:#1976d2; font-weight:700;">avg_time</span>'
-            '</div>'
-
-            '<div style="display:flex; align-items:center; gap:8px; background:white;'
-            ' border-radius:10px; padding:8px 16px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
-            '<span style="font-size:15px; color:#e53935; font-weight:700;">DQ3</span>'
-            '<span style="font-size:15px; color:#555;">→</span>'
-            '<span style="font-size:15px; color:#1976d2; font-weight:700;">score</span>'
-            '</div>'
-
-            '</div>'
-            '</div>',
-            unsafe_allow_html=True
-        )
     else:
         st.info("ols_3.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
     st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
