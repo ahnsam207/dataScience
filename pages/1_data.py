@@ -91,39 +91,40 @@ if st.session_state.data_page == "출처":
     else:
         st.info("cite.jpg 파일을 pages 폴더에 추가해 주세요.")
 
-# ══════════════════════════════════════════════════
-# 찾아보기
-# ══════════════════════════════════════════════════
 elif st.session_state.data_page == "찾아보기":
 
     images = [
-        ("link.jpg",     "다운로드 메뉴", "01"),
-        ("agree.jpg",    "동의 및 선택",  "02"),
-        ("download.jpg", "다운로드",      "03"),
+        ("link.jpg",     "다운로드 메뉴",  "01"),
+        ("agree.jpg",    "동의 및 선택",   "02"),
+        ("link2.jpg",    "",               ""),
+        ("download.jpg", "다운로드",       "03"),
     ]
 
     for i, (filename, title, num) in enumerate(images):
         img_path = os.path.join(pages_folder, filename)
-        st.markdown(
-            '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
-            '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
-            ' color:white; border-radius:16px; padding:8px 20px;'
-            ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">'
-            + num +
-            '</div>'
-            '<div style="font-size:28px; font-weight:800; color:#1565c0;">'
-            + title +
-            '</div>'
-            '</div>',
-            unsafe_allow_html=True
-        )
+
+        if title:
+            st.markdown(
+                '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+                '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+                ' color:white; border-radius:16px; padding:8px 20px;'
+                ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">'
+                + num +
+                '</div>'
+                '<div style="font-size:28px; font-weight:800; color:#1565c0;">'
+                + title +
+                '</div>'
+                '</div>',
+                unsafe_allow_html=True
+            )
+
         if os.path.exists(img_path):
             st.image(img_path, use_container_width=True)
         else:
             st.info(filename + " 파일을 pages 폴더에 추가해 주세요.")
 
         if i < len(images) - 1:
-            st.markdown('<div style="margin-bottom:60px;"></div>', unsafe_allow_html=True)
+            st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════
 # 미리보기
