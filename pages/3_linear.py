@@ -391,12 +391,27 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
         unsafe_allow_html=True
     )
 
+    # 02 - 결과 해석
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">02</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">결과 해석</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
     # 카드 1 - 모델 적합도
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
-        ' border-radius:16px; padding:28px 36px;'
+        ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
         ' border-left:6px solid #1976d2;">'
-        '<div style="font-size:20px; font-weight:800; color:#1565c0; margin-bottom:14px;">📊 모델 적합도 (R-squared)</div>'
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:14px;">'
+        '<span style="font-size:20px; font-weight:800; color:#1565c0;">📊 모델 적합도 (R-squared)</span>'
+        '<span style="background:#e53935; color:white; border-radius:20px;'
+        ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">설명력 매우 낮음</span>'
+        '</div>'
         '<div style="font-size:17px; line-height:2.0; color:#222;">'
         'R² 값이 <span style="font-weight:700; color:#e53935;">0.001</span> 로,'
         ' 독립변수들이 학업 성적 변동의 약 <span style="font-weight:700; color:#e53935;">0.1%</span> 만 설명하고 있습니다.'
@@ -409,9 +424,13 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
     # 카드 2 - 통계적 유의성
     st.markdown(
         '<div style="background:linear-gradient(135deg,#fce4ec,#f3e5f5);'
-        ' border-radius:16px; padding:28px 36px;'
+        ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
         ' border-left:6px solid #e53935;">'
-        '<div style="font-size:20px; font-weight:800; color:#b71c1c; margin-bottom:14px;">🔍 모델 전체 유의성 (F-statistic)</div>'
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:14px;">'
+        '<span style="font-size:20px; font-weight:800; color:#b71c1c;">🔍 모델 전체 유의성 (F-statistic)</span>'
+        '<span style="background:#e53935; color:white; border-radius:20px;'
+        ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">유의하지 않음</span>'
+        '</div>'
         '<div style="font-size:17px; line-height:2.0; color:#222;">'
         'F-통계량의 유의확률이 <span style="font-weight:700; color:#e53935;">0.443</span> 으로'
         ' 유의수준 0.05보다 크기 때문에,'
@@ -425,9 +444,13 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
     # 카드 3 - 개별 변수 유의성
     st.markdown(
         '<div style="background:linear-gradient(135deg,#f3e5f5,#ede7f6);'
-        ' border-radius:16px; padding:28px 36px;'
+        ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
         ' border-left:6px solid #8e24aa;">'
-        '<div style="font-size:20px; font-weight:800; color:#6a1b9a; margin-bottom:14px;">📌 개별 변수 유의성 (P-value)</div>'
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:14px;">'
+        '<span style="font-size:20px; font-weight:800; color:#6a1b9a;">📌 개별 변수 유의성 (P-value)</span>'
+        '<span style="background:#e53935; color:white; border-radius:20px;'
+        ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">두 변수 모두 유의하지 않음</span>'
+        '</div>'
         '<div style="font-size:17px; line-height:2.0; color:#222;">'
         '<span style="background:#ede7f6; border-radius:8px; padding:2px 10px;'
         ' font-weight:700; color:#8e24aa;">use_grade</span>'
@@ -445,9 +468,13 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
     # 카드 4 - 회귀계수 해석
     st.markdown(
         '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
-        ' border-radius:16px; padding:28px 36px;'
+        ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
         ' border-left:6px solid #f9a825;">'
-        '<div style="font-size:20px; font-weight:800; color:#e65100; margin-bottom:14px;">📈 회귀계수 해석</div>'
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:14px;">'
+        '<span style="font-size:20px; font-weight:800; color:#e65100;">📈 회귀계수 해석</span>'
+        '<span style="background:#f9a825; color:white; border-radius:20px;'
+        ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">영향력 매우 미미</span>'
+        '</div>'
         '<div style="font-size:17px; line-height:2.0; color:#222;">'
         '절편(Intercept)은 <span style="font-weight:700; color:#1976d2;">3.07</span> 로,'
         ' 독립변수가 0일 때 학업 성적의 기댓값입니다.<br>'
@@ -467,9 +494,13 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
     # 카드 5 - 최종 결론
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
-        ' border-radius:16px; padding:28px 36px;'
+        ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
         ' border-left:6px solid #26a69a;">'
-        '<div style="font-size:20px; font-weight:800; color:#00695c; margin-bottom:14px;">💡 최종 결론</div>'
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:14px;">'
+        '<span style="font-size:20px; font-weight:800; color:#00695c;">💡 최종 결론</span>'
+        '<span style="background:#26a69a; color:white; border-radius:20px;'
+        ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">AI 사용이 학업 성적에 유의한 영향 없음</span>'
+        '</div>'
         '<div style="font-size:17px; line-height:2.0; color:#222;">'
         '생성형 AI의 사용목적(성적 향상)과 평균 사용시간은'
         ' 고등학생의 학업 성적에 <span style="font-weight:700; color:#e53935;">통계적으로 유의한 영향을 미치지 않는 것</span>'
@@ -480,5 +511,3 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
         '</div>',
         unsafe_allow_html=True
     )
-
-    st.markdown('</div>', unsafe_allow_html=True)
