@@ -34,7 +34,7 @@ st.markdown(
 
 # ── 상단 메뉴 버튼 ──────────────────────────────────
 mc    = st.columns([2, 2, 2, 2, 1])
-tabs  = ["연구주제", "탐색적 데이터 분석", "다중공선성 확인", "회귀분석"]
+tabs  = ["연구주제", "탐색적 데이터 분석", "다중공선성 확인", "다중 선형 회귀분석"]
 icons = ["🔍", "📊", "🔬", "📈"]
 for col, tab, icon in zip(mc[:4], tabs, icons):
     with col:
@@ -354,7 +354,35 @@ elif st.session_state.linear_page == "다중공선성 확인":
 # ══════════════════════════════════════════════════
 # 회귀분석
 # ══════════════════════════════════════════════════
-elif st.session_state.linear_page == "회귀분석":
-    st.subheader("📈 회귀분석")
-    st.divider()
-    st.info("회귀분석 내용을 여기에 추가해 주세요.")
+elif st.session_state.linear_page == "다중 선형 회귀분석":
+
+    # 01 - 다중 선형 회귀분석
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">01</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">다중 선형 회귀분석</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    img_path7 = os.path.join(pages_folder, "ols_7.jpg")
+    if os.path.exists(img_path7):
+        st.image(img_path7, use_container_width=True)
+    else:
+        st.info("ols_7.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+    st.markdown('<div style="margin-bottom:60px;"></div>', unsafe_allow_html=True)
+
+    # 02 - 결과 해석
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">02</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">결과 해석</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+    st.info("결과 해석 내용을 여기에 추가해 주세요.")
