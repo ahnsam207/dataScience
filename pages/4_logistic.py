@@ -1,4 +1,15 @@
 import streamlit as st
+import os
+import base64
+
+pages_folder = os.path.dirname(os.path.abspath(__file__))
+
+def img_to_base64(img_path):
+    ext  = img_path.split(".")[-1].lower()
+    mime = "image/png" if ext == "png" else "image/jpeg"
+    with open(img_path, "rb") as f:
+        b64 = base64.b64encode(f.read()).decode()
+    return mime, b64
 
 if "logistic_page" not in st.session_state:
     st.session_state.logistic_page = "연구주제"
@@ -17,12 +28,32 @@ st.markdown(
     "div[data-testid='stHorizontalBlock'] button {"
     "  height: 3.5rem !important;"
     "}"
+    "#top-anchor { position: absolute; top: 0; }"
+    ".top-btn {"
+    "  position: fixed;"
+    "  bottom: 40px;"
+    "  right: 40px;"
+    "  background: linear-gradient(135deg, #e53935, #ef9a9a);"
+    "  color: white;"
+    "  border: none;"
+    "  border-radius: 50px;"
+    "  padding: 12px 22px;"
+    "  font-size: 16px;"
+    "  font-weight: 800;"
+    "  cursor: pointer;"
+    "  box-shadow: 0 4px 16px rgba(229,57,53,0.4);"
+    "  z-index: 9999;"
+    "  text-decoration: none;"
+    "}"
+    ".top-btn:hover { background: linear-gradient(135deg,#c62828,#e53935); }"
     "</style>",
     unsafe_allow_html=True
 )
 
+st.markdown('<div id="top-anchor"></div>', unsafe_allow_html=True)
+
 # ── 상단 메뉴 버튼 ──────────────────────────────────
-mc    = st.columns([1, 1, 1, 1, 2])
+mc    = st.columns([2, 2, 2, 2, 1])
 tabs  = ["연구주제", "탐색적 데이터 분석", "다중공선성 확인", "회귀분석"]
 icons = ["🔍", "📊", "🔬", "📉"]
 for col, tab, icon in zip(mc[:4], tabs, icons):
@@ -136,11 +167,9 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         unsafe_allow_html=True
     )
 
-    # 짚고 넘어가기 섹션
     st.markdown(
         '<div style="background:linear-gradient(135deg,#1a237e,#283593);'
         ' border-radius:16px; padding:28px 36px; margin-bottom:20px;">'
-
         '<div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 24px;">'
         '<div style="font-size:18px; font-weight:800; color:#ffeb3b; margin-bottom:12px;">📌 짚고 넘어가기</div>'
         '<div style="font-size:17px; line-height:1.9; color:white;">'
@@ -153,7 +182,6 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         ' 화 해야 합니다.'
         '</div>'
         '</div>'
-
         '</div>',
         unsafe_allow_html=True
     )
@@ -179,3 +207,9 @@ elif st.session_state.logistic_page == "회귀분석":
     st.subheader("📉 회귀분석")
     st.divider()
     st.info("회귀분석 내용을 여기에 추가해 주세요.")
+
+# ── TOP 버튼 ──────────────────────────────────────
+st.markdown(
+    '<a href="#top-anchor" class="top-btn">▲ TOP</a>',
+    unsafe_allow_html=True
+)
