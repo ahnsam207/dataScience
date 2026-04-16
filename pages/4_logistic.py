@@ -202,17 +202,14 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         '</div>'
         '</div>'
 
-        '<div style="display:flex; align-items:flex-start; gap:14px;">'
-        '<span style="background:#e53935; color:white; border-radius:50%; min-width:28px; height:28px;'
-        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
-        ' font-weight:700; flex-shrink:0; margin-top:2px;">6</span>'
-        '<div style="font-size:17px; line-height:1.9; color:#222;">'
-        '생성형 AI 사용 시 윤리의식 여부 <span style="color:#e53935; font-weight:700;">(Q14_4_10)</span> 데이터 불러오기'
+        '<div style="display:flex; align-items:flex-start; gap:16px;">'
+        '<span style="background:#8e24aa; color:white; border-radius:10px;'
+        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">종속변수 (1개)</span>'
+        '<div style="font-size:17px; color:#222; line-height:1.9;">'
+        '윤리의식 여부 <span style="color:#8e24aa; font-weight:700;">(Q14_4_10)</span>'
         '</div>'
         '</div>'
 
-        '</div>'
-        '</div>',
         unsafe_allow_html=True
     )
 
