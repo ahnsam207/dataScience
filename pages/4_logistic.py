@@ -282,12 +282,60 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
 
     st.markdown('<div style="margin-bottom:60px;"></div>', unsafe_allow_html=True)
 
-    # 03 - 상관계수 및 상관관계 확인하기
+    # 03 - 데이터 분석
     st.markdown(
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
         '<div style="background:linear-gradient(135deg,#e53935,#ef9a9a);'
         ' color:white; border-radius:16px; padding:8px 20px;'
         ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">03</div>'
+        '<div style="font-size:28px; font-weight:800; color:#b71c1c;">데이터 분석</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    img_path_eda = os.path.join(pages_folder, "logit_eda.jpg")
+    if os.path.exists(img_path_eda):
+        st.image(img_path_eda, use_container_width=True)
+    else:
+        st.info("logit_eda.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
+        ' border-radius:12px; padding:20px 28px; margin-top:16px;'
+        ' border-left:6px solid #26a69a;">'
+        '<div style="display:flex; flex-wrap:wrap; gap:12px;">'
+
+        '<div style="display:flex; align-items:center; gap:8px; background:white;'
+        ' border-radius:10px; padding:8px 18px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
+        '<span style="font-size:18px;">✅</span>'
+        '<span style="font-size:16px; font-weight:700; color:#00695c;">결측치 없음</span>'
+        '</div>'
+
+        '<div style="display:flex; align-items:center; gap:8px; background:white;'
+        ' border-radius:10px; padding:8px 18px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
+        '<span style="font-size:18px;">✅</span>'
+        '<span style="font-size:16px; font-weight:700; color:#00695c;">이상치 없음</span>'
+        '</div>'
+
+        '<div style="display:flex; align-items:center; gap:8px; background:white;'
+        ' border-radius:10px; padding:8px 18px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
+        '<span style="font-size:18px;">✅</span>'
+        '<span style="font-size:16px; font-weight:700; color:#00695c;">리커트 척도 값으로 스케일링 필요 없음</span>'
+        '</div>'
+
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown('<div style="margin-bottom:60px;"></div>', unsafe_allow_html=True)
+
+    # 04 - 상관계수 및 상관관계 확인하기
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#e53935,#ef9a9a);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">04</div>'
         '<div style="font-size:28px; font-weight:800; color:#b71c1c;">상관계수 및 상관관계 확인하기</div>'
         '</div>',
         unsafe_allow_html=True
@@ -555,7 +603,6 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
         st.image(img_path6, use_container_width=True)
         st.markdown('<div style="margin-bottom:16px;"></div>', unsafe_allow_html=True)
 
-        # 카드 1 - 모델 적합도
         st.markdown(
             '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
             ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
@@ -574,7 +621,6 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
             unsafe_allow_html=True
         )
 
-        # 카드 2 - 모델 전체 유의성
         st.markdown(
             '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
             ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
@@ -593,7 +639,6 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
             unsafe_allow_html=True
         )
 
-        # 카드 3 - 개별 변수 유의성
         st.markdown(
             '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
             ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
@@ -639,7 +684,6 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
             unsafe_allow_html=True
         )
 
-        # 카드 4 - 최종 결론
         st.markdown(
             '<div style="background:linear-gradient(135deg,#fce4ec,#f3e5f5);'
             ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
@@ -660,3 +704,9 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
         )
     else:
         st.info("logit_6.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+# ── TOP 버튼 ──────────────────────────────────────
+st.markdown(
+    '<a href="#top-anchor" class="top-btn">▲ TOP</a>',
+    unsafe_allow_html=True
+)
