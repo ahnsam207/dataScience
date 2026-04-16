@@ -125,7 +125,6 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '</div>',
         unsafe_allow_html=True
     )
-    img_path1 = os.path.join(pages_folder, "ols_1.jpg")
     if os.path.exists(img_path1):
         st.image(img_path1, use_container_width=True)
         st.markdown(
@@ -139,6 +138,8 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         )
     else:
         st.info("ols_1.jpg 파일을 pages 폴더에 추가해 주세요.")
+    img_path1 = os.path.join(pages_folder, "ols_1.jpg")
+    
 
     st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
