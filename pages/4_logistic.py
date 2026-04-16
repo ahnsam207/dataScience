@@ -468,6 +468,61 @@ elif st.session_state.logistic_page == "다중공선성 확인":
         '</div>',
         unsafe_allow_html=True
     )
+st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
+
+
+    img_path5 = os.path.join(pages_folder, "logit_5.jpg")
+    if os.path.exists(img_path5):
+        st.image(img_path5, use_container_width=True)
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
+            ' border-radius:16px; padding:28px 36px; margin-top:16px;'
+            ' border-left:6px solid #26a69a;">'
+            '<div style="font-size:24px; font-weight:800; color:#00695c; margin-bottom:20px;">✅ ai_gpt 제거 후 결과</div>'
+
+            '<div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:20px;">'
+
+            '<div style="background:white; border-radius:12px; padding:16px 24px;'
+            ' box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1; min-width:160px; text-align:center;">'
+            '<div style="font-size:15px; color:#888; margin-bottom:6px;">ai_query</div>'
+            '<div style="font-size:14px; color:#e53935; font-weight:700; margin-bottom:4px;">12.14 →</div>'
+            '<div style="font-size:28px; font-weight:900; color:#1976d2;">7.44</div>'
+            '<div style="font-size:13px; color:#26a69a; font-weight:700; margin-top:4px;">✔ 정상</div>'
+            '</div>'
+
+            '<div style="background:white; border-radius:12px; padding:16px 24px;'
+            ' box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1; min-width:160px; text-align:center;">'
+            '<div style="font-size:15px; color:#888; margin-bottom:6px;">ai_gemi</div>'
+            '<div style="font-size:14px; color:#e53935; font-weight:700; margin-bottom:4px;">3.53 →</div>'
+            '<div style="font-size:28px; font-weight:900; color:#1976d2;">3.38</div>'
+            '<div style="font-size:13px; color:#26a69a; font-weight:700; margin-top:4px;">✔ 정상</div>'
+            '</div>'
+
+            '<div style="background:white; border-radius:12px; padding:16px 24px;'
+            ' box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1; min-width:160px; text-align:center;">'
+            '<div style="font-size:15px; color:#888; margin-bottom:6px;">use_grade</div>'
+            '<div style="font-size:14px; color:#e53935; font-weight:700; margin-bottom:4px;">8.33 →</div>'
+            '<div style="font-size:28px; font-weight:900; color:#1976d2;">6.29</div>'
+            '<div style="font-size:13px; color:#26a69a; font-weight:700; margin-top:4px;">✔ 정상</div>'
+            '</div>'
+
+            '</div>'
+
+            '<div style="background:rgba(38,166,154,0.15); border-radius:12px; padding:18px 24px;">'
+            '<div style="font-size:20px; font-weight:800; color:#00695c; line-height:1.8;">'
+            '🎯 모든 변수 VIF 10 미만 &nbsp;→&nbsp; <span style="color:#e53935;">다중공선성 해소!</span><br>'
+            '<span style="font-size:17px; font-weight:600; color:#555;">'
+            '최종 분석 변수 : ai_query &nbsp;·&nbsp; ai_gemi &nbsp;·&nbsp; use_grade'
+            '</span>'
+            '</div>'
+            '</div>'
+
+            '</div>',
+            unsafe_allow_html=True
+        )
+    else:
+        st.info("logit_5.jpg 파일을 pages 폴더에 추가해 주세요.")
+    
 # ══════════════════════════════════════════════════
 # 회귀분석
 # ══════════════════════════════════════════════════
