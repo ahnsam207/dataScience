@@ -315,19 +315,6 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
     else:
         st.info("ols_3.jpg 파일을 pages 폴더에 추가해 주세요.")
 
-    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
-
-    # 04 - 상관계수 및 상관관계 확인하기 (위에 결측치/이상치 정보 추가)
-    st.markdown(
-        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
-        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
-        ' color:white; border-radius:16px; padding:8px 20px;'
-        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">04</div>'
-        '<div style="font-size:28px; font-weight:800; color:#1565c0;">상관계수 및 상관관계 확인하기</div>'
-        '</div>',
-        unsafe_allow_html=True
-    )
-
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
         ' border-radius:12px; padding:20px 28px; margin-bottom:20px;'
@@ -357,6 +344,21 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         unsafe_allow_html=True
     )
 
+
+    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
+
+    # 04 - 상관계수 및 상관관계 확인하기 (위에 결측치/이상치 정보 추가)
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">04</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">상관계수 및 상관관계 확인하기</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    
     img_path4 = os.path.join(pages_folder, "ols_4.jpg")
     if os.path.exists(img_path4):
         st.image(img_path4, use_container_width=True)
