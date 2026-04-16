@@ -295,6 +295,64 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
     img_path3 = os.path.join(pages_folder, "logit_3.jpg")
     if os.path.exists(img_path3):
         st.image(img_path3, use_container_width=True)
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
+            ' border-radius:12px; padding:20px 28px; margin-top:16px;'
+            ' border-left:6px solid #f9a825;">'
+            '<div style="font-size:22px; font-weight:800; color:#e65100; margin-bottom:16px;">🔍 상관계수 분석 결과</div>'
+            '<div style="display:flex; flex-direction:column; gap:14px;">'
+
+            '<div style="display:flex; align-items:flex-start; gap:12px;">'
+            '<span style="background:#f9a825; color:white; border-radius:50%; min-width:28px; height:28px;'
+            ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+            ' font-weight:700; flex-shrink:0; margin-top:2px;">1</span>'
+            '<div style="font-size:17px; line-height:1.9; color:#222;">'
+            '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_query</span>'
+            ' 와 '
+            '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_moral</span>'
+            ' 의 상관계수는 <span style="font-weight:900; color:#e53935;">0.453</span> 으로,'
+            ' 생성형 AI에 질문하는 방법을 아는 학생일수록 <b>윤리의식도 높은 경향</b>이 있음.'
+            '</div>'
+            '</div>'
+
+            '<div style="display:flex; align-items:flex-start; gap:12px;">'
+            '<span style="background:#f9a825; color:white; border-radius:50%; min-width:28px; height:28px;'
+            ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+            ' font-weight:700; flex-shrink:0; margin-top:2px;">2</span>'
+            '<div style="font-size:17px; line-height:1.9; color:#222;">'
+            '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_gpt</span>'
+            ' 와 '
+            '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">use_grade</span>'
+            ' 의 상관계수는 <span style="font-weight:900; color:#e53935;">0.490</span> 으로,'
+            ' 챗GPT 사용빈도가 높을수록 <b>성적향상 목적의 AI 사용도 높은 경향</b>이 있음.'
+            '</div>'
+            '</div>'
+
+            '<div style="display:flex; align-items:flex-start; gap:12px;">'
+            '<span style="background:#f9a825; color:white; border-radius:50%; min-width:28px; height:28px;'
+            ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+            ' font-weight:700; flex-shrink:0; margin-top:2px;">3</span>'
+            '<div style="font-size:17px; line-height:1.9; color:#222;">'
+            '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_gemi</span>'
+            ' 는 모든 변수와의 상관계수가 <span style="font-weight:900; color:#1976d2;">0.18 이하</span> 로,'
+            ' 제미나이 사용빈도는 다른 변수들과 <b>낮은 상관관계</b>를 보임.'
+            '</div>'
+            '</div>'
+
+            '<div style="display:flex; align-items:flex-start; gap:12px;">'
+            '<span style="background:#f9a825; color:white; border-radius:50%; min-width:28px; height:28px;'
+            ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+            ' font-weight:700; flex-shrink:0; margin-top:2px;">4</span>'
+            '<div style="font-size:17px; line-height:1.9; color:#222;">'
+            '모든 독립변수 간 상관계수가 <span style="font-weight:900; color:#1976d2;">0.49 이하</span> 로,'
+            ' <b>다중공선성 문제는 없는 것</b>으로 판단됨.'
+            '</div>'
+            '</div>'
+
+            '</div>'
+            '</div>',
+            unsafe_allow_html=True
+        )
     else:
         st.info("logit_3.jpg 파일을 pages 폴더에 추가해 주세요.")
 
