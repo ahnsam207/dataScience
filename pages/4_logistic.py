@@ -105,9 +105,64 @@ if st.session_state.logistic_page == "연구주제":
 # 탐색적 데이터 분석
 # ══════════════════════════════════════════════════
 elif st.session_state.logistic_page == "탐색적 데이터 분석":
-    st.subheader("📊 탐색적 데이터 분석")
-    st.divider()
-    st.info("탐색적 데이터 분석 내용을 여기에 추가해 주세요.")
+
+    # 01 - 분석 대상 데이터만 가져오기
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#e53935,#ef9a9a);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">01</div>'
+        '<div style="font-size:28px; font-weight:800; color:#b71c1c;">분석 대상 데이터만 가져오기</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    img_path1 = os.path.join(pages_folder, "logit_1.jpg")
+    if os.path.exists(img_path1):
+        st.image(img_path1, use_container_width=True)
+    else:
+        st.info("logit_1.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+    st.markdown('<div style="margin-bottom:60px;"></div>', unsafe_allow_html=True)
+
+    # 02 - 종속변수의 값 수정하기
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#e53935,#ef9a9a);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">02</div>'
+        '<div style="font-size:28px; font-weight:800; color:#b71c1c;">종속변수의 값 수정하기</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    # 짚고 넘어가기 섹션
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#1a237e,#283593);'
+        ' border-radius:16px; padding:28px 36px; margin-bottom:20px;">'
+
+        '<div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 24px;">'
+        '<div style="font-size:18px; font-weight:800; color:#ffeb3b; margin-bottom:12px;">📌 짚고 넘어가기</div>'
+        '<div style="font-size:17px; line-height:1.9; color:white;">'
+        '로지스틱 회귀분석의 결과 값은 '
+        '<span style="color:#69f0ae; font-weight:700;">시그모이드 함수(Sigmoid Function)</span>'
+        ' 를 거치며 '
+        '<span style="color:#ffeb3b; font-weight:700;">0과 1 값으로 출력</span>'
+        ' 되는 범주형 분석의 결과가 되므로,<br>'
+        '종속변수의 값을 <span style="color:#ff8a80; font-weight:700;">이진분류(Binary Classification)</span>'
+        ' 화 해야 합니다.'
+        '</div>'
+        '</div>'
+
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    img_path2 = os.path.join(pages_folder, "logit_2.jpg")
+    if os.path.exists(img_path2):
+        st.image(img_path2, use_container_width=True)
+    else:
+        st.info("logit_2.jpg 파일을 pages 폴더에 추가해 주세요.")
 
 # ══════════════════════════════════════════════════
 # 다중공선성 확인
