@@ -188,8 +188,9 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         ' display:flex; align-items:center; justify-content:center; font-size:14px;'
         ' font-weight:700; flex-shrink:0; margin-top:2px;">4</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
-        '생성형 AI 사용빈도 _ 챗GPT <span style="color:#e53935; font-weight:700;">(Q6_1)</span>,'
-        ' 제미나이 <span style="color:#e53935; font-weight:700;">(Q6_4)</span>'
+        '챗GPT <span style="color:#e53935; font-weight:700;">(Q6_1)</span>'
+        ' 와 제미나이 <span style="color:#e53935; font-weight:700;">(Q6_4)</span>'
+        ' 의 사용빈도'
         '</div>'
         '</div>'
 
