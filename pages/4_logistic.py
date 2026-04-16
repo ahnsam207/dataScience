@@ -279,6 +279,7 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         )
     else:
         st.info("logit_2.jpg 파일을 pages 폴더에 추가해 주세요.")
+
     st.markdown('<div style="margin-bottom:60px;"></div>', unsafe_allow_html=True)
 
     # 03 - 상관계수 및 상관관계 확인하기
@@ -345,6 +346,7 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         )
     else:
         st.info("logit_3.jpg 파일을 pages 폴더에 추가해 주세요.")
+
 # ══════════════════════════════════════════════════
 # 다중공선성 확인
 # ══════════════════════════════════════════════════
@@ -370,6 +372,16 @@ elif st.session_state.logistic_page == "다중공선성 확인":
     st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
     # 02 - 다중공선성 분석
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#e53935,#ef9a9a);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">02</div>'
+        '<div style="font-size:28px; font-weight:800; color:#b71c1c;">다중공선성 분석</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
     st.markdown(
         '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
         ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
@@ -448,7 +460,7 @@ elif st.session_state.logistic_page == "다중공선성 확인":
 
     st.markdown(
         '<div style="background:linear-gradient(135deg,#fce4ec,#f3e5f5);'
-        ' border-radius:16px; padding:28px 36px;'
+        ' border-radius:16px; padding:28px 36px; margin-bottom:20px;'
         ' border-left:6px solid #e53935;">'
         '<div style="font-size:24px; font-weight:800; color:#b71c1c; margin-bottom:14px;">💡 조치 사항</div>'
         '<div style="font-size:19px; line-height:2.2; color:#222;">'
@@ -468,8 +480,8 @@ elif st.session_state.logistic_page == "다중공선성 확인":
         '</div>',
         unsafe_allow_html=True
     )
-st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
 
+    st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
 
     img_path5 = os.path.join(pages_folder, "logit_5.jpg")
     if os.path.exists(img_path5):
@@ -522,12 +534,12 @@ st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
         )
     else:
         st.info("logit_5.jpg 파일을 pages 폴더에 추가해 주세요.")
-    
+
 # ══════════════════════════════════════════════════
 # 회귀분석
 # ══════════════════════════════════════════════════
 elif st.session_state.logistic_page == "회귀분석":
-    st.subheader("📉 회귀분석")
+    st.subheader("📉 로지스틱 회귀분석")
     st.divider()
     st.info("회귀분석 내용을 여기에 추가해 주세요.")
 
