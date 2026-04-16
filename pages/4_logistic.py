@@ -159,7 +159,7 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         ' display:flex; align-items:center; justify-content:center; font-size:14px;'
         ' font-weight:700; flex-shrink:0; margin-top:2px;">1</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
-        '생성형 AI를 사용한 경험 <span style="color:#e53935; font-weight:700;">(Q4)</span> 이 있는 학생과'
+        '생성형 AI를 사용한 경험 <span style="color:#e53935; font-weight:700;">(Q4)</span> 이 있는'
         '</div>'
         '</div>'
 
@@ -170,7 +170,7 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
         '일반고 <span style="color:#e53935; font-weight:700;">(SQ0_3 = 2)</span>,'
         ' 특성화고 <span style="color:#e53935; font-weight:700;">(SQ0_3 = 5)</span>'
-        ' 대상인 학생 데이터 중에서'
+        ' 학생 데이터 중에서'
         '</div>'
         '</div>'
 
