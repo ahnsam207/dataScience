@@ -371,43 +371,57 @@ elif st.session_state.logistic_page == "다중공선성 확인":
 
     # 02 - 다중공선성 분석
     st.markdown(
-        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
-        '<div style="background:linear-gradient(135deg,#e53935,#ef9a9a);'
-        ' color:white; border-radius:16px; padding:8px 20px;'
-        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">02</div>'
-        '<div style="font-size:28px; font-weight:800; color:#b71c1c;">다중공선성 분석</div>'
-        '</div>',
-        unsafe_allow_html=True
-    )
-
-    st.markdown(
         '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
         ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
         ' border-left:6px solid #f9a825;">'
         '<div style="font-size:22px; font-weight:800; color:#e65100; margin-bottom:20px;">🔍 VIF 분석 결과</div>'
-        '<div style="display:flex; flex-direction:column; gap:14px;">'
+        '<div style="display:flex; flex-direction:column; gap:16px;">'
 
         '<div style="display:flex; align-items:flex-start; gap:12px;">'
-        '<span style="background:#e53935; color:white; border-radius:10px;'
-        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">문제</span>'
+        '<span style="background:#f9a825; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">1</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
         '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_gpt</span>'
-        ' 의 VIF 값이 <span style="font-weight:900; color:#e53935;">15.79</span> 로 가장 높고,'
-        ' <span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_query</span>'
-        ' 도 <span style="font-weight:900; color:#e53935;">12.14</span> 로'
-        ' 기준값인 <span style="font-weight:700; color:#e53935;">10을 초과</span>하여 다중공선성 문제가 있음.'
+        ' 의 VIF 값이 <span style="font-weight:900; color:#e53935;">15.79</span> 로 가장 높습니다.'
+        ' 상관계수 분석에서 <b>ai_gpt ↔ use_grade (0.490)</b>, <b>ai_gpt ↔ ai_query (0.361)</b> 로'
+        ' 여러 변수와 중간 이상의 상관관계를 가지고 있어 다중공선성의 주요 원인으로 판단됩니다.'
         '</div>'
         '</div>'
 
         '<div style="display:flex; align-items:flex-start; gap:12px;">'
-        '<span style="background:#26a69a; color:white; border-radius:10px;'
-        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">양호</span>'
+        '<span style="background:#f9a825; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">2</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_query</span>'
+        ' 의 VIF 값은 <span style="font-weight:900; color:#e53935;">12.14</span> 로 기준값 10을 초과합니다.'
+        ' 상관계수에서 <b>ai_query ↔ ai_moral (0.453)</b>, <b>ai_query ↔ ai_gpt (0.361)</b>,'
+        ' <b>ai_query ↔ use_grade (0.273)</b> 로 종속변수 및 다른 독립변수들과 고루 상관관계를 보입니다.'
+        '</div>'
+        '</div>'
+
+        '<div style="display:flex; align-items:flex-start; gap:12px;">'
+        '<span style="background:#f9a825; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">3</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">use_grade</span>'
+        ' 의 VIF 값은 <span style="font-weight:900; color:#f9a825;">8.33</span> 으로 기준값 10 미만이지만,'
+        ' <b>ai_gpt ↔ use_grade (0.490)</b> 의 높은 상관관계로 인해'
+        ' ai_gpt 제거 시 VIF 가 크게 낮아질 것으로 예상됩니다.'
+        '</div>'
+        '</div>'
+
+        '<div style="display:flex; align-items:flex-start; gap:12px;">'
+        '<span style="background:#f9a825; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">4</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
         '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_gemi</span>'
-        ' 의 VIF 값은 <span style="font-weight:900; color:#1976d2;">3.53</span>,'
-        ' <span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">use_grade</span>'
-        ' 의 VIF 값은 <span style="font-weight:900; color:#1976d2;">8.33</span> 으로'
-        ' 기준값 10 미만으로 다중공선성 문제 없음.'
+        ' 의 VIF 값은 <span style="font-weight:900; color:#1976d2;">3.53</span> 으로 가장 낮습니다.'
+        ' 상관계수에서도 모든 변수와 <b>0.18 이하</b>의 낮은 상관관계를 보여'
+        ' 다중공선성 문제가 없는 것으로 판단됩니다.'
         '</div>'
         '</div>'
 
@@ -426,14 +440,17 @@ elif st.session_state.logistic_page == "다중공선성 확인":
         '<span style="background:#ffebee; border-radius:8px; padding:2px 10px;'
         ' font-weight:700; color:#e53935;">ai_gpt 제거</span>'
         ' 후 재분석을 진행합니다.<br>'
-        'ai_gpt 와 ai_query 는 상관관계(0.361)가 있어 챗GPT 사용빈도가 높은 학생이'
-        ' AI 질문 방법도 잘 아는 경향이 있으므로,'
-        ' VIF 가 더 높은 ai_gpt 를 제거하는 것이 적절합니다.'
+        '<b>ai_gpt ↔ use_grade (0.490)</b> 의 높은 상관관계와'
+        ' <b>ai_gpt ↔ ai_query (0.361)</b> 의 상관관계로 볼 때,'
+        ' 챗GPT 사용빈도가 높은 학생은 성적향상 목적으로 AI를 사용하고 AI 질문 방법도 잘 아는 경향이 있습니다.<br>'
+        ' 두 변수 중 VIF가 더 높고 다른 변수들과 더 많은 상관관계를 가진'
+        ' <span style="background:#ffebee; border-radius:8px; padding:2px 10px;'
+        ' font-weight:700; color:#e53935;">ai_gpt</span>'
+        ' 를 제거하는 것이 통계적으로 적절합니다.'
         '</div>'
         '</div>',
         unsafe_allow_html=True
     )
-
 # ══════════════════════════════════════════════════
 # 회귀분석
 # ══════════════════════════════════════════════════
