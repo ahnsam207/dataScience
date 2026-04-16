@@ -483,7 +483,62 @@ elif st.session_state.logistic_page == "다중공선성 확인":
 
     st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
 
-    elif st.session_state.logistic_page == "회귀분석":
+    img_path5 = os.path.join(pages_folder, "logit_5.jpg")
+    if os.path.exists(img_path5):
+        st.image(img_path5, use_container_width=True)
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
+            ' border-radius:16px; padding:28px 36px; margin-top:16px;'
+            ' border-left:6px solid #26a69a;">'
+            '<div style="font-size:22px; font-weight:800; color:#00695c; margin-bottom:20px;">✅ ai_gpt 제거 후 결과</div>'
+
+            '<div style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">'
+
+            '<div style="display:flex; align-items:center; gap:16px;">'
+            '<span style="font-size:17px; font-weight:700; color:#555; min-width:90px;">ai_query</span>'
+            '<span style="font-size:17px; color:#e53935; font-weight:700;">12.14</span>'
+            '<span style="font-size:17px; color:#555;">→</span>'
+            '<span style="font-size:17px; color:#1976d2; font-weight:700;">7.44</span>'
+            '<span style="font-size:17px; color:#26a69a; font-weight:700;">✔ 정상</span>'
+            '</div>'
+
+            '<div style="display:flex; align-items:center; gap:16px;">'
+            '<span style="font-size:17px; font-weight:700; color:#555; min-width:90px;">ai_gemi</span>'
+            '<span style="font-size:17px; color:#e53935; font-weight:700;">3.53</span>'
+            '<span style="font-size:17px; color:#555;">→</span>'
+            '<span style="font-size:17px; color:#1976d2; font-weight:700;">3.38</span>'
+            '<span style="font-size:17px; color:#26a69a; font-weight:700;">✔ 정상</span>'
+            '</div>'
+
+            '<div style="display:flex; align-items:center; gap:16px;">'
+            '<span style="font-size:17px; font-weight:700; color:#555; min-width:90px;">use_grade</span>'
+            '<span style="font-size:17px; color:#e53935; font-weight:700;">8.33</span>'
+            '<span style="font-size:17px; color:#555;">→</span>'
+            '<span style="font-size:17px; color:#1976d2; font-weight:700;">6.29</span>'
+            '<span style="font-size:17px; color:#26a69a; font-weight:700;">✔ 정상</span>'
+            '</div>'
+
+            '</div>'
+
+            '<div style="border-top:1px solid #b2dfdb; padding-top:16px;">'
+            '<div style="font-size:19px; font-weight:800; color:#00695c; line-height:1.8;">'
+            '🎯 모든 변수 VIF 10 미만 &nbsp;→&nbsp; <span style="color:#e53935;">다중공선성 해소!</span><br>'
+            '<span style="font-size:17px; font-weight:600; color:#555;">'
+            '최종 분석 변수 : ai_query &nbsp;·&nbsp; ai_gemi &nbsp;·&nbsp; use_grade'
+            '</span>'
+            '</div>'
+            '</div>'
+
+            '</div>',
+            unsafe_allow_html=True
+        )
+    else:
+        st.info("logit_5.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+# ══════════════════════════════════════════════════
+# 로지스틱 회귀분석
+# ══════════════════════════════════════════════════
+elif st.session_state.logistic_page == "로지스틱 회귀분석":
 
     st.markdown(
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
@@ -500,13 +555,6 @@ elif st.session_state.logistic_page == "다중공선성 확인":
         st.image(img_path6, use_container_width=True)
     else:
         st.info("logit_6.jpg 파일을 pages 폴더에 추가해 주세요.")
-# ══════════════════════════════════════════════════
-# 회귀분석
-# ══════════════════════════════════════════════════
-elif st.session_state.logistic_page == "회귀분석":
-    st.subheader("📉 로지스틱 회귀분석")
-    st.divider()
-    st.info("회귀분석 내용을 여기에 추가해 주세요.")
 
 # ── TOP 버튼 ──────────────────────────────────────
 st.markdown(
