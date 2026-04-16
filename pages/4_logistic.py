@@ -553,11 +553,112 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
     img_path6 = os.path.join(pages_folder, "logit_6.jpg")
     if os.path.exists(img_path6):
         st.image(img_path6, use_container_width=True)
+        st.markdown('<div style="margin-bottom:16px;"></div>', unsafe_allow_html=True)
+
+        # 카드 1 - 모델 적합도
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
+            ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
+            ' border-left:6px solid #1976d2;">'
+            '<div style="display:flex; align-items:center; gap:16px; margin-bottom:14px;">'
+            '<span style="font-size:20px; font-weight:800; color:#1565c0;">📊 모델 적합도 (Pseudo R-squared)</span>'
+            '<span style="background:#1976d2; color:white; border-radius:20px;'
+            ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">설명력 보통</span>'
+            '</div>'
+            '<div style="font-size:17px; line-height:2.0; color:#222;">'
+            'Pseudo R² 값이 <span style="font-weight:900; color:#1976d2;">0.1641</span> 로,'
+            ' 독립변수들이 윤리의식 여부 변동의 약 <span style="font-weight:900; color:#1976d2;">16.4%</span> 를 설명합니다.'
+            ' 로지스틱 회귀분석에서 0.1 이상이면 의미 있는 설명력으로 판단합니다.'
+            '</div>'
+            '</div>',
+            unsafe_allow_html=True
+        )
+
+        # 카드 2 - 모델 전체 유의성
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
+            ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
+            ' border-left:6px solid #26a69a;">'
+            '<div style="display:flex; align-items:center; gap:16px; margin-bottom:14px;">'
+            '<span style="font-size:20px; font-weight:800; color:#00695c;">🔍 모델 전체 유의성 (LLR p-value)</span>'
+            '<span style="background:#26a69a; color:white; border-radius:20px;'
+            ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">통계적으로 유의 ✔️</span>'
+            '</div>'
+            '<div style="font-size:17px; line-height:2.0; color:#222;">'
+            'LLR p-value 가 <span style="font-weight:900; color:#26a69a;">1.333e-94</span> 로'
+            ' 유의수준 0.05보다 매우 작으므로,'
+            ' 이 로지스틱 회귀모델은 <span style="font-weight:700; color:#26a69a;">통계적으로 매우 유의</span>합니다.'
+            '</div>'
+            '</div>',
+            unsafe_allow_html=True
+        )
+
+        # 카드 3 - 개별 변수 유의성
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
+            ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
+            ' border-left:6px solid #f9a825;">'
+            '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+            '<span style="font-size:20px; font-weight:800; color:#e65100;">📌 개별 변수 유의성 (P-value)</span>'
+            '</div>'
+            '<div style="display:flex; flex-direction:column; gap:14px;">'
+
+            '<div style="display:flex; align-items:center; gap:16px;">'
+            '<span style="background:#26a69a; color:white; border-radius:10px;'
+            ' padding:4px 14px; font-size:15px; font-weight:700; min-width:90px; text-align:center;">ai_query</span>'
+            '<span style="font-size:17px; color:#222; line-height:1.9;">'
+            'P값 <span style="font-weight:900; color:#26a69a;">0.000</span> &nbsp;→&nbsp;'
+            ' <span style="font-weight:700; color:#26a69a;">유의 ✔️</span> &nbsp;|&nbsp;'
+            ' 계수 <span style="font-weight:700; color:#1976d2;">1.1018</span> —'
+            ' AI 질문 능력이 높을수록 윤리의식이 높아질 확률 <b>증가</b>'
+            '</span>'
+            '</div>'
+
+            '<div style="display:flex; align-items:center; gap:16px;">'
+            '<span style="background:#e53935; color:white; border-radius:10px;'
+            ' padding:4px 14px; font-size:15px; font-weight:700; min-width:90px; text-align:center;">ai_gemi</span>'
+            '<span style="font-size:17px; color:#222; line-height:1.9;">'
+            'P값 <span style="font-weight:900; color:#e53935;">0.976</span> &nbsp;→&nbsp;'
+            ' <span style="font-weight:700; color:#e53935;">유의하지 않음 ✖️</span> &nbsp;|&nbsp;'
+            ' 제미나이 사용빈도는 윤리의식에 <b>영향 없음</b>'
+            '</span>'
+            '</div>'
+
+            '<div style="display:flex; align-items:center; gap:16px;">'
+            '<span style="background:#e53935; color:white; border-radius:10px;'
+            ' padding:4px 14px; font-size:15px; font-weight:700; min-width:90px; text-align:center;">use_grade</span>'
+            '<span style="font-size:17px; color:#222; line-height:1.9;">'
+            'P값 <span style="font-weight:900; color:#e53935;">0.373</span> &nbsp;→&nbsp;'
+            ' <span style="font-weight:700; color:#e53935;">유의하지 않음 ✖️</span> &nbsp;|&nbsp;'
+            ' 성적향상 목적 AI 사용은 윤리의식에 <b>영향 없음</b>'
+            '</span>'
+            '</div>'
+
+            '</div>'
+            '</div>',
+            unsafe_allow_html=True
+        )
+
+        # 카드 4 - 최종 결론
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#fce4ec,#f3e5f5);'
+            ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
+            ' border-left:6px solid #e53935;">'
+            '<div style="display:flex; align-items:center; gap:16px; margin-bottom:14px;">'
+            '<span style="font-size:20px; font-weight:800; color:#b71c1c;">💡 최종 결론</span>'
+            '<span style="background:#e53935; color:white; border-radius:20px;'
+            ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">ai_query 만 유의</span>'
+            '</div>'
+            '<div style="font-size:17px; line-height:2.0; color:#222;">'
+            '생성형 AI에 <b>질문하는 방법을 아는 것(ai_query)</b> 만이 윤리의식 여부에'
+            ' <span style="font-weight:700; color:#e53935;">통계적으로 유의한 영향</span>을 미칩니다.<br>'
+            '제미나이 사용빈도(ai_gemi)와 성적향상 목적의 AI 사용(use_grade)은'
+            ' 윤리의식에 유의한 영향을 미치지 않는 것으로 나타났습니다.<br>'
+            '즉, AI를 얼마나 자주 사용하느냐보다 <span style="font-weight:700; color:#e53935;">'
+            'AI를 올바르게 활용하는 방법을 아는 것</span>이 윤리의식과 더 깊은 관련이 있습니다.'
+            '</div>'
+            '</div>',
+            unsafe_allow_html=True
+        )
     else:
         st.info("logit_6.jpg 파일을 pages 폴더에 추가해 주세요.")
-
-# ── TOP 버튼 ──────────────────────────────────────
-st.markdown(
-    '<a href="#top-anchor" class="top-btn">▲ TOP</a>',
-    unsafe_allow_html=True
-)
