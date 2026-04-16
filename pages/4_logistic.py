@@ -339,23 +339,12 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
             '</div>'
             '</div>'
 
-            '<div style="display:flex; align-items:flex-start; gap:12px;">'
-            '<span style="background:#f9a825; color:white; border-radius:50%; min-width:28px; height:28px;'
-            ' display:flex; align-items:center; justify-content:center; font-size:14px;'
-            ' font-weight:700; flex-shrink:0; margin-top:2px;">4</span>'
-            '<div style="font-size:17px; line-height:1.9; color:#222;">'
-            '모든 독립변수 간 상관계수가 <span style="font-weight:900; color:#1976d2;">0.49 이하</span> 로,'
-            ' <b>다중공선성 문제는 없는 것</b>으로 판단됨.'
-            '</div>'
-            '</div>'
-
             '</div>'
             '</div>',
             unsafe_allow_html=True
         )
     else:
         st.info("logit_3.jpg 파일을 pages 폴더에 추가해 주세요.")
-
 # ══════════════════════════════════════════════════
 # 다중공선성 확인
 # ══════════════════════════════════════════════════
