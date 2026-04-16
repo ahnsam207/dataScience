@@ -349,9 +349,90 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
 # 다중공선성 확인
 # ══════════════════════════════════════════════════
 elif st.session_state.logistic_page == "다중공선성 확인":
-    st.subheader("🔬 다중공선성 확인")
-    st.divider()
-    st.info("다중공선성 확인 내용을 여기에 추가해 주세요.")
+
+    # 01 - 다중공선성 확인
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#e53935,#ef9a9a);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">01</div>'
+        '<div style="font-size:28px; font-weight:800; color:#b71c1c;">다중공선성 확인</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    img_path4 = os.path.join(pages_folder, "logit_4.jpg")
+    if os.path.exists(img_path4):
+        st.image(img_path4, use_container_width=True)
+    else:
+        st.info("logit_4.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
+
+    # 02 - 다중공선성 분석
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#e53935,#ef9a9a);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">02</div>'
+        '<div style="font-size:28px; font-weight:800; color:#b71c1c;">다중공선성 분석</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#fff8e1,#fff3e0);'
+        ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
+        ' border-left:6px solid #f9a825;">'
+        '<div style="font-size:22px; font-weight:800; color:#e65100; margin-bottom:20px;">🔍 VIF 분석 결과</div>'
+        '<div style="display:flex; flex-direction:column; gap:14px;">'
+
+        '<div style="display:flex; align-items:flex-start; gap:12px;">'
+        '<span style="background:#e53935; color:white; border-radius:10px;'
+        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">문제</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_gpt</span>'
+        ' 의 VIF 값이 <span style="font-weight:900; color:#e53935;">15.79</span> 로 가장 높고,'
+        ' <span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_query</span>'
+        ' 도 <span style="font-weight:900; color:#e53935;">12.14</span> 로'
+        ' 기준값인 <span style="font-weight:700; color:#e53935;">10을 초과</span>하여 다중공선성 문제가 있음.'
+        '</div>'
+        '</div>'
+
+        '<div style="display:flex; align-items:flex-start; gap:12px;">'
+        '<span style="background:#26a69a; color:white; border-radius:10px;'
+        ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">양호</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_gemi</span>'
+        ' 의 VIF 값은 <span style="font-weight:900; color:#1976d2;">3.53</span>,'
+        ' <span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">use_grade</span>'
+        ' 의 VIF 값은 <span style="font-weight:900; color:#1976d2;">8.33</span> 으로'
+        ' 기준값 10 미만으로 다중공선성 문제 없음.'
+        '</div>'
+        '</div>'
+
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#fce4ec,#f3e5f5);'
+        ' border-radius:16px; padding:28px 36px;'
+        ' border-left:6px solid #e53935;">'
+        '<div style="font-size:22px; font-weight:800; color:#b71c1c; margin-bottom:14px;">💡 조치 사항</div>'
+        '<div style="font-size:17px; line-height:2.0; color:#222;">'
+        'VIF 값이 가장 높은 '
+        '<span style="background:#ffebee; border-radius:8px; padding:2px 10px;'
+        ' font-weight:700; color:#e53935;">ai_gpt 제거</span>'
+        ' 후 재분석을 진행합니다.<br>'
+        'ai_gpt 와 ai_query 는 상관관계(0.361)가 있어 챗GPT 사용빈도가 높은 학생이'
+        ' AI 질문 방법도 잘 아는 경향이 있으므로,'
+        ' VIF 가 더 높은 ai_gpt 를 제거하는 것이 적절합니다.'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
 
 # ══════════════════════════════════════════════════
 # 회귀분석
