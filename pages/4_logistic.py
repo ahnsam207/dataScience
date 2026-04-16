@@ -148,6 +148,74 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         unsafe_allow_html=True
     )
 
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#fce4ec,#f3e5f5);'
+        ' border-radius:16px; padding:28px 36px; margin-bottom:20px;'
+        ' border-left:6px solid #e53935;">'
+        '<div style="display:flex; flex-direction:column; gap:14px;">'
+
+        '<div style="display:flex; align-items:flex-start; gap:14px;">'
+        '<span style="background:#e53935; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">1</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '생성형 AI를 사용한 경험 <span style="color:#e53935; font-weight:700;">(Q4)</span> 이 있는 학생과'
+        '</div>'
+        '</div>'
+
+        '<div style="display:flex; align-items:flex-start; gap:14px;">'
+        '<span style="background:#e53935; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">2</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '일반고 <span style="color:#e53935; font-weight:700;">(SQ0_3 = 2)</span>,'
+        ' 특성화고 <span style="color:#e53935; font-weight:700;">(SQ0_3 = 5)</span>'
+        ' 대상인 학생 데이터 중에서'
+        '</div>'
+        '</div>'
+
+        '<div style="display:flex; align-items:flex-start; gap:14px;">'
+        '<span style="background:#e53935; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">3</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '생성형 AI에 어떻게 질문하는지 알고 있다 <span style="color:#e53935; font-weight:700;">(Q14_2_4)</span>'
+        '</div>'
+        '</div>'
+
+        '<div style="display:flex; align-items:flex-start; gap:14px;">'
+        '<span style="background:#e53935; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">4</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '생성형 AI 사용빈도 _ 챗GPT <span style="color:#e53935; font-weight:700;">(Q6_1)</span>,'
+        ' 제미나이 <span style="color:#e53935; font-weight:700;">(Q6_4)</span>'
+        '</div>'
+        '</div>'
+
+        '<div style="display:flex; align-items:flex-start; gap:14px;">'
+        '<span style="background:#e53935; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">5</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '생성형 AI의 사용목적이 성적향상 <span style="color:#e53935; font-weight:700;">(Q9_6)</span> 인 데이터와'
+        '</div>'
+        '</div>'
+
+        '<div style="display:flex; align-items:flex-start; gap:14px;">'
+        '<span style="background:#e53935; color:white; border-radius:50%; min-width:28px; height:28px;'
+        ' display:flex; align-items:center; justify-content:center; font-size:14px;'
+        ' font-weight:700; flex-shrink:0; margin-top:2px;">6</span>'
+        '<div style="font-size:17px; line-height:1.9; color:#222;">'
+        '생성형 AI 사용 시 윤리의식 여부 <span style="color:#e53935; font-weight:700;">(Q14_4_10)</span> 데이터 불러오기'
+        '</div>'
+        '</div>'
+
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
     img_path1 = os.path.join(pages_folder, "logit_1.jpg")
     if os.path.exists(img_path1):
         st.image(img_path1, use_container_width=True)
