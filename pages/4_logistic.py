@@ -652,9 +652,7 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
             '<div style="font-size:17px; line-height:2.0; color:#222;">'
             '생성형 AI에 <b>질문하는 방법을 아는 것(ai_query)</b> 만이 윤리의식 여부에'
             ' <span style="font-weight:700; color:#e53935;">통계적으로 유의한 영향</span>을 미칩니다.<br>'
-            '제미나이 사용빈도(ai_gemi)와 성적향상 목적의 AI 사용(use_grade)은'
-            ' 윤리의식에 유의한 영향을 미치지 않는 것으로 나타났습니다.<br>'
-            '즉, AI를 얼마나 자주 사용하느냐보다 <span style="font-weight:700; color:#e53935;">'
+            'AI를 얼마나 자주 사용하느냐보다 <span style="font-weight:700; color:#e53935;">'
             'AI를 올바르게 활용하는 방법을 아는 것</span>이 윤리의식과 더 깊은 관련이 있습니다.'
             '</div>'
             '</div>',
