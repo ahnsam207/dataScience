@@ -127,7 +127,7 @@ elif st.session_state.subject_page == "로지스틱 회귀분석":
         '<span style="background:#8e24aa; color:white; border-radius:10px;'
         ' padding:4px 14px; font-size:15px; font-weight:700; flex-shrink:0; margin-top:2px;">종속변수 (1개)</span>'
         '<div style="font-size:17px; color:#222; line-height:1.9;">'
-        '윤리의식 여부 <span style="color:#8e24aa; font-weight:700;">(Q14_4_10)</span>'
+        '윤리의식 여부 <span style="color:#8e24aa; font-weight:700;">(Q14_4_12)</span>'
         '</div>'
         '</div>'
 
