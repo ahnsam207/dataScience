@@ -279,6 +279,24 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         )
     else:
         st.info("logit_2.jpg 파일을 pages 폴더에 추가해 주세요.")
+    st.markdown('<div style="margin-bottom:60px;"></div>', unsafe_allow_html=True)
+
+    # 03 - 상관계수 및 상관관계 확인하기
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
+        '<div style="background:linear-gradient(135deg,#e53935,#ef9a9a);'
+        ' color:white; border-radius:16px; padding:8px 20px;'
+        ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">03</div>'
+        '<div style="font-size:28px; font-weight:800; color:#b71c1c;">상관계수 및 상관관계 확인하기</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    img_path3 = os.path.join(pages_folder, "logit_3.jpg")
+    if os.path.exists(img_path3):
+        st.image(img_path3, use_container_width=True)
+    else:
+        st.info("logit_3.jpg 파일을 pages 폴더에 추가해 주세요.")
 
 # ══════════════════════════════════════════════════
 # 다중공선성 확인
