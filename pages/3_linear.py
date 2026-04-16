@@ -125,21 +125,28 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '</div>',
         unsafe_allow_html=True
     )
+
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
+        ' border-radius:12px; padding:20px 28px; margin-bottom:16px;'
+        ' border-left:6px solid #1976d2;">'
+        '<div style="display:flex; align-items:center; gap:12px;">'
+        '<span style="font-size:20px;">📌</span>'
+        '<div style="font-size:17px; color:#222; line-height:1.9;">'
+        '(데이터) 청소년의 생성형 AI 이용실태 및 리터러시 증진방안 연구.xlsx'
+        ' &nbsp;<span style="color:#555;">→</span>&nbsp; '
+        '<span style="font-weight:700; color:#1976d2;">data.xlsx</span> 로 수정'
+        '</div>'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    img_path1 = os.path.join(pages_folder, "ols_1.jpg")
     if os.path.exists(img_path1):
         st.image(img_path1, use_container_width=True)
-        st.markdown(
-            '<div style="font-size:15px; color:#666;'
-            ' border-left:3px solid #bbb; padding:8px 14px; margin-top:8px;">'
-            '📌 (데이터) 청소년의 생성형 AI 이용실태 및 리터러시 증진방안 연구.xlsx'
-            '&nbsp;&nbsp;→&nbsp;&nbsp;'
-            '<b>data.xlsx</b> 로 수정'
-            '</div>',
-            unsafe_allow_html=True
-        )
     else:
         st.info("ols_1.jpg 파일을 pages 폴더에 추가해 주세요.")
-    img_path1 = os.path.join(pages_folder, "ols_1.jpg")
-    
 
     st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
@@ -153,6 +160,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '</div>',
         unsafe_allow_html=True
     )
+
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
         ' border-radius:16px; padding:28px 36px; margin-bottom:20px;'
@@ -270,6 +278,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '</div>',
         unsafe_allow_html=True
     )
+
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
         ' border-radius:12px; padding:20px 28px; margin-bottom:16px;'
@@ -318,7 +327,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
 
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
-        ' border-radius:12px; padding:20px 28px; margin-bottom:20px;'
+        ' border-radius:12px; padding:20px 28px; margin-top:16px; margin-bottom:40px;'
         ' border-left:6px solid #26a69a;">'
         '<div style="display:flex; flex-wrap:wrap; gap:12px;">'
 
@@ -345,10 +354,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         unsafe_allow_html=True
     )
 
-
-    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
-
-    # 04 - 상관계수 및 상관관계 확인하기 (위에 결측치/이상치 정보 추가)
+    # 04 - 상관계수 및 상관관계 확인하기
     st.markdown(
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
         '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
@@ -359,7 +365,6 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         unsafe_allow_html=True
     )
 
-    
     img_path4 = os.path.join(pages_folder, "ols_4.jpg")
     if os.path.exists(img_path4):
         st.image(img_path4, use_container_width=True)
@@ -457,7 +462,6 @@ elif st.session_state.linear_page == "다중공선성 확인":
 # ══════════════════════════════════════════════════
 elif st.session_state.linear_page == "다중 선형 회귀분석":
 
-    # 01 - 다중 선형 회귀분석
     st.markdown(
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
         '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
@@ -476,7 +480,6 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
 
     st.markdown('<div style="margin-bottom:60px;"></div>', unsafe_allow_html=True)
 
-    # 02 - 결과 해석
     st.markdown(
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
         '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
