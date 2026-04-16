@@ -257,6 +257,26 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
     img_path2 = os.path.join(pages_folder, "logit_2.jpg")
     if os.path.exists(img_path2):
         st.image(img_path2, use_container_width=True)
+        st.markdown(
+            '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
+            ' border-radius:12px; padding:20px 28px; margin-top:16px;'
+            ' border-left:6px solid #26a69a;">'
+            '<div style="display:flex; align-items:center; gap:12px;">'
+            '<span style="font-size:24px;">✅</span>'
+            '<div style="font-size:17px; line-height:1.9; color:#222;">'
+            '생성형 AI 사용 시 윤리의식 여부 '
+            '<span style="background:#e0f7fa; border-radius:8px; padding:2px 10px;'
+            ' font-weight:700; color:#00695c;">ai_moral</span>'
+            ' 의 값이 '
+            '<span style="font-weight:700; color:#e53935;">리커트 척도 (1~5)</span>'
+            ' 에서 '
+            '<span style="font-weight:700; color:#1976d2;">0과 1 이진 분류 값</span>'
+            ' 으로 수정되었다.'
+            '</div>'
+            '</div>'
+            '</div>',
+            unsafe_allow_html=True
+        )
     else:
         st.info("logit_2.jpg 파일을 pages 폴더에 추가해 주세요.")
 
