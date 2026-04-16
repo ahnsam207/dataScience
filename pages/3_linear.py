@@ -560,8 +560,6 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
         ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">영향력 매우 미미</span>'
         '</div>'
         '<div style="font-size:17px; line-height:2.0; color:#222;">'
-        '절편(Intercept)은 <span style="font-weight:700; color:#1976d2;">3.07</span> 로,'
-        ' 독립변수가 0일 때 학업 성적의 기댓값입니다.<br>'
         '<span style="background:#fff3e0; border-radius:8px; padding:2px 10px;'
         ' font-weight:700; color:#e65100;">use_grade</span>'
         ' 의 계수는 <span style="font-weight:700; color:#1976d2;">0.014</span> 로,'
