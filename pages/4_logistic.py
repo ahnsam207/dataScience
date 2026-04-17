@@ -246,7 +246,7 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         '<span style="color:#69f0ae; font-weight:700;">시그모이드 함수(Sigmoid Function)</span>'
         ' 를 거치며 <br>'
         '<span style="color:#ffeb3b; font-weight:700;">0과 1 값으로 출력</span>'
-        ' 되는 범주형 분석의 결과가 되므로,<br>'
+        ' 되는 범주형 분석의 결과가 되므로,'
         '종속변수의 값을 <span style="color:#ff8a80; font-weight:700;">이진분류(Binary Classification)</span>'
         ' 화한다.'
         '</div>'
