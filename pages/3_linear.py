@@ -346,7 +346,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '<div style="display:flex; align-items:center; gap:8px; background:white;'
         ' border-radius:10px; padding:8px 18px; box-shadow:0 1px 4px rgba(0,0,0,0.1);">'
         '<span style="font-size:18px;">✅</span>'
-        '<span style="font-size:16px; font-weight:700; color:#00695c;">리커트 척도 값으로 스케일링 필요 없음</span>'
+        '<span style="font-size:16px; font-weight:700; color:#00695c;">종속변수의 데이터가 리커트 척도 값으로 스케일링 필요 없음</span>'
         '</div>'
 
         '</div>'
