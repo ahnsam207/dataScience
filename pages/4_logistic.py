@@ -242,7 +242,7 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         '<div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 24px;">'
         '<div style="font-size:18px; font-weight:800; color:#ffeb3b; margin-bottom:12px;">📌 짚고 넘어가기</div>'
         '<div style="font-size:17px; line-height:1.9; color:white;">'
-        '로지스틱 회귀분석의 결과 값은 '
+        '회귀분석의 종속변수는 연속적인 값을 가져야 하지만 로지스틱 회귀분석의 경우 결과 값이 '
         '<span style="color:#69f0ae; font-weight:700;">시그모이드 함수(Sigmoid Function)</span>'
         ' 를 거치며 '
         '<span style="color:#ffeb3b; font-weight:700;">0과 1 값으로 출력</span>'
