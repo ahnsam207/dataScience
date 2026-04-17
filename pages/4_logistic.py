@@ -695,7 +695,7 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
             ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">ai_query 만 유의</span>'
             '</div>'
             '<div style="font-size:17px; line-height:2.0; color:#222;">'
-            '생성형 AI에 <b>질문하는 방법을 아는 것(ai_query)</b> 만이 윤리의식 여부에'
+            '생성형 AI에 <b>질문하는 방법을 아는 것(ai_query)</b> 이 윤리의식 여부에'
             ' <span style="font-weight:700; color:#e53935;">통계적으로 유의한 영향</span>을 미칩니다.'
             '</div>'
             '</div>',
