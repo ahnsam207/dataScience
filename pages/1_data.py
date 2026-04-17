@@ -28,9 +28,29 @@ st.markdown(
     "div[data-testid='stHorizontalBlock'] button {"
     "  height: 3.5rem !important;"
     "}"
+    "#top-anchor { position: absolute; top: 0; }"
+    ".top-btn {"
+    "  position: fixed;"
+    "  bottom: 40px;"
+    "  right: 40px;"
+    "  background: linear-gradient(135deg, #1976d2, #42a5f5);"
+    "  color: white;"
+    "  border: none;"
+    "  border-radius: 50px;"
+    "  padding: 12px 22px;"
+    "  font-size: 16px;"
+    "  font-weight: 800;"
+    "  cursor: pointer;"
+    "  box-shadow: 0 4px 16px rgba(25,118,210,0.4);"
+    "  z-index: 9999;"
+    "  text-decoration: none;"
+    "}"
+    ".top-btn:hover { background: linear-gradient(135deg,#1565c0,#1976d2); }"
     "</style>",
     unsafe_allow_html=True
 )
+
+st.markdown('<div id="top-anchor"></div>', unsafe_allow_html=True)
 
 # ── 상단 메뉴 버튼 ──────────────────────────────────
 mc    = st.columns([1, 1, 1, 3])
@@ -91,13 +111,16 @@ if st.session_state.data_page == "출처":
     else:
         st.info("cite.jpg 파일을 pages 폴더에 추가해 주세요.")
 
+# ══════════════════════════════════════════════════
+# 찾아보기
+# ══════════════════════════════════════════════════
 elif st.session_state.data_page == "찾아보기":
 
     images = [
-        ("link.jpg",     "다운로드 메뉴",  "01"),
-        ("agree.jpg",    "동의 및 선택",   "02"),
-        ("link2.jpg",    "",               ""),
-        ("download.jpg", "다운로드",       "03"),
+        ("link.jpg",     "다운로드 메뉴", "01"),
+        ("agree.jpg",    "동의 및 선택",  "02"),
+        ("link2.jpg",    "",              ""),
+        ("download.jpg", "다운로드",      "03"),
     ]
 
     for i, (filename, title, num) in enumerate(images):
@@ -126,12 +149,15 @@ elif st.session_state.data_page == "찾아보기":
         if i < len(images) - 1:
             st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
+# ══════════════════════════════════════════════════
+# 미리보기
+# ══════════════════════════════════════════════════
 elif st.session_state.data_page == "미리보기":
 
     sections = [
-        ("table_1.jpg", "조사표",           "01"),
-        ("table_2.jpg", "데이터",           "02"),
-        ("table_3.jpg", "코드북",           "03"),
+        ("table_1.jpg", "조사표",              "01"),
+        ("table_2.jpg", "데이터",              "02"),
+        ("table_3.jpg", "코드북",              "03"),
         ("table_4.jpg", "생성형 코드북(제미나이)", "04"),
     ]
 
@@ -162,3 +188,9 @@ elif st.session_state.data_page == "미리보기":
 
         if i < len(sections) - 1:
             st.markdown('<div style="margin-bottom:60px;"></div>', unsafe_allow_html=True)
+
+# ── TOP 버튼 ──────────────────────────────────────
+st.markdown(
+    '<a href="#top-anchor" class="top-btn">▲ TOP</a>',
+    unsafe_allow_html=True
+)
