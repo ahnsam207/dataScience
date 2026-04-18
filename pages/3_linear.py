@@ -181,7 +181,9 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         ' display:flex; align-items:center; justify-content:center; font-size:14px;'
         ' font-weight:700; flex-shrink:0; margin-top:2px;">2</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
-        '고등학생 <span style="color:#1976d2; font-weight:700;">(일반고, 특성화고)</span> 대상인 학생 데이터 중에서'
+        '일반고 <span style="color:#1976d2; font-weight:700;">(SQ0_3 = 2)</span>,'
+        ' 특성화고 <span style="color:#1976d2; font-weight:700;">(SQ0_3 = 5)</span>'
+        ' 학생 데이터 중에서'
         '</div>'
         '</div>'
 
