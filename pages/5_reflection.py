@@ -1,4 +1,3 @@
-
 import streamlit as st
 
 st.markdown(
@@ -13,6 +12,7 @@ st.markdown(
 )
 
 st.markdown(
+    '<div style="max-width:780px;">'
     '<div style="background:linear-gradient(135deg,#1a237e,#283593);'
     ' border-radius:20px; padding:48px 56px; margin-bottom:24px;">'
 
@@ -58,11 +58,14 @@ st.markdown(
     '</div>'
     '</div>'
 
+    '</div>'
+    '</div>'
 
     '<div style="margin-top:36px; text-align:right;">'
     '<span style="font-size:22px; color:#ffeb3b; font-weight:800;">감사합니다 🙏</span>'
     '</div>'
 
+    '</div>'
     '</div>',
     unsafe_allow_html=True
 )
