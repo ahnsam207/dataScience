@@ -159,7 +159,7 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         ' display:flex; align-items:center; justify-content:center; font-size:14px;'
         ' font-weight:700; flex-shrink:0; margin-top:2px;">1</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
-        '생성형 AI를 사용한 경험 <span style="color:#e53935; font-weight:700;">(Q4)</span> 이 있는'
+        '생성형 AI를 사용한 경험 <span style="color:#e53935; font-weight:700;">(Q4)</span> 이 있는 학생과'
         '</div>'
         '</div>'
 
@@ -190,7 +190,7 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
         '챗GPT <span style="color:#e53935; font-weight:700;">(Q6_1)</span>'
         ' 와 제미나이 <span style="color:#e53935; font-weight:700;">(Q6_4)</span>'
-        ' 의 사용 빈도 데이터'
+        ' 의 사용빈도'
         '</div>'
         '</div>'
 
@@ -199,7 +199,7 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         ' display:flex; align-items:center; justify-content:center; font-size:14px;'
         ' font-weight:700; flex-shrink:0; margin-top:2px;">5</span>'
         '<div style="font-size:17px; line-height:1.9; color:#222;">'
-        '생성형 AI의 사용목적이 성적향상 <span style="color:#e53935; font-weight:700;">(Q9_6)</span> 인 데이터'
+        '생성형 AI의 사용목적이 성적향상 <span style="color:#e53935; font-weight:700;">(Q9_6)</span> 인 데이터와'
         '</div>'
         '</div>'
 
@@ -244,16 +244,17 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         '<div style="font-size:17px; line-height:1.9; color:white;">'
         '회귀분석의 종속변수는 연속적인 값을 가져야 하지만 로지스틱 회귀분석의 경우 결과 값이 '
         '<span style="color:#69f0ae; font-weight:700;">시그모이드 함수(Sigmoid Function)</span>'
-        ' 를 거치며 <br>'
+        ' 를 거치며 '
         '<span style="color:#ffeb3b; font-weight:700;">0과 1 값으로 출력</span>'
-        ' 되는 범주형 분석의 결과가 되므로,'
+        ' 되는 범주형 분석의 결과가 되므로,<br>'
         '종속변수의 값을 <span style="color:#ff8a80; font-weight:700;">이진분류(Binary Classification)</span>'
-        ' 화한다.'
+        ' 화 해야 합니다.'
         '</div>'
         '</div>'
         '</div>',
         unsafe_allow_html=True
     )
+
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e3f2fd,#e8f5e9);'
         ' border-radius:16px; padding:28px 36px; margin-bottom:20px;'
@@ -284,6 +285,7 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
         '</div>',
         unsafe_allow_html=True
     )
+
     score_img = os.path.join(pages_folder, "score.jpg")
     if os.path.exists(score_img):
         st.image(score_img, use_container_width=True)
@@ -397,7 +399,7 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
             '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_query</span>'
             ' 와 '
             '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_moral</span>'
-            ' 의 상관계수는 <span style="font-weight:900; color:#e53935;">0.42</span> 로,'
+            ' 의 상관계수는 <span style="font-weight:900; color:#e53935;">0.453</span> 으로,'
             ' 생성형 AI에 질문하는 방법을 아는 학생일수록 <b>윤리의식도 높은 경향</b>이 있음.'
             '</div>'
             '</div>'
@@ -438,7 +440,6 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
 # ══════════════════════════════════════════════════
 elif st.session_state.logistic_page == "다중공선성 확인":
 
-    # 01 - 다중공선성 확인
     st.markdown(
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
         '<div style="background:linear-gradient(135deg,#e53935,#ef9a9a);'
@@ -457,7 +458,6 @@ elif st.session_state.logistic_page == "다중공선성 확인":
 
     st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
-    # 02 - 다중공선성 분석
     st.markdown(
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">'
         '<div style="background:linear-gradient(135deg,#e53935,#ef9a9a);'
@@ -651,8 +651,8 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
             ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">설명력 보통</span>'
             '</div>'
             '<div style="font-size:17px; line-height:2.0; color:#222;">'
-            'Pseudo R² 값이 <span style="font-weight:900; color:#1976d2;">0.1641</span> 로,'
-            ' 독립변수들이 윤리의식 여부 변동의 약 <span style="font-weight:900; color:#1976d2;">16.4%</span> 를 설명합니다.'
+            'Pseudo R² 값이 <span style="font-weight:900; color:#1976d2;">0.1429 (14.3%)</span> 로,'
+            ' 독립변수들이 윤리의식 여부 변동의 약 14.3% 를 설명합니다.'
             ' 로지스틱 회귀분석에서 0.1 이상이면 의미 있는 설명력으로 판단합니다.'
             '</div>'
             '</div>',
@@ -669,7 +669,7 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
             ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">통계적으로 유의 ✔️</span>'
             '</div>'
             '<div style="font-size:17px; line-height:2.0; color:#222;">'
-            'LLR p-value 가 <span style="font-weight:900; color:#26a69a;">1.333e-94</span> 로'
+            'LLR p-value 가 <span style="font-weight:900; color:#26a69a;">1.663e-83</span> 으로'
             ' 유의수준 0.05보다 매우 작으므로,'
             ' 이 로지스틱 회귀모델은 <span style="font-weight:700; color:#26a69a;">통계적으로 매우 유의</span>합니다.'
             '</div>'
@@ -692,7 +692,7 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
             '<span style="font-size:17px; color:#222; line-height:1.9;">'
             'P값 <span style="font-weight:900; color:#26a69a;">0.000</span> &nbsp;→&nbsp;'
             ' <span style="font-weight:700; color:#26a69a;">유의 ✔️</span> &nbsp;|&nbsp;'
-            ' 계수 <span style="font-weight:700; color:#1976d2;">1.1018</span> —'
+            ' 계수 <span style="font-weight:700; color:#1976d2;">1.0236</span> —'
             ' AI 질문 능력이 높을수록 윤리의식이 높아질 확률 <b>증가</b>'
             '</span>'
             '</div>'
@@ -701,7 +701,7 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
             '<span style="background:#e53935; color:white; border-radius:10px;'
             ' padding:4px 14px; font-size:15px; font-weight:700; min-width:90px; text-align:center;">ai_gemi</span>'
             '<span style="font-size:17px; color:#222; line-height:1.9;">'
-            'P값 <span style="font-weight:900; color:#e53935;">0.976</span> &nbsp;→&nbsp;'
+            'P값 <span style="font-weight:900; color:#e53935;">0.134</span> &nbsp;→&nbsp;'
             ' <span style="font-weight:700; color:#e53935;">유의하지 않음 ✖️</span> &nbsp;|&nbsp;'
             ' 제미나이 사용빈도는 윤리의식에 <b>영향 없음</b>'
             '</span>'
@@ -711,7 +711,7 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
             '<span style="background:#e53935; color:white; border-radius:10px;'
             ' padding:4px 14px; font-size:15px; font-weight:700; min-width:90px; text-align:center;">use_grade</span>'
             '<span style="font-size:17px; color:#222; line-height:1.9;">'
-            'P값 <span style="font-weight:900; color:#e53935;">0.373</span> &nbsp;→&nbsp;'
+            'P값 <span style="font-weight:900; color:#e53935;">0.851</span> &nbsp;→&nbsp;'
             ' <span style="font-weight:700; color:#e53935;">유의하지 않음 ✖️</span> &nbsp;|&nbsp;'
             ' 성적향상 목적 AI 사용은 윤리의식에 <b>영향 없음</b>'
             '</span>'
@@ -732,8 +732,10 @@ elif st.session_state.logistic_page == "로지스틱 회귀분석":
             ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">ai_query 만 유의</span>'
             '</div>'
             '<div style="font-size:17px; line-height:2.0; color:#222;">'
-            '생성형 AI에 <b>질문하는 방법을 아는 것(ai_query)</b> 이 윤리의식 여부에'
-            ' <span style="font-weight:700; color:#e53935;">통계적으로 유의한 영향</span>을 미칩니다.'
+            '생성형 AI에 <b>질문하는 방법을 아는 것(ai_query)</b> 만이 윤리의식 여부에'
+            ' <span style="font-weight:700; color:#e53935;">통계적으로 유의한 영향</span>을 미칩니다.<br>'
+            'AI를 얼마나 자주 사용하느냐보다 <span style="font-weight:700; color:#e53935;">'
+            'AI를 올바르게 활용하는 방법을 아는 것</span>이 윤리의식과 더 깊은 관련이 있습니다.'
             '</div>'
             '</div>',
             unsafe_allow_html=True
