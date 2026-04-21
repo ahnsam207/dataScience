@@ -397,7 +397,7 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
             '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_query</span>'
             ' 와 '
             '<span style="background:#fff3e0; border-radius:8px; padding:2px 8px; font-weight:700; color:#e65100;">ai_moral</span>'
-            ' 의 상관계수는 <span style="font-weight:900; color:#e53935;">0.453</span> 으로,'
+            ' 의 상관계수는 <span style="font-weight:900; color:#e53935;">0.42</span> 으로,'
             ' 생성형 AI에 질문하는 방법을 아는 학생일수록 <b>윤리의식도 높은 경향</b>이 있음.'
             '</div>'
             '</div>'
