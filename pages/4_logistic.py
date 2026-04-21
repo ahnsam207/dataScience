@@ -263,33 +263,27 @@ elif st.session_state.logistic_page == "탐색적 데이터 분석":
 
         '<div style="display:flex; align-items:center; gap:16px;">'
         '<span style="background:#e53935; color:white; border-radius:10px;'
-        ' padding:6px 18px; font-size:16px; font-weight:700; flex-shrink:0; min-width:160px; text-align:center;">'
-        '1·2·3 → 0</span>'
+        ' padding:6px 18px; font-size:20px; font-weight:900; flex-shrink:0; min-width:50px; text-align:center;">0</span>'
         '<span style="font-size:17px; color:#222; line-height:1.9;">'
-        '전혀 그렇지 않다 · 거의 그렇지 않다 · 보통이다'
+        '전혀 그렇지 않다 <span style="color:#e53935; font-weight:700;">(1)</span>'
+        ' &nbsp;·&nbsp; 거의 그렇지 않다 <span style="color:#e53935; font-weight:700;">(2)</span>'
+        ' &nbsp;·&nbsp; 보통이다 <span style="color:#e53935; font-weight:700;">(3)</span>'
         '</span>'
         '</div>'
 
         '<div style="display:flex; align-items:center; gap:16px;">'
         '<span style="background:#26a69a; color:white; border-radius:10px;'
-        ' padding:6px 18px; font-size:16px; font-weight:700; flex-shrink:0; min-width:160px; text-align:center;">'
-        '4·5 → 1</span>'
+        ' padding:6px 18px; font-size:20px; font-weight:900; flex-shrink:0; min-width:50px; text-align:center;">1</span>'
         '<span style="font-size:17px; color:#222; line-height:1.9;">'
-        '약간 그렇다 · 매우 그렇다'
+        '약간 그렇다 <span style="color:#26a69a; font-weight:700;">(4)</span>'
+        ' &nbsp;·&nbsp; 매우 그렇다 <span style="color:#26a69a; font-weight:700;">(5)</span>'
         '</span>'
-        '</div>'
-
-        '<div style="border-top:1px solid #bbdefb; margin-top:8px; padding-top:12px;">'
-        '<div style="font-size:16px; color:#555; line-height:1.9;">'
-        '📌 <b>윤리적 문제들을 알고 있다</b>에 대한 응답을 기준으로 이진분류'
-        '</div>'
         '</div>'
 
         '</div>'
         '</div>',
         unsafe_allow_html=True
     )
-
     score_img = os.path.join(pages_folder, "score.jpg")
     if os.path.exists(score_img):
         st.image(score_img, use_container_width=True)
