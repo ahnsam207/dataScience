@@ -53,13 +53,11 @@ st.markdown(
     ' font-weight:700; flex-shrink:0; margin-top:2px;">2</span>'
     '<div style="font-size:18px; line-height:2.0; color:white;">'
     '그동안 여러 교육 자료나 강의 내용에서 파악하기 어려웠던'
-    ' <span style="color:#ffd180; font-weight:700;">행간의 숨겨진 의미</span>를 경험하며,'
-    ' 놓치고 있던 내용과 의문을 가졌던 내용이 해소되고 정리되는 기회가 된 것 같습니다.'
+    ' <span style="color:#ffd180; font-weight:700;">행간의 숨겨진 의미</span>를 경험하며,<br>'
+    '놓치고 있던 내용과 의문을 가졌던 내용이 해소되고 정리되는 기회가 된 것 같습니다.'
     '</div>'
     '</div>'
 
-    '</div>'
-    '</div>'
 
     '<div style="margin-top:36px; text-align:right;">'
     '<span style="font-size:22px; color:#ffeb3b; font-weight:800;">감사합니다 🙏</span>'
