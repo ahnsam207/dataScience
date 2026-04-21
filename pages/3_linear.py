@@ -355,6 +355,23 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '</div>',
         unsafe_allow_html=True
     )
+    st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
+
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">'
+        '<span style="font-size:18px;">🔎</span>'
+        '<span style="font-size:20px; font-weight:800; color:#1565c0;">이상치 재확인</span>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    outlier_img = os.path.join(pages_folder, "outlier.jpg")
+    if os.path.exists(outlier_img):
+        st.image(outlier_img, use_container_width=True)
+    else:
+        st.info("outlier.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+    st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
     # 04 - 상관계수 및 상관관계 확인하기
     st.markdown(
