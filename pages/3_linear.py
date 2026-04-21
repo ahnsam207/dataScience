@@ -594,24 +594,6 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:14px;">'
         '<span style="font-size:20px; font-weight:800; color:#00695c;">💡 최종 결론</span>'
         '<span style="background:#26a69a; color:white; border-radius:20px;'
-        ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">판단 불가</span>'
-        '</div>'
-        '<div style="font-size:17px; line-height:2.0; color:#222;">'
-        '모델 전체가 통계적으로 유의하지 않으므로,'
-        ' <span style="font-weight:700; color:#e53935;">'
-        '이 분석 결과로는 어떠한 통계적 판단도 할 수 없습니다.</span><br>'
-        '변수 선정, 표본 구성, 분석 방법 등을 재검토한 후 재분석이 필요합니다.'
-        '</div>'
-        '</div>',
-        unsafe_allow_html=True
-    )
-    st.markdown(
-        '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
-        ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
-        ' border-left:6px solid #26a69a;">'
-        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:14px;">'
-        '<span style="font-size:20px; font-weight:800; color:#00695c;">💡 최종 결론</span>'
-        '<span style="background:#26a69a; color:white; border-radius:20px;'
         ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">AI 사용이 학업 성적에 유의한 영향 없음</span>'
         '</div>'
         '<div style="font-size:17px; line-height:2.0; color:#222;">'
