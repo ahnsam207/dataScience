@@ -355,9 +355,9 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '</div>',
         unsafe_allow_html=True
     )
-    st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
+
     st.markdown(
-        '<div style="display:flex; align-items:center; gap:2px; margin-bottom:16px;">'
+        '<div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">'
         '<span style="font-size:18px;">🔎</span>'
         '<span style="font-size:20px; font-weight:800; color:#1565c0;">이상치 재확인</span>'
         '</div>',
