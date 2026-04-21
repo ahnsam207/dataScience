@@ -8,6 +8,7 @@ pages = [
     st.Page("pages/2_subject.py", title="연구 주제", icon="🔍"),
     st.Page("pages/3_linear.py", title="다중 선형 회귀분석", icon="📈"),
     st.Page("pages/4_logistic.py", title="로지스틱 회귀분석", icon="📉"),
+    st.Page("pages/5_reflection.py", title="소감", icon="💬"),
 ]
 pg = st.navigation(pages)
 
