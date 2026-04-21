@@ -518,9 +518,8 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
         ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">설명력 매우 낮음</span>'
         '</div>'
         '<div style="font-size:17px; line-height:2.0; color:#222;">'
-        'R² 값이 <span style="font-weight:700; color:#e53935;">0.001</span> 로,'
-        ' 독립변수들이 학업 성적 변동의 약 <span style="font-weight:700; color:#e53935;">0.1%</span> 만 설명하고 있습니다.'
-        ' 이는 모델의 설명력이 매우 낮음을 의미합니다.'
+        'R² 값이 <span style="font-weight:700; color:#e53935;">0.001 (0.1%)</span> 으로'
+        ' 모델의 설명력이 매우 낮음'
         '</div>'
         '</div>',
         unsafe_allow_html=True
@@ -536,10 +535,8 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
         ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">유의하지 않음</span>'
         '</div>'
         '<div style="font-size:17px; line-height:2.0; color:#222;">'
-        'F-통계량의 유의확률이 <span style="font-weight:700; color:#e53935;">0.443</span> 으로'
-        ' 유의수준 0.05보다 크기 때문에,'
-        ' 이 회귀모델은 <span style="font-weight:700; color:#e53935;">통계적으로 유의하지 않습니다.</span>'
-        ' 즉, 독립변수들이 종속변수를 설명하는 데 통계적으로 의미 있는 기여를 하지 못합니다.'
+        'F-통계량의 유의확률(p값)이 <span style="font-weight:700; color:#e53935;">0.443</span> 으로'
+        ' 회귀모델이 통계적으로 유의하지 않음'
         '</div>'
         '</div>',
         unsafe_allow_html=True
@@ -561,8 +558,7 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
         ' <span style="background:#ede7f6; border-radius:8px; padding:2px 10px;'
         ' font-weight:700; color:#8e24aa;">avg_time</span>'
         ' 의 P값은 <span style="font-weight:700; color:#e53935;">0.474</span> 로,'
-        ' 두 변수 모두 유의수준 0.05보다 크므로'
-        ' <span style="font-weight:700; color:#e53935;">통계적으로 유의하지 않습니다.</span>'
+        ' 두 변수 모두 통계적으로 유의하지 않음'
         '</div>'
         '</div>',
         unsafe_allow_html=True
@@ -581,16 +577,34 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
         '<span style="background:#fff3e0; border-radius:8px; padding:2px 10px;'
         ' font-weight:700; color:#e65100;">use_grade</span>'
         ' 의 계수는 <span style="font-weight:700; color:#1976d2;">0.014</span> 로,'
-        ' 성적 향상 목적의 AI 사용이 1단위 증가할 때 학업 성적이 0.014 증가하지만 유의하지 않습니다.<br>'
+        ' 성적 향상 목적의 AI 사용이 1단위 증가할 때 학업 성적이 0.014 증가하지만 유의하지 않음<br>'
         '<span style="background:#fff3e0; border-radius:8px; padding:2px 10px;'
         ' font-weight:700; color:#e65100;">avg_time</span>'
         ' 의 계수는 <span style="font-weight:700; color:#1976d2;">0.014</span> 로,'
-        ' AI 평균 사용시간이 1단위 증가할 때 학업 성적이 0.014 증가하지만 역시 유의하지 않습니다.'
+        ' AI 평균 사용시간이 1단위 증가할 때 학업 성적이 0.014 증가하지만 역시 유의하지 않음'
         '</div>'
         '</div>',
         unsafe_allow_html=True
     )
 
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
+        ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
+        ' border-left:6px solid #26a69a;">'
+        '<div style="display:flex; align-items:center; gap:16px; margin-bottom:14px;">'
+        '<span style="font-size:20px; font-weight:800; color:#00695c;">💡 최종 결론</span>'
+        '<span style="background:#26a69a; color:white; border-radius:20px;'
+        ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">판단 불가</span>'
+        '</div>'
+        '<div style="font-size:17px; line-height:2.0; color:#222;">'
+        '모델 전체가 통계적으로 유의하지 않으므로,'
+        ' <span style="font-weight:700; color:#e53935;">'
+        '이 분석 결과로는 어떠한 통계적 판단도 할 수 없습니다.</span><br>'
+        '변수 선정, 표본 구성, 분석 방법 등을 재검토한 후 재분석이 필요합니다.'
+        '</div>'
+        '</div>',
+        unsafe_allow_html=True
+    )
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
         ' border-radius:16px; padding:28px 36px; margin-bottom:16px;'
