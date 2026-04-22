@@ -101,7 +101,7 @@ if st.session_state.linear_page == "연구주제":
 
         '<div style="border-top:1px solid #bbdefb; padding-top:16px;">'
         '<div style="font-size:17px; color:#222; line-height:1.9;">'
-        '💡 생성형 AI의 사용목적과 평균사용시간이 <b>학업 성적</b>에 주는 영향 분석'
+        '💡 생성형 AI의 사용목적과 평균 사용 시간이 <b>학업 성적</b>에 주는 영향 분석'
         '</div>'
         '</div>'
 
