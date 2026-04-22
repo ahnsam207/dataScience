@@ -54,7 +54,7 @@ st.markdown('<div id="top-anchor"></div>', unsafe_allow_html=True)
 
 # ── 상단 메뉴 버튼 ──────────────────────────────────
 mc    = st.columns([2, 2, 2, 2, 1])
-tabs  = ["연구주제", "탐색적 데이터 분석", " 확인", "다중 선형 회귀분석"]
+tabs  = ["연구주제", "탐색적 데이터 분석", "다중공선성 확인", "다중 선형 회귀분석"]
 icons = ["🔍", "📊", "🔬", "📈"]
 for col, tab, icon in zip(mc[:4], tabs, icons):
     with col:
