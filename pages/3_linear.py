@@ -318,7 +318,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '<div style="background:linear-gradient(135deg,#1976d2,#42a5f5);'
         ' color:white; border-radius:16px; padding:8px 20px;'
         ' font-size:28px; font-weight:900; letter-spacing:2px; flex-shrink:0;">03</div>'
-        '<div style="font-size:28px; font-weight:800; color:#1565c0;">선별 데이터 변수명 수정하고 데이터 분석하기</div>'
+        '<div style="font-size:28px; font-weight:800; color:#1565c0;">변수명 수정 및 데이터 분석하기</div>'
         '</div>',
         unsafe_allow_html=True
     )
