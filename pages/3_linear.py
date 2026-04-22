@@ -223,7 +223,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
     st.markdown(
         '<div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">'
         '<span style="font-size:18px;">📋</span>'
-        '<span style="font-size:20px; font-weight:800; color:#1565c0;">종속변수 DQ3(학업성적)의 성격</span>'
+        '<span style="font-size:20px; font-weight:800; color:#1565c0;">종속변수 DQ3(학업성적)의 응답 척도 확인</span>'
         '</div>',
         unsafe_allow_html=True
     )
