@@ -101,7 +101,7 @@ if st.session_state.linear_page == "연구주제":
 
         '<div style="border-top:1px solid #bbdefb; padding-top:16px;">'
         '<div style="font-size:17px; color:#222; line-height:1.9;">'
-        '💡 생성형 AI의 사용목적과 평균 사용 시간이 <b>학업 성적</b>에 주는 영향 분석'
+        '💡 생성형 AI의 사용목적과 평균사용시간이 <b>학업 성적</b>에 주는 영향 분석'
         '</div>'
         '</div>'
 
@@ -213,63 +213,71 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
     )
 
     img_path2 = os.path.join(pages_folder, "ols_2.jpg")
-
     if os.path.exists(img_path2):
         st.image(img_path2, use_container_width=True)
-        st.markdown(
-            st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
-        
-            '<div style="background:linear-gradient(135deg,#1a237e,#283593);'
-            ' border-radius:16px; padding:28px 36px; margin-top:20px;">'
-
-            '<div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 24px; margin-bottom:16px;">'
-            '<div style="font-size:18px; font-weight:800; color:#ffeb3b; margin-bottom:10px;">🤔 질문</div>'
-            '<div style="font-size:17px; line-height:1.9; color:white;">'
-            '다중 선형 회귀분석의 종속 변수가 <span style="color:#ffeb3b; font-weight:700;">"1, 2, 3, 4, 5"</span>'
-            ' 의 범주형 값을 갖는데 분석이 가능한가?'
-            '</div>'
-            '</div>'
-
-            '<div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 24px; margin-bottom:16px;">'
-            '<div style="font-size:18px; font-weight:800; color:#69f0ae; margin-bottom:10px;">✅ 답안</div>'
-            '<div style="font-size:17px; line-height:1.9; color:white;">'
-            '1, 2, 3, 4, 5 의 값은 엄밀히는 범주형이지만, '
-            '<span style="color:#69f0ae; font-weight:700;">리커트 척도(Likert Scale)</span>'
-            ' 처럼 등간성을 가정할 수 있는 경우에는 연속형 변수로 간주할 수 있습니다.<br>'
-            '또한 <span style="color:#69f0ae; font-weight:700;">표본의 크기가 충분히 클 때</span>'
-            ' 중심극한정리에 의해 정규성 가정이 완화되므로,'
-            ' 다중 선형 회귀분석을 적용하는 것이 통계적으로 허용됩니다.'
-            '</div>'
-            '</div>'
-
-            '<div style="background:rgba(255,255,255,0.07); border-radius:12px; padding:20px 24px; margin-bottom:16px;">'
-            '<div style="font-size:18px; font-weight:800; color:#80d8ff; margin-bottom:10px;">📖 등간성이란?</div>'
-            '<div style="font-size:16px; line-height:1.9; color:#cfd8dc;">'
-            '등간성(等間性, Equal Interval)이란 척도의 각 단계 간 간격이 동일하다는 가정입니다.<br>'
-            '예를 들어 <span style="color:#80d8ff; font-weight:700;">"1→2"의 차이</span>와 '
-            '<span style="color:#80d8ff; font-weight:700;">"4→5"의 차이</span>가 심리적·통계적으로 동일하다고 볼 수 있을 때,'
-            ' 해당 변수를 연속형으로 처리할 수 있습니다.<br>'
-            '학업 성적(DQ3)처럼 순서 간격이 균등하다고 가정 가능한 경우 다중 선형 회귀분석 적용이 허용됩니다.'
-            '</div>'
-            '</div>'
-
-            '<div style="background:rgba(255,255,255,0.07); border-radius:12px; padding:20px 24px;">'
-            '<div style="font-size:18px; font-weight:800; color:#ffd180; margin-bottom:10px;">📖 중심극한정리란?</div>'
-            '<div style="font-size:16px; line-height:1.9; color:#cfd8dc;">'
-            '중심극한정리(中心極限定理, Central Limit Theorem)란 모집단의 분포 형태와 관계없이,'
-            ' <span style="color:#ffd180; font-weight:700;">표본의 크기가 충분히 크면(일반적으로 n ≥ 30)</span>'
-            ' 표본 평균의 분포가 정규분포에 가까워진다는 통계학의 핵심 정리입니다.<br>'
-            '즉, 원래 데이터가 정규분포를 따르지 않더라도 표본이 크면 회귀분석의 정규성 가정을 완화할 수 있으며,'
-            ' 본 연구의 표본 수는 <span style="color:#ffd180; font-weight:700;">1,952명</span> 으로'
-            ' 충분히 크기 때문에 다중 선형 회귀분석 적용이 가능합니다.'
-            '</div>'
-            '</div>'
-
-            '</div>',
-            unsafe_allow_html=True
-        )
     else:
         st.info("ols_2.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+    st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
+
+    ols_score_img = os.path.join(pages_folder, "ols_score.jpg")
+    if os.path.exists(ols_score_img):
+        st.image(ols_score_img, use_container_width=True)
+    else:
+        st.info("ols_score.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+    st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
+
+    st.markdown(
+        '<div style="background:linear-gradient(135deg,#1a237e,#283593);'
+        ' border-radius:16px; padding:28px 36px; margin-top:20px;">'
+
+        '<div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 24px; margin-bottom:16px;">'
+        '<div style="font-size:18px; font-weight:800; color:#ffeb3b; margin-bottom:10px;">🤔 질문</div>'
+        '<div style="font-size:17px; line-height:1.9; color:white;">'
+        '다중 선형 회귀 변수인데 종속 변수가 <span style="color:#ffeb3b; font-weight:700;">"1, 2, 3, 4, 5"</span>'
+        ' 의 값을 갖는 범주형 변수를 분석할 수 있는가?'
+        '</div>'
+        '</div>'
+
+        '<div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 24px; margin-bottom:16px;">'
+        '<div style="font-size:18px; font-weight:800; color:#69f0ae; margin-bottom:10px;">✅ 답안</div>'
+        '<div style="font-size:17px; line-height:1.9; color:white;">'
+        '1, 2, 3, 4, 5 의 값은 엄밀히는 범주형이지만, '
+        '<span style="color:#69f0ae; font-weight:700;">리커트 척도(Likert Scale)</span>'
+        ' 처럼 등간성을 가정할 수 있는 경우에는 연속형 변수로 간주할 수 있습니다.<br>'
+        '또한 <span style="color:#69f0ae; font-weight:700;">표본의 크기가 충분히 클 때</span>'
+        ' 중심극한정리에 의해 정규성 가정이 완화되므로,'
+        ' 다중 선형 회귀분석을 적용하는 것이 통계적으로 허용됩니다.'
+        '</div>'
+        '</div>'
+
+        '<div style="background:rgba(255,255,255,0.07); border-radius:12px; padding:20px 24px; margin-bottom:16px;">'
+        '<div style="font-size:18px; font-weight:800; color:#80d8ff; margin-bottom:10px;">📖 등간성이란?</div>'
+        '<div style="font-size:16px; line-height:1.9; color:#cfd8dc;">'
+        '등간성(等間性, Equal Interval)이란 척도의 각 단계 간 간격이 동일하다는 가정입니다.<br>'
+        '예를 들어 <span style="color:#80d8ff; font-weight:700;">"1→2"의 차이</span>와 '
+        '<span style="color:#80d8ff; font-weight:700;">"4→5"의 차이</span>가 심리적·통계적으로 동일하다고 볼 수 있을 때,'
+        ' 해당 변수를 연속형으로 처리할 수 있습니다.<br>'
+        '학업 성적(DQ3)처럼 순서 간격이 균등하다고 가정 가능한 경우 다중 선형 회귀분석 적용이 허용됩니다.'
+        '</div>'
+        '</div>'
+
+        '<div style="background:rgba(255,255,255,0.07); border-radius:12px; padding:20px 24px;">'
+        '<div style="font-size:18px; font-weight:800; color:#ffd180; margin-bottom:10px;">📖 중심극한정리란?</div>'
+        '<div style="font-size:16px; line-height:1.9; color:#cfd8dc;">'
+        '중심극한정리(中心極限定理, Central Limit Theorem)란 모집단의 분포 형태와 관계없이,'
+        ' <span style="color:#ffd180; font-weight:700;">표본의 크기가 충분히 크면(일반적으로 n ≥ 30)</span>'
+        ' 표본 평균의 분포가 정규분포에 가까워진다는 통계학의 핵심 정리입니다.<br>'
+        '즉, 원래 데이터가 정규분포를 따르지 않더라도 표본이 크면 회귀분석의 정규성 가정을 완화할 수 있으며,'
+        ' 본 연구의 표본 수는 <span style="color:#ffd180; font-weight:700;">1,952명</span> 으로'
+        ' 충분히 크기 때문에 다중 선형 회귀분석 적용이 가능합니다.'
+        '</div>'
+        '</div>'
+
+        '</div>',
+        unsafe_allow_html=True
+    )
 
     st.markdown('<div style="margin-bottom:40px;"></div>', unsafe_allow_html=True)
 
@@ -332,7 +340,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
 
     st.markdown(
         '<div style="background:linear-gradient(135deg,#e8f5e9,#e0f7fa);'
-        ' border-radius:12px; padding:20px 28px; margin-top:16px; margin-bottom:40px;'
+        ' border-radius:12px; padding:20px 28px; margin-top:16px; margin-bottom:20px;'
         ' border-left:6px solid #26a69a;">'
         '<div style="display:flex; flex-wrap:wrap; gap:12px;">'
 
@@ -359,10 +367,12 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         unsafe_allow_html=True
     )
 
+    st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
+
     st.markdown(
         '<div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">'
         '<span style="font-size:18px;">🔎</span>'
-        '<span style="font-size:20px; font-weight:800; color:#1565c0;">이상치 확인</span>'
+        '<span style="font-size:20px; font-weight:800; color:#1565c0;">이상치 재확인</span>'
         '</div>',
         unsafe_allow_html=True
     )
@@ -597,14 +607,13 @@ elif st.session_state.linear_page == "다중 선형 회귀분석":
         '<div style="display:flex; align-items:center; gap:16px; margin-bottom:14px;">'
         '<span style="font-size:20px; font-weight:800; color:#00695c;">💡 최종 결론</span>'
         '<span style="background:#26a69a; color:white; border-radius:20px;'
-        ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">AI 사용이 학업 성적에 유의한 영향 없음</span>'
+        ' padding:4px 16px; font-size:15px; font-weight:700; flex-shrink:0;">판단 불가</span>'
         '</div>'
         '<div style="font-size:17px; line-height:2.0; color:#222;">'
-        '생성형 AI의 사용목적(성적 향상)과 평균 사용시간은'
-        ' 고등학생의 학업 성적에 <span style="font-weight:700; color:#e53935;">통계적으로 유의한 영향을 미치지 않는 것</span>'
-        ' 으로 나타났습니다.<br>'
-        '즉, 생성형 AI 사용이 직접적으로 학업 성적 향상으로 이어진다고 보기 어려우며,'
-        ' 학업 성적에 영향을 미치는 다른 요인들을 추가로 고려할 필요가 있습니다.'
+        '모델 전체가 통계적으로 유의하지 않으므로,'
+        ' <span style="font-weight:700; color:#e53935;">'
+        '이 분석 결과로는 어떠한 통계적 판단도 할 수 없습니다.</span><br>'
+        '변수 선정, 표본 구성, 분석 방법 등을 재검토한 후 재분석이 필요합니다.'
         '</div>'
         '</div>',
         unsafe_allow_html=True
