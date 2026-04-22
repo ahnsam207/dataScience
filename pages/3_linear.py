@@ -284,29 +284,6 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '</div>'
         '</div>'
 
-        '<div style="background:rgba(255,255,255,0.07); border-radius:12px; padding:20px 24px; margin-bottom:16px;">'
-        '<div style="font-size:18px; font-weight:800; color:#80d8ff; margin-bottom:10px;">📖 등간성이란?</div>'
-        '<div style="font-size:16px; line-height:1.9; color:#cfd8dc;">'
-        '등간성(等間性, Equal Interval)이란 척도의 각 단계 간 간격이 동일하다는 가정입니다.<br>'
-        '예를 들어 <span style="color:#80d8ff; font-weight:700;">"1→2"의 차이</span>와 '
-        '<span style="color:#80d8ff; font-weight:700;">"4→5"의 차이</span>가 심리적·통계적으로 동일하다고 볼 수 있을 때,'
-        ' 해당 변수를 연속형으로 처리할 수 있습니다.<br>'
-        '학업 성적(DQ3)처럼 순서 간격이 균등하다고 가정 가능한 경우 다중 선형 회귀분석 적용이 허용됩니다.'
-        '</div>'
-        '</div>'
-
-        '<div style="background:rgba(255,255,255,0.07); border-radius:12px; padding:20px 24px;">'
-        '<div style="font-size:18px; font-weight:800; color:#ffd180; margin-bottom:10px;">📖 중심극한정리란?</div>'
-        '<div style="font-size:16px; line-height:1.9; color:#cfd8dc;">'
-        '중심극한정리(中心極限定理, Central Limit Theorem)란 모집단의 분포 형태와 관계없이,'
-        ' <span style="color:#ffd180; font-weight:700;">표본의 크기가 충분히 크면(일반적으로 n ≥ 30)</span>'
-        ' 표본 평균의 분포가 정규분포에 가까워진다는 통계학의 핵심 정리입니다.<br>'
-        '즉, 원래 데이터가 정규분포를 따르지 않더라도 표본이 크면 회귀분석의 정규성 가정을 완화할 수 있으며,'
-        ' 본 연구의 표본 수는 <span style="color:#ffd180; font-weight:700;">1,952명</span> 으로'
-        ' 충분히 크기 때문에 다중 선형 회귀분석 적용이 가능합니다.'
-        '</div>'
-        '</div>'
-
         '</div>',
         unsafe_allow_html=True
     )
