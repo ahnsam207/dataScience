@@ -214,19 +214,21 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
 
     img_path2 = os.path.join(pages_folder, "ols_2.jpg")
 
-    
-    st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
-
-    ols_score_img = os.path.join(pages_folder, "ols_score.jpg")
-    if os.path.exists(ols_score_img):
-        st.image(ols_score_img, use_container_width=True)
-    else:
-        st.info("ols_score.jpg 파일을 pages 폴더에 추가해 주세요.")
-
-    
     if os.path.exists(img_path2):
         st.image(img_path2, use_container_width=True)
         st.markdown(
+            st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
+
+
+            
+            ols_score_img = os.path.join(pages_folder, "ols_score.jpg")
+            if os.path.exists(ols_score_img):
+                st.image(ols_score_img, use_container_width=True)
+            else:
+                st.info("ols_score.jpg 파일을 pages 폴더에 추가해 주세요.")
+
+
+        
             '<div style="background:linear-gradient(135deg,#1a237e,#283593);'
             ' border-radius:16px; padding:28px 36px; margin-top:20px;">'
 
