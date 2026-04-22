@@ -243,7 +243,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '<div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 24px; margin-bottom:16px;">'
         '<div style="font-size:18px; font-weight:800; color:#ffeb3b; margin-bottom:10px;">🤔 질문</div>'
         '<div style="font-size:17px; line-height:1.9; color:white;">'
-        '종속 변수가 <span style="color:#ffeb3b; font-weight:700;">"1, 2, 3, 4, 5"</span>'
+        '종속 변수(DQ3, 학업성적)가 <span style="color:#ffeb3b; font-weight:700;">"1, 2, 3, 4, 5"</span>'
         ' 의 값을 갖는 범주형 변수인데 다중 선형 회귀 분석을 할 수 있는가?'
         '</div>'
         '</div>'
