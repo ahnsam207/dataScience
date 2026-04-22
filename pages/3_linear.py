@@ -54,7 +54,7 @@ st.markdown('<div id="top-anchor"></div>', unsafe_allow_html=True)
 
 # ── 상단 메뉴 버튼 ──────────────────────────────────
 mc    = st.columns([2, 2, 2, 2, 1])
-tabs  = ["연구주제", "탐색적 데이터 분석", "다중공선성 확인", "다중 선형 회귀분석"]
+tabs  = ["연구주제", "탐색적 데이터 분석", " 확인", "다중 선형 회귀분석"]
 icons = ["🔍", "📊", "🔬", "📈"]
 for col, tab, icon in zip(mc[:4], tabs, icons):
     with col:
@@ -486,9 +486,9 @@ elif st.session_state.linear_page == "다중공선성 확인":
             ' 와 '
             '<span style="background:#fff3e0; border-radius:8px; padding:2px 10px;'
             ' font-weight:700; color:#e65100;">use_grade</span>'
-            ' 는 본질적으로 같은 학습 목적(숙제 → 성적 향상)을 중복 측정하고 있어'
-            ' 강한 상관관계(0.83)와 높은 다중공선성이 발생하였다고 판단되므로,'
-            '<br>VIF 값이 더 높은 '
+            ' 는 본질적으로 같은 학습 목적(숙제 → 성적 향상)을 중복 측정하고 있어<br>'
+            '강한 상관관계(0.83)와 높은 다중공선성이 발생하였다고 판단되므로,<br>'
+            'VIF 값이 더 높은 '
             '<span style="background:#ffebee; border-radius:8px; padding:2px 10px;'
             ' font-weight:700; color:#e53935;">use_hw 를 제거</span>'
             ' 하기로 함.'
