@@ -252,7 +252,7 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
         '<div style="font-size:18px; font-weight:800; color:#69f0ae; margin-bottom:10px;">✅ 답안</div>'
         '<div style="font-size:17px; line-height:1.9; color:white;">'
         '1, 2, 3, 4, 5 의 값은 엄밀히는 범주형이지만, '
-        '<span style="color:#ff8a80; font-weight:700;">리커트 척도(Likert Scale)</span>'
+        '<span style="color:#69f0ae; font-weight:700;">리커트 척도(Likert Scale)</span>'
         ' 처럼 <span style="color:#ff8a80; font-weight:700;">등간성</span>을 가정할 수 있는 경우에는 연속형 변수로 간주할 수 있습니다.<br>'
         '또한 <span style="color:#69f0ae; font-weight:700;">표본의 크기가 충분히 클 때</span>'
         ' <span style="color:#ff8a80; font-weight:700;">중심극한정리</span>에 의해 정규성 가정이 완화되므로,'
