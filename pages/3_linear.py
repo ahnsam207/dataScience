@@ -220,6 +220,14 @@ elif st.session_state.linear_page == "탐색적 데이터 분석":
 
     st.markdown('<div style="margin-bottom:20px;"></div>', unsafe_allow_html=True)
 
+    st.markdown(
+        '<div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">'
+        '<span style="font-size:18px;">📋</span>'
+        '<span style="font-size:20px; font-weight:800; color:#1565c0;">종속변수 DQ3(학업성적)의 성격</span>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
     ols_score_img = os.path.join(pages_folder, "ols_score.jpg")
     if os.path.exists(ols_score_img):
         st.image(ols_score_img, use_container_width=True)
